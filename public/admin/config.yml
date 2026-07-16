@@ -2,7 +2,6 @@ backend:
   name: git-gateway
   repo: zsnourish/pulse-docs
   branch: main
-  # Filled in once the DecapBridge site is created — see README for the two values to swap in.
   identity_url: https://auth.decapbridge.com/sites/abd6658d-45db-4463-96fc-c81b34caf13e
   gateway_url: https://gateway.decapbridge.com
 
