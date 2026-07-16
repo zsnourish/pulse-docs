@@ -27,7 +27,12 @@ collections:
         default: "draft"
       - { label: "Owner", name: "owner", widget: "string", hint: "Who's responsible for this component" }
       - { label: "Last updated", name: "trackerUpdated", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
+        editor_components: ["do", "dont", "image"]
+        buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
 
   - name: "guides"
     label: "Guides"
@@ -37,4 +42,9 @@ collections:
     extension: "md"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
+        editor_components: ["do", "dont", "image"]
+        buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]

@@ -1,40 +1,101 @@
 /**
- * Nourish branding pass for Starlight.
- *
- * PLACEHOLDER TOKENS — I don't have your actual brand colours/type, so these
- * are sensible defaults, not Nourish's real palette. Swap the values below
- * (and the font import) for your real tokens and the whole site re-themes.
+ * Pulse (Nourish) branding for Starlight.
+ * Tokens pulled from the Pulse Supernova docs (Foundations > Colour / Typography).
+ * https://nourish.supernova-docs.io
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --sl-font: 'Inter', system-ui, sans-serif;
+  /* Heading font in Pulse is a licensed display face ("FS Me"), not available here —
+     falling back to Inter at heavier weight so headings still read as "Strong". */
+  --sl-font-headings: 'Inter', system-ui, sans-serif;
 
-  /* --- swap these for real Nourish brand tokens --- */
-  --nourish-brand-primary: #0b6e4f;   /* placeholder green */
-  --nourish-brand-primary-dark: #094f38;
-  --nourish-brand-accent: #f2a900;    /* placeholder accent */
-  --nourish-brand-text: #1a1a1a;
-  --nourish-brand-bg: #ffffff;
-  /* ------------------------------------------------- */
+  /* --- Pulse Primary (teal) --- */
+  --pulse-primary-120: #172f2f;
+  --pulse-primary-110: #214343;
+  --pulse-primary-100: #2b5656; /* CTA */
+  --pulse-primary-90:  #3e7e7e; /* CTA */
+  --pulse-primary-70:  #66cccc; /* official brand colour */
+  --pulse-primary-30:  #d1f0f0;
+  --pulse-primary-10:  #f0fafa;
 
-  --sl-color-accent-low: color-mix(in srgb, var(--nourish-brand-primary) 15%, white);
-  --sl-color-accent: var(--nourish-brand-primary);
-  --sl-color-accent-high: var(--nourish-brand-primary-dark);
-  --sl-color-text-accent: var(--nourish-brand-primary);
-  --sl-color-bg: var(--nourish-brand-bg);
-  --sl-color-bg-nav: var(--nourish-brand-bg);
-  --sl-color-text: var(--nourish-brand-text);
+  /* --- Pulse Neutral --- */
+  --pulse-neutral-120: #36393f; /* default body text */
+  --pulse-neutral-90:  #878e9d;
+  --pulse-neutral-40:  #e7e8eb;
+  --pulse-neutral-30:  #f3f4f5; /* containers */
+  --pulse-neutral-20:  #f9f9fa; /* default UI background */
+  --pulse-neutral-10:  #ffffff;
+
+  /* --- Pulse Semantic --- */
+  --pulse-success-70:  #4bb97e;
+  --pulse-success-20:  #edfcf4;
+  --pulse-urgency-70:  #cc5252;
+  --pulse-urgency-20:  #fee7e7;
+  --pulse-attention-70:#e6c020;
+  --pulse-attention-20:#faf2d2;
+
+  /* Map onto Starlight's theme variables */
+  --sl-color-accent-low: var(--pulse-primary-10);
+  --sl-color-accent: var(--pulse-primary-90);
+  --sl-color-accent-high: var(--pulse-primary-100);
+  --sl-color-text-accent: var(--pulse-primary-100);
+  --sl-color-white: var(--pulse-neutral-10);
+  --sl-color-bg: var(--pulse-neutral-10);
+  --sl-color-bg-nav: var(--pulse-neutral-10);
+  --sl-color-bg-sidebar: var(--pulse-neutral-20);
+  --sl-color-text: var(--pulse-neutral-120);
+  --sl-color-hairline: var(--pulse-neutral-40);
+  --sl-color-hairline-light: var(--pulse-neutral-30);
 }
 
 :root[data-theme='dark'] {
-  --sl-color-accent-low: color-mix(in srgb, var(--nourish-brand-primary) 25%, black);
-  --sl-color-accent: var(--nourish-brand-primary);
-  --sl-color-accent-high: color-mix(in srgb, var(--nourish-brand-primary) 60%, white);
+  --sl-color-accent-low: var(--pulse-primary-120);
+  --sl-color-accent: var(--pulse-primary-70);
+  --sl-color-accent-high: var(--pulse-primary-30);
+  --sl-color-bg: var(--pulse-neutral-120);
+  --sl-color-bg-nav: var(--pulse-neutral-120);
+  --sl-color-bg-sidebar: #2a2d33;
+  --sl-color-text: var(--pulse-neutral-20);
 }
 
-/* Status pill on component tracker pages */
+/* Headings use the "Strong" weight per Pulse type scale */
+h1, h2, h3, h4, h5,
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* --- GitBook-style polish: rounder, more breathing room --- */
+.sidebar-pane {
+  border-right: 1px solid var(--sl-color-hairline-light);
+}
+.right-sidebar {
+  border-left: 1px solid var(--sl-color-hairline-light);
+}
+a.px-3 { /* sidebar links */
+  border-radius: 0.5rem;
+}
+main .sl-markdown-content {
+  font-size: var(--sl-text-base);
+  line-height: 1.7;
+}
+.sl-markdown-content :is(table) {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.sl-markdown-content pre {
+  border-radius: 0.75rem;
+}
+.card {
+  border-radius: 0.75rem !important;
+}
+
+/* --- Status pill on component tracker pages --- */
 .status-pill {
   display: inline-block;
   padding: 0.15rem 0.6rem;
@@ -43,7 +104,33 @@
   font-weight: 600;
   text-transform: uppercase;
 }
-.status-pill[data-status='approved'] { background: #d4f7e0; color: #0b6e4f; }
-.status-pill[data-status='in-review'] { background: #fff2cc; color: #8a6d00; }
-.status-pill[data-status='draft'] { background: #eee; color: #555; }
-.status-pill[data-status='deprecated'] { background: #fddede; color: #9c1f1f; }
+.status-pill[data-status='approved'] { background: var(--pulse-success-20); color: var(--pulse-success-70); }
+.status-pill[data-status='in-review'] { background: var(--pulse-attention-20); color: #7a6100; }
+.status-pill[data-status='draft'] { background: var(--pulse-neutral-30); color: var(--pulse-neutral-90); }
+.status-pill[data-status='deprecated'] { background: var(--pulse-urgency-20); color: var(--pulse-urgency-70); }
+
+/* --- Do / Don't callouts, matching Pulse Supernova's pattern --- */
+.ds-callout {
+  border-radius: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  margin: 1rem 0;
+  border: 1px solid transparent;
+}
+.ds-callout p {
+  margin: 0;
+}
+.ds-callout strong {
+  margin-right: 0.35rem;
+}
+.ds-do {
+  background: var(--pulse-success-20);
+  border-color: var(--pulse-success-70);
+  color: var(--pulse-neutral-120);
+}
+.ds-do strong { color: var(--pulse-success-70); }
+.ds-dont {
+  background: var(--pulse-urgency-20);
+  border-color: var(--pulse-urgency-70);
+  color: var(--pulse-neutral-120);
+}
+.ds-dont strong { color: var(--pulse-urgency-70); }

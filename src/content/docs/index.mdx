@@ -1,11 +1,25 @@
 ---
-title: Pulse Design Docs
-description: Component documentation and tracker for the Pulse design system.
-template: splash
+title: Pulse Design System Docs
+description: Component documentation and tracker for Pulse — replacing Supernova.
+template: doc
+tableOfContents: false
 ---
 
-Component docs, review workflow, and tracker for Pulse — replacing Supernova.
+import { CardGrid, Card } from '@astrojs/starlight/components';
 
-- **Draft & review**: edit pages at `/admin`, comments happen via PR (or directly if you're logged in through Netlify Identity).
-- **Tracker fields**: every component page carries `status`, `owner`, and `trackerUpdated` in its frontmatter — see the [Components](/components/button/) section.
-- **Source of truth**: this GitHub repo. What's published here is what's shipped.
+Component docs, review workflow, and tracker for **Pulse** — replacing Supernova. This GitHub repo is the single source of truth; what's published here is what's shipped.
+
+<CardGrid>
+	<Card title="Components" icon="puzzle">
+		Every component's status, owner, and last-updated date, plus usage guidance — see [Button](/components/button/) for the format.
+	</Card>
+	<Card title="Draft & review" icon="pencil">
+		Edit at [`/admin`](/admin/) — draft, request review, and publish without touching GitHub directly.
+	</Card>
+	<Card title="Do's & don'ts" icon="approve-check-circle">
+		Usage guidance is called out inline as **Do** / **Don't** blocks, the same pattern as Supernova.
+	</Card>
+	<Card title="How reviews work" icon="open-book">
+		See the [reviewing & publishing guide](/guides/reviewing-docs/) for the full draft → review → publish loop.
+	</Card>
+</CardGrid>

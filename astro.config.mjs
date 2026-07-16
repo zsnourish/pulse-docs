@@ -7,6 +7,11 @@ export default defineConfig({
       title: 'Pulse Docs',
       description: 'Pulse component documentation and tracker',
       customCss: ['./src/styles/nourish-theme.css'],
+      logo: {
+        src: './src/assets/pulse-logo.png',
+        alt: 'Pulse Design System',
+        replacesTitle: true,
+      },
       social: {
         github: 'https://github.com/zsnourish/pulse-docs',
       },
