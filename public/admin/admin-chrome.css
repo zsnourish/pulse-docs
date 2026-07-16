@@ -1,0 +1,15 @@
+/**
+ * Very light-touch styling for Decap CMS's own outer UI (the editor chrome
+ * itself, not the preview pane). Decap doesn't expose a theming API for its
+ * own interface — its internal component classes are auto-generated and can
+ * change on any update, so deep reskinning here is fragile by nature. This
+ * sticks to the two properties safe enough to override globally: base font
+ * and page background. For anything deeper (button colours, toolbar icons),
+ * that would mean patching Decap's own CSS modules, which breaks on updates.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+html, body {
+  font-family: 'Inter', system-ui, sans-serif !important;
+}

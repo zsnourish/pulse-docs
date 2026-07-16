@@ -134,3 +134,23 @@ main .sl-markdown-content {
   color: var(--pulse-neutral-120);
 }
 .ds-dont strong { color: var(--pulse-urgency-70); }
+
+/* --- Additional GitBook-style polish (light theme only) --- */
+.card {
+  box-shadow: 0 1px 2px rgba(23, 47, 47, 0.06);
+  border: 1px solid var(--pulse-neutral-40);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.card:hover {
+  box-shadow: 0 4px 12px rgba(23, 47, 47, 0.08);
+}
+header.header {
+  box-shadow: 0 1px 0 var(--pulse-neutral-40);
+}
+nav.sidebar a[aria-current='page'],
+nav.sidebar a.large[aria-current='page'] {
+  background: var(--pulse-primary-10);
+  color: var(--pulse-primary-100);
+  border-radius: 0.5rem;
+  font-weight: 600;
+}

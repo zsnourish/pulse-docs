@@ -5,6 +5,8 @@
  * https://decapcms.org/docs/custom-widgets/
  */
 
+CMS.registerPreviewStyle('/admin/preview-style.css');
+
 CMS.registerEditorComponent({
   id: 'do',
   label: '✓ Do',

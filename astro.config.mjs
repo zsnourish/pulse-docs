@@ -28,6 +28,11 @@ export default defineConfig({
       editLink: {
         baseUrl: 'https://github.com/zsnourish/pulse-docs/edit/main/',
       },
+      // Light-only theme, no dark mode toggle — matches GitBook's default look.
+      components: {
+        ThemeProvider: './src/components/ForceLightThemeProvider.astro',
+        ThemeSelect: './src/components/EmptyThemeSelect.astro',
+      },
     }),
   ],
 });

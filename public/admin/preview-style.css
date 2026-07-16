@@ -1,0 +1,36 @@
+/**
+ * Styles the Decap CMS *live preview pane* so drafting matches the real site.
+ * Registered via CMS.registerPreviewStyle() in widgets.js.
+ * Keep this in sync with src/styles/nourish-theme.css by hand (it's a plain
+ * CSS file served to Decap's preview iframe, not run through Astro/Vite).
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #36393f;
+  line-height: 1.7;
+  padding: 1rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #172f2f;
+}
+
+a { color: #2b5656; }
+
+.ds-callout {
+  border-radius: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  margin: 1rem 0;
+  border: 1px solid transparent;
+}
+.ds-callout p { margin: 0; }
+.ds-callout strong { margin-right: 0.35rem; }
+.ds-do { background: #edfcf4; border-color: #4bb97e; }
+.ds-do strong { color: #4bb97e; }
+.ds-dont { background: #fee7e7; border-color: #cc5252; }
+.ds-dont strong { color: #cc5252; }

@@ -1,0 +1,12 @@
+---
+// Pulse docs is light-theme only (matches GitBook's default look and Pulse's
+// own brand, which doesn't have a dark palette defined). This replaces
+// Starlight's default ThemeProvider, which reads localStorage/prefers-color-scheme.
+---
+
+<script is:inline>
+	document.documentElement.dataset.theme = 'light';
+	window.StarlightThemeProvider = {
+		updatePickers() {},
+	};
+</script>
