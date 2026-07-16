@@ -1,6 +1,10 @@
 backend:
   name: git-gateway
+  repo: zsnourish/pulse-docs
   branch: main
+  # Filled in once the DecapBridge site is created — see README for the two values to swap in.
+  identity_url: https://auth.decapbridge.com/sites/REPLACE_WITH_DECAPBRIDGE_SITE_ID
+  gateway_url: https://gateway.decapbridge.com
 
 # Draft -> review -> publish, matching how the team already reviews Pulse PRs.
 publish_mode: editorial_workflow
