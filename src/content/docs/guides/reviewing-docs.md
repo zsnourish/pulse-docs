@@ -1,0 +1,10 @@
+---
+title: Reviewing & publishing docs
+---
+
+1. A designer drafts or edits a page at `/admin`.
+2. Draft is saved — with Git Gateway enabled, this opens as an "unpublished entry" (Decap's internal draft state) that others can view and comment on before it's merged.
+3. Someone else on the team reviews the diff and approves.
+4. Publishing the entry commits it to `main` and Netlify redeploys the site automatically — usually live within a minute.
+
+Everything here is derived from the `pulse-docs` GitHub repo — no separate copy in Notion or Supernova to keep in sync.

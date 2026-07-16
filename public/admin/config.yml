@@ -1,0 +1,37 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Draft -> review -> publish, matching how the team already reviews Pulse PRs.
+publish_mode: editorial_workflow
+
+media_folder: "src/assets/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "components"
+    label: "Components"
+    folder: "src/content/docs/components"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["draft", "in-review", "approved", "deprecated"]
+        default: "draft"
+      - { label: "Owner", name: "owner", widget: "string", hint: "Who's responsible for this component" }
+      - { label: "Last updated", name: "trackerUpdated", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "guides"
+    label: "Guides"
+    folder: "src/content/docs/guides"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

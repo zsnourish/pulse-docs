@@ -1,0 +1,49 @@
+/**
+ * Nourish branding pass for Starlight.
+ *
+ * PLACEHOLDER TOKENS — I don't have your actual brand colours/type, so these
+ * are sensible defaults, not Nourish's real palette. Swap the values below
+ * (and the font import) for your real tokens and the whole site re-themes.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --sl-font: 'Inter', system-ui, sans-serif;
+
+  /* --- swap these for real Nourish brand tokens --- */
+  --nourish-brand-primary: #0b6e4f;   /* placeholder green */
+  --nourish-brand-primary-dark: #094f38;
+  --nourish-brand-accent: #f2a900;    /* placeholder accent */
+  --nourish-brand-text: #1a1a1a;
+  --nourish-brand-bg: #ffffff;
+  /* ------------------------------------------------- */
+
+  --sl-color-accent-low: color-mix(in srgb, var(--nourish-brand-primary) 15%, white);
+  --sl-color-accent: var(--nourish-brand-primary);
+  --sl-color-accent-high: var(--nourish-brand-primary-dark);
+  --sl-color-text-accent: var(--nourish-brand-primary);
+  --sl-color-bg: var(--nourish-brand-bg);
+  --sl-color-bg-nav: var(--nourish-brand-bg);
+  --sl-color-text: var(--nourish-brand-text);
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: color-mix(in srgb, var(--nourish-brand-primary) 25%, black);
+  --sl-color-accent: var(--nourish-brand-primary);
+  --sl-color-accent-high: color-mix(in srgb, var(--nourish-brand-primary) 60%, white);
+}
+
+/* Status pill on component tracker pages */
+.status-pill {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.status-pill[data-status='approved'] { background: #d4f7e0; color: #0b6e4f; }
+.status-pill[data-status='in-review'] { background: #fff2cc; color: #8a6d00; }
+.status-pill[data-status='draft'] { background: #eee; color: #555; }
+.status-pill[data-status='deprecated'] { background: #fddede; color: #9c1f1f; }
