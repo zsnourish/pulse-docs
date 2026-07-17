@@ -2,20 +2,37 @@
 // Extends Starlight's default EditLink with a "View history" link (derived
 // from the same GitHub edit URL Starlight already computes) and the git
 // commit author's name — so "who last touched this" needs zero manual entry.
-import Icon from '@astrojs/starlight/components/Icon.astro';
+//
+// Runs the same way Starlight's own built-in `lastUpdated` feature does
+// (a direct git command at build time, keyed off `entry.id`) rather than via
+// a remark plugin — remark-injected frontmatter doesn't propagate into
+// `entry.data` for content collections, only into rendered-page metadata, so
+// that approach silently didn't work in an earlier pass. This does.
+import { execSync } from 'node:child_process';
+import { resolve } from 'node:path';
 
 const { editUrl, entry } = Astro.props;
 const historyUrl = editUrl ? new URL(editUrl.href.replace('/edit/', '/commits/')) : undefined;
-const lastAuthor = (entry?.data as Record<string, unknown> | undefined)?.gitLastAuthor as
-  | string
-  | undefined;
+
+let lastAuthor: string | undefined;
+try {
+  const filePath = resolve(process.cwd(), 'src/content/docs', entry.id);
+  lastAuthor = execSync(`git log -1 --format=%an -- "${filePath}"`, {
+    encoding: 'utf-8',
+    stdio: ['ignore', 'pipe', 'ignore'],
+  }).trim() || undefined;
+} catch {
+  // No git history yet (brand new, uncommitted file) — leave blank.
+}
 ---
 
 <div class="edit-history sl-flex">
   {
     editUrl && (
       <a href={editUrl.href} class="sl-flex">
-        <Icon name="pencil" size="1.2em" />
+        <svg width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 20h9" /><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
+        </svg>
         {Astro.locals.t('page.editLink')}
       </a>
     )
@@ -23,7 +40,9 @@ const lastAuthor = (entry?.data as Record<string, unknown> | undefined)?.gitLast
   {
     historyUrl && (
       <a href={historyUrl.href} class="sl-flex">
-        <Icon name="document" size="1.2em" />
+        <svg width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12a9 9 0 1 0 3-6.7L3 8" /><path d="M3 3v5h5" /><path d="M12 7v5l3 3" />
+        </svg>
         View history
       </a>
     )

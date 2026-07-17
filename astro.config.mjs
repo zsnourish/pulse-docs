@@ -1,11 +1,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import remarkGitAuthor from './src/remark-git-author.mjs';
 
 export default defineConfig({
-  markdown: {
-    remarkPlugins: [remarkGitAuthor],
-  },
   integrations: [
     starlight({
       title: 'Pulse Docs',

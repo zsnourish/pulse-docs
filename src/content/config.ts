@@ -12,11 +12,6 @@ export const collections = {
           .default('draft')
           .optional(),
         owner: z.string().optional(),
-
-        // Auto-populated by the remarkGitAuthor plugin from git history —
-        // never set this by hand. Starlight's own `lastUpdated` (config
-        // option, also git-derived) covers the "when"; this covers "who".
-        gitLastAuthor: z.string().optional(),
       }),
     }),
   }),
