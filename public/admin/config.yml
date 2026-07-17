@@ -11,9 +11,38 @@ publish_mode: editorial_workflow
 media_folder: "src/assets/uploads"
 public_folder: "/uploads"
 
+# Three content categories, mirroring the left nav on the live site. Decap's
+# folder-per-category is what actually drives Starlight's grouped sidebar —
+# a single collection with a "category" dropdown can't reliably route files
+# into different folders (a known Decap limitation), so each category is its
+# own collection here. Functionally it's the same authoring step: pick which
+# of the three you're writing, exactly like picking a tag.
 collections:
+  - name: "foundations"
+    label: "🎨 Foundations"
+    folder: "src/content/docs/foundations"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["draft", "in-review", "approved", "deprecated"]
+        default: "draft"
+        required: false
+      - { label: "Owner", name: "owner", widget: "string", required: false }
+      - { label: "Last updated", name: "trackerUpdated", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
+        editor_components: ["do", "dont", "image"]
+        buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
+
   - name: "components"
-    label: "Components"
+    label: "🧩 Components"
     folder: "src/content/docs/components"
     create: true
     slug: "{{slug}}"
@@ -34,14 +63,22 @@ collections:
         editor_components: ["do", "dont", "image"]
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
 
-  - name: "guides"
-    label: "Guides"
-    folder: "src/content/docs/guides"
+  - name: "visuals"
+    label: "🖼️ Visuals"
+    folder: "src/content/docs/visuals"
     create: true
     slug: "{{slug}}"
     extension: "md"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["draft", "in-review", "approved", "deprecated"]
+        default: "draft"
+        required: false
+      - { label: "Owner", name: "owner", widget: "string", required: false }
+      - { label: "Last updated", name: "trackerUpdated", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
       - label: "Body"
         name: "body"
         widget: "markdown"

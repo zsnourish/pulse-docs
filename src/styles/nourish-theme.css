@@ -154,3 +154,47 @@ nav.sidebar a.large[aria-current='page'] {
   border-radius: 0.5rem;
   font-weight: 600;
 }
+
+/* --- GitBook-match: grouped sidebar section headers (uppercase, muted) --- */
+.group-label .large {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: var(--pulse-neutral-90);
+}
+details > summary {
+  padding-block: 0.35rem;
+}
+
+/* --- GitBook-match: search trigger styled as a rounded search bar --- */
+site-search button[data-open-modal] {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 22rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--pulse-neutral-40);
+  background: var(--pulse-neutral-20);
+  color: var(--pulse-neutral-90);
+  font-size: 0.9rem;
+}
+site-search button[data-open-modal] kbd {
+  margin-inline-start: auto;
+  background: var(--pulse-neutral-10);
+  border: 1px solid var(--pulse-neutral-40);
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.7rem;
+}
+
+/* --- GitBook-match: larger, bolder page titles --- */
+.sl-markdown-content > h1:first-child,
+starlight-page-title h1,
+.content-panel h1 {
+  font-size: 2.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}

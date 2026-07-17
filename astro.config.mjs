@@ -17,12 +17,16 @@ export default defineConfig({
       },
       sidebar: [
         {
-          label: 'Components',
+          label: '🎨 Foundations',
+          autogenerate: { directory: 'foundations' },
+        },
+        {
+          label: '🧩 Components',
           autogenerate: { directory: 'components' },
         },
         {
-          label: 'Guides',
-          autogenerate: { directory: 'guides' },
+          label: '🖼️ Visuals',
+          autogenerate: { directory: 'visuals' },
         },
       ],
       editLink: {
