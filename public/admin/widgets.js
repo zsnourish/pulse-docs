@@ -112,3 +112,39 @@ CMS.registerEditorComponent({
  * set `show_preview_links: false` in config.yml.
  * https://decapcms.org/docs/deploy-preview-links/
  */
+
+/**
+ * The Workflow board (Drafts / In Review / Ready columns) ships with
+ * hardcoded pastel purple/yellow/lime-green column headers baked into
+ * Decap's own bundle — there's no CSS variable or config option exposed for
+ * them, so plain CSS can't reach them by itself. This finds those specific
+ * headers by their known computed background colour (Decap's literal
+ * hex values, confirmed against the published decap-cms@3.1 bundle) and
+ * re-colours them to match Pulse's palette instead. If a future Decap
+ * version changes those colours, the match simply stops firing — it won't
+ * break anything, it'll just stop re-colouring.
+ */
+(function restyleWorkflowBoard() {
+  // Decap's hardcoded column header colours -> Pulse equivalents.
+  const colourMap = [
+    { match: 'rgb(246, 216, 255)', bg: '#f3f4f5', text: '#36393f' }, // Draft (was purple-light)
+    { match: 'rgb(255, 238, 156)', bg: '#faf2d2', text: '#7a6100' }, // In Review (was yellow)
+    { match: 'rgb(202, 239, 111)', bg: '#edfcf4', text: '#4bb97e' }, // Ready (was lime-green)
+  ];
+
+  function tryRestyle() {
+    document.querySelectorAll('h2').forEach(function (el) {
+      const bg = getComputedStyle(el).backgroundColor;
+      const found = colourMap.find((c) => c.match === bg);
+      if (found) {
+        el.style.setProperty('background-color', found.bg, 'important');
+        el.style.setProperty('color', found.text, 'important');
+        el.style.setProperty('border-radius', '0.5rem', 'important');
+        el.style.setProperty('font-family', "'Inter', system-ui, sans-serif", 'important');
+      }
+    });
+  }
+  const observer = new MutationObserver(tryRestyle);
+  observer.observe(document.body || document.documentElement, { childList: true, subtree: true });
+  tryRestyle();
+})();

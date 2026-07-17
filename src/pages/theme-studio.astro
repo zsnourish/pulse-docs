@@ -4,6 +4,12 @@
 // export a ready-to-use nourish-theme.css. This tool only runs in your
 // browser; it doesn't write to GitHub, so download/copy the result and
 // send it back (or push it yourself) to apply it.
+//
+// Scope note: this only covers CSS — visual styling (colour, font, spacing,
+// roundness). Button/label *wording* (like Decap's "New doc" or "Publish")
+// lives in config.yml / locale-en.js, not CSS, and isn't something a
+// client-side style tool can safely rewrite — ask directly for wording
+// changes and they'll get made in those files instead.
 ---
 
 <html lang="en">
@@ -19,7 +25,7 @@
       background: #f9f9fa;
       color: #36393f;
       display: grid;
-      grid-template-columns: 340px 1fr;
+      grid-template-columns: 380px 1fr;
       min-height: 100vh;
     }
     aside {
@@ -27,22 +33,32 @@
       border-right: 1px solid #e7e8eb;
       padding: 1.5rem;
       overflow-y: auto;
+      max-height: 100vh;
     }
     aside h1 { font-size: 1.1rem; margin: 0 0 0.25rem; }
-    aside p.hint { font-size: 0.8rem; color: #878e9d; margin: 0 0 1.5rem; }
-    label { display: block; font-size: 0.8rem; font-weight: 600; margin: 1rem 0 0.3rem; }
-    input[type="color"] { width: 100%; height: 2.2rem; border: 1px solid #e7e8eb; border-radius: 0.5rem; padding: 0.15rem; }
+    aside p.hint { font-size: 0.8rem; color: #878e9d; margin: 0 0 1rem; }
+    aside h2.section {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700;
+      color: #878e9d; margin: 1.5rem 0 0.5rem; padding-top: 1rem; border-top: 1px solid #e7e8eb;
+    }
+    aside h2.section:first-of-type { border-top: none; padding-top: 0; margin-top: 1rem; }
+    label { display: block; font-size: 0.8rem; font-weight: 600; margin: 0.85rem 0 0.3rem; }
+    .color-row { display: flex; gap: 0.4rem; align-items: center; }
+    input[type="color"] { width: 2.4rem; height: 2.2rem; border: 1px solid #e7e8eb; border-radius: 0.5rem; padding: 0.15rem; flex-shrink: 0; }
+    input[type="text"].hex { flex: 1; font-family: monospace; text-transform: uppercase; }
     input[type="range"] { width: 100%; }
     select, input[type="text"] {
-      width: 100%; padding: 0.5rem; border-radius: 0.5rem; border: 1px solid #e7e8eb; font-family: inherit;
+      width: 100%; padding: 0.5rem; border-radius: 0.5rem; border: 1px solid #e7e8eb; font-family: inherit; font-size: 0.85rem;
     }
-    .row { display: flex; gap: 0.5rem; }
-    .row > div { flex: 1; }
     button.action {
       width: 100%; margin-top: 0.75rem; padding: 0.6rem; border-radius: 0.5rem; border: none;
       background: #2b5656; color: white; font-weight: 600; cursor: pointer; font-family: inherit;
     }
     button.action.secondary { background: #f3f4f5; color: #36393f; }
+    .note {
+      font-size: 0.75rem; color: #878e9d; background: #f9f9fa; border-radius: 0.5rem;
+      padding: 0.6rem 0.75rem; margin-top: 0.5rem; line-height: 1.4;
+    }
     main { padding: 2.5rem; overflow-y: auto; }
     .preview-card {
       background: var(--p-bg, #fff);
@@ -70,15 +86,26 @@
       text-transform: uppercase; background: var(--p-success-bg, #edfcf4); color: var(--p-success, #4bb97e);
     }
     .pv-sidebar {
-      width: 200px; background: #f9f9fa; border-radius: calc(var(--p-radius, 12) * 1px); padding: 1rem; margin-top: 1.5rem;
+      width: 220px; background: #f9f9fa; border-radius: calc(var(--p-radius, 12) * 1px); padding: 1rem; margin-top: 1.5rem;
     }
+    .pv-sidebar .group {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700;
+      margin-top: calc(0.9rem * var(--p-sidebar-gap, 1)); margin-bottom: 0.3rem;
+    }
+    .pv-sidebar .group:nth-of-type(1) { color: var(--p-cat-foundations, #2b5656); }
+    .pv-sidebar .group:nth-of-type(3) { color: var(--p-cat-components, #2b5656); }
+    .pv-sidebar .group:nth-of-type(5) { color: var(--p-cat-visuals, #2b5656); }
     .pv-sidebar .active {
       background: var(--p-accent-low, #f0fafa); color: var(--p-accent, #2b5656); border-radius: 0.5rem;
-      padding: 0.4rem 0.6rem; font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 0.3rem;
+      padding: 0.4rem 0.6rem; font-weight: 600; font-size: 0.9rem; display: block;
+      margin-bottom: calc(0.3rem * var(--p-sidebar-gap, 1));
     }
-    .pv-sidebar .item { padding: 0.4rem 0.6rem; font-size: 0.9rem; color: #878e9d; display: block; }
+    .pv-sidebar .item {
+      padding: 0.4rem 0.6rem; font-size: 0.9rem; color: #878e9d; display: block;
+      margin-bottom: calc(0.15rem * var(--p-sidebar-gap, 1));
+    }
     textarea#cssOut {
-      width: 100%; height: 260px; margin-top: 1rem; font-family: monospace; font-size: 0.75rem;
+      width: 100%; height: 220px; margin-top: 1rem; font-family: monospace; font-size: 0.7rem;
       padding: 0.75rem; border-radius: 0.5rem; border: 1px solid #e7e8eb; background: #f9f9fa;
     }
   </style>
@@ -88,28 +115,65 @@
     <h1>Theme Studio</h1>
     <p class="hint">Adjust Pulse's docs theme. Nothing here writes to GitHub — copy or download the CSS when you're happy, and push it (or send it back).</p>
 
-    <label>Accent colour (links, buttons)</label>
-    <input type="color" id="accent" value="#2b5656" />
+    <h2 class="section">Core brand</h2>
+
+    <label>Accent (links, buttons)</label>
+    <div class="color-row">
+      <input type="color" id="accent" value="#2b5656" />
+      <input type="text" class="hex" id="accentHex" value="#2B5656" />
+    </div>
 
     <label>Brand teal (chips, highlights)</label>
-    <input type="color" id="brandTeal" value="#66cccc" />
+    <div class="color-row">
+      <input type="color" id="brandTeal" value="#66cccc" />
+      <input type="text" class="hex" id="brandTealHex" value="#66CCCC" />
+    </div>
 
-    <div class="row">
-      <div>
-        <label>Success</label>
-        <input type="color" id="success" value="#4bb97e" />
-      </div>
-      <div>
-        <label>Urgency / error</label>
-        <input type="color" id="urgency" value="#cc5252" />
-      </div>
+    <label>Success</label>
+    <div class="color-row">
+      <input type="color" id="success" value="#4bb97e" />
+      <input type="text" class="hex" id="successHex" value="#4BB97E" />
+    </div>
+
+    <label>Urgency / error</label>
+    <div class="color-row">
+      <input type="color" id="urgency" value="#cc5252" />
+      <input type="text" class="hex" id="urgencyHex" value="#CC5252" />
     </div>
 
     <label>Body text colour</label>
-    <input type="color" id="text" value="#36393f" />
+    <div class="color-row">
+      <input type="color" id="text" value="#36393f" />
+      <input type="text" class="hex" id="textHex" value="#36393F" />
+    </div>
 
     <label>Page background</label>
-    <input type="color" id="bg" value="#ffffff" />
+    <div class="color-row">
+      <input type="color" id="bg" value="#ffffff" />
+      <input type="text" class="hex" id="bgHex" value="#FFFFFF" />
+    </div>
+
+    <h2 class="section">Per-category sidebar colour</h2>
+
+    <label>Foundations</label>
+    <div class="color-row">
+      <input type="color" id="catFoundations" value="#2b5656" />
+      <input type="text" class="hex" id="catFoundationsHex" value="#2B5656" />
+    </div>
+
+    <label>Components</label>
+    <div class="color-row">
+      <input type="color" id="catComponents" value="#2b5656" />
+      <input type="text" class="hex" id="catComponentsHex" value="#2B5656" />
+    </div>
+
+    <label>Visuals</label>
+    <div class="color-row">
+      <input type="color" id="catVisuals" value="#2b5656" />
+      <input type="text" class="hex" id="catVisualsHex" value="#2B5656" />
+    </div>
+
+    <h2 class="section">Type & spacing</h2>
 
     <label>Font family</label>
     <select id="font">
@@ -123,11 +187,18 @@
     <label>Corner roundness: <span id="radiusVal">12px</span></label>
     <input type="range" id="radius" min="0" max="24" value="12" />
 
-    <label>Spacing scale: <span id="spaceVal">1.0x</span></label>
+    <label>Content spacing scale: <span id="spaceVal">1.0x</span></label>
     <input type="range" id="space" min="0.8" max="1.4" step="0.05" value="1" />
+
+    <label>Sidebar item spacing: <span id="sidebarGapVal">1.0x</span></label>
+    <input type="range" id="sidebarGap" min="0.6" max="2" step="0.1" value="1" />
 
     <button class="action" id="copyBtn">Copy CSS to clipboard</button>
     <button class="action secondary" id="downloadBtn">Download nourish-theme.css</button>
+
+    <div class="note">
+      <strong>Not covered here:</strong> button/label text (e.g. Decap's "New doc", "Publish", homepage card titles) is content, not CSS — it lives in <code>config.yml</code> / <code>locale-en.js</code>. Ask directly for wording changes.
+    </div>
 
     <textarea id="cssOut" readonly></textarea>
   </aside>
@@ -147,9 +218,12 @@
       </div>
 
       <div class="pv-sidebar">
-        <span class="active">Components</span>
-        <span class="item">Guides</span>
-        <span class="item">Foundations</span>
+        <div class="group">Foundations</div>
+        <span class="active">Colour</span>
+        <div class="group">Components</div>
+        <span class="item">Button</span>
+        <div class="group">Visuals</div>
+        <span class="item">Iconography</span>
       </div>
     </div>
   </main>
@@ -165,6 +239,27 @@
       return `rgba(${r}, ${g}, ${b}, ${alpha})`;
     }
 
+    // Two-way binding between a <input type=color> and its paired hex text field.
+    function bindColorPair(colorId, hexId) {
+      const colorEl = $(colorId);
+      const hexEl = $(hexId);
+      colorEl.addEventListener('input', () => {
+        hexEl.value = colorEl.value.toUpperCase();
+        update();
+      });
+      hexEl.addEventListener('input', () => {
+        const v = hexEl.value.trim();
+        if (/^#[0-9a-fA-F]{6}$/.test(v)) {
+          colorEl.value = v;
+          update();
+        }
+      });
+    }
+
+    ['accent', 'brandTeal', 'success', 'urgency', 'text', 'bg', 'catFoundations', 'catComponents', 'catVisuals'].forEach(
+      (id) => bindColorPair(id, id + 'Hex')
+    );
+
     function update() {
       const accent = $('accent').value;
       const brandTeal = $('brandTeal').value;
@@ -172,12 +267,17 @@
       const urgency = $('urgency').value;
       const text = $('text').value;
       const bg = $('bg').value;
+      const catFoundations = $('catFoundations').value;
+      const catComponents = $('catComponents').value;
+      const catVisuals = $('catVisuals').value;
       const font = $('font').value;
       const radius = $('radius').value;
       const space = $('space').value;
+      const sidebarGap = $('sidebarGap').value;
 
       $('radiusVal').textContent = radius + 'px';
       $('spaceVal').textContent = space + 'x';
+      $('sidebarGapVal').textContent = sidebarGap + 'x';
 
       root.style.setProperty('--p-accent', accent);
       root.style.setProperty('--p-accent-low', hexToRgbaBg(accent, 0.08));
@@ -190,6 +290,10 @@
       root.style.setProperty('--p-font', font);
       root.style.setProperty('--p-radius', radius);
       root.style.setProperty('--p-space', space);
+      root.style.setProperty('--p-sidebar-gap', sidebarGap);
+      root.style.setProperty('--p-cat-foundations', catFoundations);
+      root.style.setProperty('--p-cat-components', catComponents);
+      root.style.setProperty('--p-cat-visuals', catVisuals);
       document.querySelector('main').style.fontFamily = font;
 
       const css = `/**
@@ -228,6 +332,16 @@ h1, h2, h3, h4, h5 { font-weight: 700; letter-spacing: -0.01em; }
 
 .card, .sl-markdown-content pre, .sl-markdown-content table { border-radius: ${radius}px !important; }
 
+/* Sidebar item spacing */
+.sidebar-pane nav .top-level > li { margin-bottom: calc(0.2rem * ${sidebarGap}); }
+.sidebar-pane nav a.large,
+.sidebar-pane nav details > summary { padding-block: calc(0.35rem * ${sidebarGap}); }
+
+/* Per-category sidebar group colour (order: Foundations, Components, Visuals) */
+.sidebar-pane .top-level > li:nth-of-type(1) .group-label .large { color: ${catFoundations}; }
+.sidebar-pane .top-level > li:nth-of-type(2) .group-label .large { color: ${catComponents}; }
+.sidebar-pane .top-level > li:nth-of-type(3) .group-label .large { color: ${catVisuals}; }
+
 .status-pill { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
 .status-pill[data-status='approved'] { background: ${hexToRgbaBg(success, 0.12)}; color: ${success}; }
 .status-pill[data-status='deprecated'] { background: ${hexToRgbaBg(urgency, 0.12)}; color: ${urgency}; }
@@ -241,7 +355,11 @@ h1, h2, h3, h4, h5 { font-weight: 700; letter-spacing: -0.01em; }
       $('cssOut').value = css;
     }
 
-    ['accent','brandTeal','success','urgency','text','bg','font','radius','space'].forEach((id) => {
+    [
+      'accent', 'brandTeal', 'success', 'urgency', 'text', 'bg',
+      'catFoundations', 'catComponents', 'catVisuals',
+      'font', 'radius', 'space', 'sidebarGap',
+    ].forEach((id) => {
       $(id).addEventListener('input', update);
     });
 
