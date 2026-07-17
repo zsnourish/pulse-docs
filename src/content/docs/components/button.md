@@ -1,7 +1,6 @@
 ---
 title: Button
 status: approved
-owner: Zahra Siddiquia
 ---
 
 Example component doc — replace with real Pulse component content, or edit via `/admin` once DecapBridge is connected.

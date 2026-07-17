@@ -6,7 +6,7 @@ This repo is the single source of truth — no parallel copy in Notion or Supern
 ## What's in here
 
 - `src/content/docs/foundations/`, `components/`, `visuals/` — three categories, each its own folder. This drives both the grouped left nav (🎨 Foundations / 🧩 Components / 🖼️ Visuals) and the three collections in `/admin`.
-- Frontmatter on doc pages: `status` (manual — editorial state), `owner` (manual, auto-suggested from whoever's logged in when a doc is first created, editable). There's no manual "last updated" or "author" field — see below.
+- Frontmatter on doc pages: `status` (manual — editorial state) only. There's no manual "owner" or "last updated" field — who touched a doc and when is read automatically from git history, see below.
 - Starlight's built-in `lastUpdated: true` (date) plus a direct git lookup in `EditLinkWithHistory.astro` (author) — every page automatically shows who last touched it and when, read straight from git commit history. Nothing to type in, nothing that can go stale.
 - `src/components/EditLinkWithHistory.astro` — adds a **View history** link (GitHub's native commit history for that file) next to "Edit this page".
 - `src/content/docs/foundations/backups-and-history.md` — explains how GitHub already gives you version history and backup, and why there's no separate "trash bin" feature (and why that's fine).
@@ -14,7 +14,7 @@ This repo is the single source of truth — no parallel copy in Notion or Supern
 - `src/pages/theme-studio.astro` — a standalone visual tool at `/theme-studio` for adjusting colours, font, corner roundness and spacing with a live preview. Doesn't write to GitHub — copy/download the CSS it generates and send it back, or paste it into `src/styles/nourish-theme.css` yourself.
 - `public/admin/` — Decap CMS:
   - `config.yml` — the three category collections (`label_singular: doc`, so buttons read "New doc"), draft → review → publish workflow, DecapBridge auth backend.
-  - `widgets.js` — "✓ Do" / "✗ Don't" editor components, preview-pane stylesheet, English locale override (renames Decap's "Contents"/"New Post" chrome to "Docs"/"New doc"), auto-fills Owner on new docs from the logged-in user, and hides the redundant "Quick add" button.
+  - `widgets.js` — "✓ Do" / "✗ Don't" editor components, preview-pane stylesheet, English locale override (renames Decap's "Contents"/"New Post" chrome to "Docs"/"New doc"), and hides the redundant "Quick add" and "Sync scrolling" buttons.
   - `preview-style.css` — styles Decap's live-preview pane to match the real site.
   - `admin-chrome.css` — font override for Decap's own outer UI (see note below).
 - `src/styles/nourish-theme.css` — Pulse brand tokens, GitBook-style sidebar/search/heading polish, Do/Don't callout styling, and a fix for oversized Previous/Next footer cards. Light theme only.

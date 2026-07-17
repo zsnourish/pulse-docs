@@ -73,34 +73,6 @@ CMS.registerEditorComponent({
  * entire UI the first time around).
  */
 
-/**
- * Auto-fill "Owner" with whoever's publishing, if it's still blank — so it's
- * a sensible default, not a required manual step. Still editable, since the
- * actual owner may end up being someone else.
- *
- * This has to be a `prePublish` hook, not `preSave`: Decap's own docs show
- * `preSave` handlers only receive `{ entry }` (no author info at all) — only
- * `prePublish`/`postPublish`/`preUnpublish`/`postUnpublish` receive
- * `{ author, entry }`. An earlier version of this file used `preSave`,
- * which is exactly why the auto-fill never fired.
- * https://decapcms.org/docs/registering-events/
- */
-CMS.registerEventListener({
-  name: 'prePublish',
-  handler: ({ entry, author }) => {
-    // Visible once in the browser console (F12) so if this ever silently
-    // stops matching a field, the real shape of `author` is easy to check
-    // rather than guessing again.
-    console.log('[pulse-docs] prePublish author object:', author);
-
-    const data = entry.get('data');
-    if (data.get('owner')) return data;
-
-    const name =
-      (author && (author.name || author.login || author.useremail || author.email)) || '';
-    return name ? data.set('owner', name) : data;
-  },
-});
 
 /**
  * Hide a couple of toolbar items that add clutter without adding value here:
