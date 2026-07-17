@@ -75,24 +75,27 @@ CMS.registerEditorComponent({
 
 
 /**
- * Hide a couple of toolbar items that add clutter without adding value here:
- *  - "Quick add" — redundant next to each collection's own "New doc" button.
- *  - "Sync scrolling" — only matters in split raw-markdown/preview view;
- *    since every doc is rich-text-only (see config.yml `modes`), there's no
- *    second markdown pane for it to sync against.
- * Best-effort: Decap has no config flag to remove either, so this looks
- * buttons up by their accessible name/title and hides them. If a future
- * Decap version changes that markup, this silently does nothing rather than
- * breaking anything.
+ * "Sync scrolling" is hidden — it only matters in split raw-markdown/preview
+ * view, and since every doc is rich-text-only (see config.yml `modes`),
+ * there's no second markdown pane for it to sync against. Best-effort:
+ * Decap has no config flag to remove it, so this looks the button up by its
+ * accessible name and hides it. If a future Decap version changes that
+ * markup, this silently does nothing rather than breaking anything.
+ *
+ * "Quick add" is deliberately left alone (an earlier version of this file
+ * tried to hide it too, unreliably — see git history). Each collection now
+ * has a distinct `label_singular` ("Foundations doc" / "Components doc" /
+ * "Visuals doc") specifically so Quick Add's dropdown is actually useful
+ * instead of showing three identical "doc" entries with no way to tell them
+ * apart, which is what it looked like before that fix.
  */
-(function hideClutterButtons() {
-  const hideIfMatches = ['quick add', 'sync scrolling', 'toggle scroll sync'];
+(function hideSyncScrolling() {
   function tryHide() {
     document.querySelectorAll('button').forEach(function (btn) {
       const label = (btn.textContent || btn.getAttribute('aria-label') || btn.title || '')
         .trim()
         .toLowerCase();
-      if (hideIfMatches.some((needle) => label.startsWith(needle) || label === needle)) {
+      if (label.startsWith('sync scrolling') || label.startsWith('toggle scroll sync')) {
         btn.style.display = 'none';
       }
     });
@@ -148,3 +151,67 @@ CMS.registerEditorComponent({
   observer.observe(document.body || document.documentElement, { childList: true, subtree: true });
   tryRestyle();
 })();
+
+/**
+ * "Embed" editor component — paste a Figma share link, a Storybook story
+ * URL, or any other embeddable URL, and it renders as an iframe both in the
+ * CMS preview and on the live site. Figma share links (figma.com/file/... or
+ * /design/...) get auto-converted to Figma's actual embeddable URL format;
+ * anything else (Storybook, etc.) is used as-is.
+ *
+ * Storybook specifically only works once you have a *hosted* Storybook
+ * instance to point at (e.g. published via Chromatic, or your own static
+ * build) — this makes embedding one possible, it doesn't create one.
+ *
+ * Known limitation: editing an existing embed shows the already-converted
+ * Figma embed URL in the field, not the original pretty share link — still
+ * fully editable, just a longer URL on the second look.
+ */
+function toEmbedSrc(url) {
+  try {
+    const u = new URL(url);
+    if (u.hostname.indexOf('figma.com') !== -1 && !u.searchParams.has('embed_host')) {
+      return 'https://www.figma.com/embed?embed_host=pulse-docs&url=' + encodeURIComponent(url);
+    }
+  } catch (e) {
+    // Not a valid absolute URL — fall through and use it as typed.
+  }
+  return url;
+}
+
+CMS.registerEditorComponent({
+  id: 'embed',
+  label: 'Embed (Figma / Storybook / URL)',
+  fields: [
+    { name: 'url', label: 'Embed URL (Figma share link, Storybook story URL, or any embeddable URL)', widget: 'string' },
+    { name: 'label', label: 'Caption (optional)', widget: 'string', required: false },
+  ],
+  pattern: /^<div class="ds-embed">\n<iframe src="(.*?)" loading="lazy" allowfullscreen><\/iframe>\n<p class="ds-embed-caption">(.*?)<\/p>\n<\/div>$/ms,
+  fromBlock: function (match) {
+    return { url: match[1], label: match[2] };
+  },
+  toBlock: function (obj) {
+    return (
+      '<div class="ds-embed">\n<iframe src="' +
+      toEmbedSrc(obj.url || '') +
+      '" loading="lazy" allowfullscreen></iframe>\n<p class="ds-embed-caption">' +
+      (obj.label || '') +
+      '</p>\n</div>'
+    );
+  },
+  toPreview: function (obj) {
+    return h(
+      'div',
+      { style: { border: '1px solid #e7e8eb', borderRadius: '0.5rem', padding: '0.5rem', margin: '0.5rem 0' } },
+      h(
+        'div',
+        { style: { fontSize: '0.8rem', color: '#878e9d', marginBottom: '0.3rem' } },
+        'Embed: ' + (obj.label || obj.url || '')
+      ),
+      h('iframe', {
+        src: toEmbedSrc(obj.url || ''),
+        style: { width: '100%', height: '300px', border: 'none', borderRadius: '0.3rem' },
+      })
+    );
+  },
+});

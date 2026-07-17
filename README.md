@@ -14,7 +14,8 @@ This repo is the single source of truth — no parallel copy in Notion or Supern
 - `src/pages/theme-studio.astro` — a standalone visual tool at `/theme-studio` for adjusting colours, font, corner roundness and spacing with a live preview. Doesn't write to GitHub — copy/download the CSS it generates and send it back, or paste it into `src/styles/nourish-theme.css` yourself.
 - `public/admin/` — Decap CMS:
   - `config.yml` — the three category collections (`label_singular: doc`, so buttons read "New doc"), draft → review → publish workflow, DecapBridge auth backend.
-  - `widgets.js` — "✓ Do" / "✗ Don't" editor components, preview-pane stylesheet, English locale override (renames Decap's "Contents"/"New Post" chrome to "Docs"/"New doc"), and hides the redundant "Quick add" and "Sync scrolling" buttons.
+  - `widgets.js` — "✓ Do" / "✗ Don't" and "Embed" (Figma/Storybook/any iframe URL) editor components, a Workflow-board colour fix (Decap hardcodes clashing pastel column colours with no CSS hook — this remaps them to Pulse tones), preview-pane stylesheet, English locale override (renames Decap's "Contents"/"New Post" chrome to "Docs"/"New doc"), and hides the redundant "Sync scrolling" button.
+  - Each collection also has a default Body template (`config.yml`) so a new doc starts with sensible section headings instead of a blank page.
   - `preview-style.css` — styles Decap's live-preview pane to match the real site.
   - `admin-chrome.css` — font override for Decap's own outer UI (see note below).
 - `src/styles/nourish-theme.css` — Pulse brand tokens, GitBook-style sidebar/search/heading polish, Do/Don't callout styling, and a fix for oversized Previous/Next footer cards. Light theme only.

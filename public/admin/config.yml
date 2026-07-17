@@ -20,12 +20,18 @@ public_folder: "/uploads"
 #
 # Note on "doc" fields: there's no manual "last updated" or "created by" field
 # below — that's intentional. The live site reads those automatically from
-# git commit history (see src/remark-git-author.mjs + Starlight's lastUpdated
-# config), so nothing needs typing in and nothing can drift from the truth.
+# git commit history (see src/components/EditLinkWithHistory.astro +
+# Starlight's lastUpdated config), so nothing needs typing in and nothing can
+# drift from the truth.
+#
+# `label_singular` is deliberately different per collection ("Foundations
+# doc" / "Components doc" / "Visuals doc") rather than a shared "doc" —
+# that's what shows in the "Quick add" dropdown, and sharing one label there
+# made all three entries look identical with no way to tell them apart.
 collections:
   - name: "foundations"
     label: "Foundations"
-    label_singular: "doc"
+    label_singular: "Foundations doc"
     folder: "src/content/docs/foundations"
     create: true
     slug: "{{slug}}"
@@ -42,12 +48,26 @@ collections:
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
-        editor_components: ["do", "dont", "image"]
+        editor_components: ["do", "dont", "embed", "image"]
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
+        default: |
+          ## Overview
+
+          What is this, and why does it exist?
+
+          ## Guidance
+
+          <div class="ds-callout ds-do">
+          <p><strong>✓ Do</strong> — </p>
+          </div>
+
+          <div class="ds-callout ds-dont">
+          <p><strong>✗ Don't</strong> — </p>
+          </div>
 
   - name: "components"
     label: "Components"
-    label_singular: "doc"
+    label_singular: "Components doc"
     folder: "src/content/docs/components"
     create: true
     slug: "{{slug}}"
@@ -63,12 +83,28 @@ collections:
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
-        editor_components: ["do", "dont", "image"]
+        editor_components: ["do", "dont", "embed", "image"]
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
+        default: |
+          ## Usage
+
+          When should this component be used? Variants and states.
+
+          <div class="ds-callout ds-do">
+          <p><strong>✓ Do</strong> — </p>
+          </div>
+
+          <div class="ds-callout ds-dont">
+          <p><strong>✗ Don't</strong> — </p>
+          </div>
+
+          ## Accessibility
+
+          Keyboard behaviour, screen reader labels, and care-worker-specific considerations (low cognitive load, error prevention).
 
   - name: "visuals"
     label: "Visuals"
-    label_singular: "doc"
+    label_singular: "Visuals doc"
     folder: "src/content/docs/visuals"
     create: true
     slug: "{{slug}}"
@@ -85,5 +121,11 @@ collections:
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
-        editor_components: ["do", "dont", "image"]
+        editor_components: ["do", "dont", "embed", "image"]
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
+        default: |
+          ## Description
+
+          What is this asset (motion, illustration, icon set, etc.), and where's it used?
+
+          ## Usage guidance

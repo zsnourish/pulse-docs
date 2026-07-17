@@ -211,3 +211,28 @@ starlight-page-title h1,
   font-weight: 600;
   color: var(--pulse-neutral-120) !important;
 }
+
+/* --- Figma/Storybook/generic embeds --- */
+.ds-embed {
+  margin: 1.25rem 0;
+  border: 1px solid var(--pulse-neutral-40);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.ds-embed iframe {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border: none;
+  display: block;
+}
+.ds-embed .ds-embed-caption {
+  margin: 0;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.85rem;
+  color: var(--pulse-neutral-90);
+  background: var(--pulse-neutral-20);
+  border-top: 1px solid var(--pulse-neutral-40);
+}
+.ds-embed .ds-embed-caption:empty {
+  display: none;
+}
