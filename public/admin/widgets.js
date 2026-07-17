@@ -66,23 +66,12 @@ CMS.registerEditorComponent({
 });
 
 /**
- * Terminology: everything is a "doc" (not "post"/"entry"), and the global
- * "New Post" button in the Workflow tab gets renamed too (per-collection
- * "New doc" buttons are handled by `label_singular: doc` in config.yml).
- * https://decapcms.org/docs/i18n/
+ * Terminology: everything is a "doc" (not "post"/"entry"). Handled in
+ * locale-en.js, loaded as a separate <script> tag in index.html (it re-registers
+ * the *complete* English locale, not just the changed keys — see the long
+ * comment at the top of that file for why a partial override broke the
+ * entire UI the first time around).
  */
-CMS.registerLocale('en', {
-  app: {
-    header: {
-      content: 'Docs',
-    },
-  },
-  workflow: {
-    workflow: {
-      newPost: 'New doc',
-    },
-  },
-});
 
 /**
  * Auto-fill "Owner" with whoever's publishing, if it's still blank — so it's
