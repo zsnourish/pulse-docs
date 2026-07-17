@@ -24,7 +24,7 @@ public_folder: "/uploads"
 # config), so nothing needs typing in and nothing can drift from the truth.
 collections:
   - name: "foundations"
-    label: "🎨 Foundations"
+    label: "Foundations"
     label_singular: "doc"
     folder: "src/content/docs/foundations"
     create: true
@@ -47,7 +47,7 @@ collections:
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
 
   - name: "components"
-    label: "🧩 Components"
+    label: "Components"
     label_singular: "doc"
     folder: "src/content/docs/components"
     create: true
@@ -69,7 +69,7 @@ collections:
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
 
   - name: "visuals"
-    label: "🖼️ Visuals"
+    label: "Visuals"
     label_singular: "doc"
     folder: "src/content/docs/visuals"
     create: true

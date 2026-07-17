@@ -19,15 +19,15 @@ export default defineConfig({
       lastUpdated: true,
       sidebar: [
         {
-          label: '🎨 Foundations',
+          label: 'Foundations',
           autogenerate: { directory: 'foundations' },
         },
         {
-          label: '🧩 Components',
+          label: 'Components',
           autogenerate: { directory: 'components' },
         },
         {
-          label: '🖼️ Visuals',
+          label: 'Visuals',
           autogenerate: { directory: 'visuals' },
         },
       ],
