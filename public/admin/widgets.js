@@ -103,16 +103,24 @@ CMS.registerEventListener({
 });
 
 /**
- * Hide the global "Quick add" shortcut — redundant next to each collection's
- * own "New doc" button. Best-effort: Decap has no config flag to remove it,
- * so this looks the button up by its accessible name and hides it. If a
- * future Decap version changes that markup, this silently does nothing
- * rather than breaking anything.
+ * Hide a couple of toolbar items that add clutter without adding value here:
+ *  - "Quick add" — redundant next to each collection's own "New doc" button.
+ *  - "Sync scrolling" — only matters in split raw-markdown/preview view;
+ *    since every doc is rich-text-only (see config.yml `modes`), there's no
+ *    second markdown pane for it to sync against.
+ * Best-effort: Decap has no config flag to remove either, so this looks
+ * buttons up by their accessible name/title and hides them. If a future
+ * Decap version changes that markup, this silently does nothing rather than
+ * breaking anything.
  */
-(function hideQuickAdd() {
+(function hideClutterButtons() {
+  const hideIfMatches = ['quick add', 'sync scrolling', 'toggle scroll sync'];
   function tryHide() {
     document.querySelectorAll('button').forEach(function (btn) {
-      if (btn.textContent && btn.textContent.trim().toLowerCase().startsWith('quick add')) {
+      const label = (btn.textContent || btn.getAttribute('aria-label') || btn.title || '')
+        .trim()
+        .toLowerCase();
+      if (hideIfMatches.some((needle) => label.startsWith(needle) || label === needle)) {
         btn.style.display = 'none';
       }
     });
@@ -121,3 +129,14 @@ CMS.registerEventListener({
   observer.observe(document.body || document.documentElement, { childList: true, subtree: true });
   tryHide();
 })();
+
+/**
+ * Note on "Check for Preview" (near the Publish button): that's Decap's
+ * built-in deploy-preview-link feature — it looks for a GitHub commit status
+ * containing the word "deploy" (which Netlify posts automatically once its
+ * GitHub integration is fully connected and successfully building). It does
+ * nothing until Netlify is properly wired up and has deployed at least one
+ * commit — not a bug, just waiting on that. To turn it off entirely instead,
+ * set `show_preview_links: false` in config.yml.
+ * https://decapcms.org/docs/deploy-preview-links/
+ */
