@@ -7,7 +7,7 @@ This repo is the single source of truth — no parallel copy in Notion or Supern
 
 - `src/content/docs/foundations/`, `components/`, `visuals/` — three categories, each its own folder. This drives both the grouped left nav (🎨 Foundations / 🧩 Components / 🖼️ Visuals) and the three collections in `/admin`.
 - Frontmatter on doc pages: `status` (manual — editorial state), `owner` (manual, auto-suggested from whoever's logged in when a doc is first created, editable). There's no manual "last updated" or "author" field — see below.
-- `src/remark-git-author.mjs` + Starlight's built-in `lastUpdated: true` — every page automatically shows who last touched it and when, read straight from git commit history. Nothing to type in, nothing that can go stale.
+- Starlight's built-in `lastUpdated: true` (date) plus a direct git lookup in `EditLinkWithHistory.astro` (author) — every page automatically shows who last touched it and when, read straight from git commit history. Nothing to type in, nothing that can go stale.
 - `src/components/EditLinkWithHistory.astro` — adds a **View history** link (GitHub's native commit history for that file) next to "Edit this page".
 - `src/content/docs/foundations/backups-and-history.md` — explains how GitHub already gives you version history and backup, and why there's no separate "trash bin" feature (and why that's fine).
 - `src/content/docs/index.mdx` — GitBook-style card landing page.
