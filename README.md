@@ -69,3 +69,9 @@ Log in at `/admin`, draft a doc in each category, try a Do/Don't block, publish,
 npm install
 npm run dev
 ```
+
+## Component Build Tracker
+
+`/components/tracker/` — cross-platform build status (Figma designed / Vue built / React built, each with a "By" and "Updated") for every component × variant × platform combination. Backed by `src/data/component-tracker.json`, edited in `/admin` as a proper list of rows (Component Build Tracker collection) rather than hand-editing an HTML table. "By" fields are free text — name whoever actually built something whether or not they have CMS access.
+
+To add more rows (new components, variants, or platforms): `/admin` → Component Build Tracker → add a row to the list, or edit `src/data/component-tracker.json` directly.
