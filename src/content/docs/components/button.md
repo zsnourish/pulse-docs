@@ -2,7 +2,6 @@
 title: Button
 status: approved
 owner: Zahra Siddiquia
-trackerUpdated: "2026-07-16"
 ---
 
 Example component doc — replace with real Pulse component content, or edit via `/admin` once DecapBridge is connected.

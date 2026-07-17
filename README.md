@@ -5,16 +5,19 @@ This repo is the single source of truth — no parallel copy in Notion or Supern
 
 ## What's in here
 
-- `src/content/docs/foundations/`, `components/`, `visuals/` — three categories, each its own folder. This is what drives the grouped left nav (🎨 Foundations / 🧩 Components / 🖼️ Visuals) on the live site and the three collections in `/admin`.
-- Frontmatter tracker fields on component/foundation/visual pages: `status`, `owner`, `trackerUpdated`.
-- `src/content/docs/index.mdx` — GitBook-style card landing page (Starlight's `CardGrid`).
+- `src/content/docs/foundations/`, `components/`, `visuals/` — three categories, each its own folder. This drives both the grouped left nav (🎨 Foundations / 🧩 Components / 🖼️ Visuals) and the three collections in `/admin`.
+- Frontmatter on doc pages: `status` (manual — editorial state), `owner` (manual, auto-suggested from whoever's logged in when a doc is first created, editable). There's no manual "last updated" or "author" field — see below.
+- `src/remark-git-author.mjs` + Starlight's built-in `lastUpdated: true` — every page automatically shows who last touched it and when, read straight from git commit history. Nothing to type in, nothing that can go stale.
+- `src/components/EditLinkWithHistory.astro` — adds a **View history** link (GitHub's native commit history for that file) next to "Edit this page".
+- `src/content/docs/foundations/backups-and-history.md` — explains how GitHub already gives you version history and backup, and why there's no separate "trash bin" feature (and why that's fine).
+- `src/content/docs/index.mdx` — GitBook-style card landing page.
 - `src/pages/theme-studio.astro` — a standalone visual tool at `/theme-studio` for adjusting colours, font, corner roundness and spacing with a live preview. Doesn't write to GitHub — copy/download the CSS it generates and send it back, or paste it into `src/styles/nourish-theme.css` yourself.
 - `public/admin/` — Decap CMS:
-  - `config.yml` — the three category collections, draft → review → publish workflow, DecapBridge auth backend.
-  - `widgets.js` — registers the "✓ Do" / "✗ Don't" editor components and the preview-pane stylesheet.
+  - `config.yml` — the three category collections (`label_singular: doc`, so buttons read "New doc"), draft → review → publish workflow, DecapBridge auth backend.
+  - `widgets.js` — "✓ Do" / "✗ Don't" editor components, preview-pane stylesheet, English locale override (renames Decap's "Contents"/"New Post" chrome to "Docs"/"New doc"), auto-fills Owner on new docs from the logged-in user, and hides the redundant "Quick add" button.
   - `preview-style.css` — styles Decap's live-preview pane to match the real site.
   - `admin-chrome.css` — font override for Decap's own outer UI (see note below).
-- `src/styles/nourish-theme.css` — Pulse brand tokens, GitBook-style sidebar/search/heading polish, Do/Don't callout styling. Light theme only.
+- `src/styles/nourish-theme.css` — Pulse brand tokens, GitBook-style sidebar/search/heading polish, Do/Don't callout styling, and a fix for oversized Previous/Next footer cards. Light theme only.
 - `src/assets/pulse-logo.png` — Pulse logo, wired into the sidebar.
 - `netlify.toml` — build config for Netlify.
 
@@ -22,11 +25,15 @@ This repo is the single source of truth — no parallel copy in Notion or Supern
 
 ## On matching GitBook exactly
 
-The **front end** (the published site) is styled to closely track the GitBook reference you shared: grouped uppercase sidebar sections, rounded search bar with a ⌘K hint, large bold page titles, card-grid landing page, light theme throughout.
+The **front end** is styled to closely track the GitBook reference you shared: grouped uppercase sidebar sections, rounded search bar with a ⌘K hint, large bold page titles, card-grid landing page, light theme throughout.
 
-The **back end** (the authoring tool) is Decap CMS, not GitBook — it's a free, open-source, git-based editor, fundamentally simpler than GitBook's own product. Things like Change requests as a first-class review UI, Site structure, Members management, Analyze, Git Sync settings, or an "Extend" marketplace are GitBook-specific features backed by their own hosted infrastructure — there's no equivalent to build in Decap without effectively building a competing SaaS product. What Decap *does* give you, which is what actually mattered from your list: a category-based authoring flow (pick Foundations/Components/Visuals, same as picking a tag), a draft → review → publish loop via pull requests, and a preview pane styled to match the live site.
+The **back end** is Decap CMS, not GitBook — free, open-source, git-based, fundamentally simpler. Change requests as a first-class review UI, Site structure, Members management, Analyze, Git Sync settings, an "Extend" marketplace — those are GitBook-specific, backed by their own hosted product, and there's no equivalent to build in Decap without effectively building a competing SaaS. What Decap does give you, matching what actually mattered from the ask: category-based authoring (pick Foundations/Components/Visuals, same as picking a tag), automatic "who/when" metadata from git (no manual entry), a draft → review → publish loop via pull requests, and a preview pane styled to match the live site.
 
-One Decap limitation worth knowing: a single collection can't dynamically route entries into different folders based on a field value (a known gap, not a choice) — that's why category is three collections rather than one form with a dropdown. In practice it's the same authoring step (pick which of the three you're writing), just presented as three menu items instead of one field.
+One Decap limitation worth knowing: a single collection can't dynamically route entries into different folders based on a field value (a known gap, not a choice) — that's why category is three collections rather than one form with a dropdown. In practice it's the same authoring step, just three menu items instead of one field.
+
+## Trash bin / version history / backups
+
+Decap has no native trash bin. Because everything is git-backed, this doesn't actually lose anything — every deleted file is recoverable from git history indefinitely, which is a stronger guarantee than a typical auto-expiring trash bin. Full explanation, plus how to actually restore something and how to lock down `main` against accidental history loss, is written up in `src/content/docs/foundations/backups-and-history.md` (published at `/foundations/backups-and-history/`).
 
 ## Do's & Don'ts
 
@@ -47,13 +54,13 @@ Insert a "✓ Do" or "✗ Don't" block from the CMS toolbar (a "+" button in the
 - Base directory blank, build command `npm run build`, publish directory `dist`.
 
 ### 2. DecapBridge: GitHub token permissions
-Needs both **Contents: Read and write** and **Pull requests: Read and write** on `zsnourish/pulse-docs` — editorial workflow opens real PRs, so both are required.
+Needs both **Contents: Read and write** and **Pull requests: Read and write** on `zsnourish/pulse-docs`.
 
 ### 3. DecapBridge: invite your team
 Dashboard → your site → **Manage collaborators** → enter each email → send invite.
 
 ### 4. Test the loop
-Log in at `/admin`, draft a page in each category, try a Do/Don't block, publish, confirm it deploys.
+Log in at `/admin`, draft a doc in each category, try a Do/Don't block, publish, confirm it deploys, and confirm the "last updated by" line appears once the commit lands.
 
 ## Local dev (optional)
 

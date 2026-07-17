@@ -5,14 +5,18 @@ export const collections = {
   docs: defineCollection({
     schema: docsSchema({
       extend: z.object({
-        // Tracker fields — surfaced on the components index page.
+        // Editorial tracker fields — deliberately manual (status/owner are
+        // assignments, not facts we can derive).
         status: z
           .enum(['draft', 'in-review', 'approved', 'deprecated'])
           .default('draft')
           .optional(),
         owner: z.string().optional(),
-        // Named to avoid clashing with Starlight's own built-in `lastUpdated` field.
-        trackerUpdated: z.string().optional(), // ISO date, set by Decap CMS
+
+        // Auto-populated by the remarkGitAuthor plugin from git history —
+        // never set this by hand. Starlight's own `lastUpdated` (config
+        // option, also git-derived) covers the "when"; this covers "who".
+        gitLastAuthor: z.string().optional(),
       }),
     }),
   }),

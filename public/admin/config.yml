@@ -17,9 +17,15 @@ public_folder: "/uploads"
 # into different folders (a known Decap limitation), so each category is its
 # own collection here. Functionally it's the same authoring step: pick which
 # of the three you're writing, exactly like picking a tag.
+#
+# Note on "doc" fields: there's no manual "last updated" or "created by" field
+# below — that's intentional. The live site reads those automatically from
+# git commit history (see src/remark-git-author.mjs + Starlight's lastUpdated
+# config), so nothing needs typing in and nothing can drift from the truth.
 collections:
   - name: "foundations"
     label: "🎨 Foundations"
+    label_singular: "doc"
     folder: "src/content/docs/foundations"
     create: true
     slug: "{{slug}}"
@@ -32,8 +38,7 @@ collections:
         options: ["draft", "in-review", "approved", "deprecated"]
         default: "draft"
         required: false
-      - { label: "Owner", name: "owner", widget: "string", required: false }
-      - { label: "Last updated", name: "trackerUpdated", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      - { label: "Owner", name: "owner", widget: "string", hint: "Who's responsible for this doc — prefilled with your name, change if needed", required: false }
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -43,6 +48,7 @@ collections:
 
   - name: "components"
     label: "🧩 Components"
+    label_singular: "doc"
     folder: "src/content/docs/components"
     create: true
     slug: "{{slug}}"
@@ -54,8 +60,7 @@ collections:
         widget: "select"
         options: ["draft", "in-review", "approved", "deprecated"]
         default: "draft"
-      - { label: "Owner", name: "owner", widget: "string", hint: "Who's responsible for this component" }
-      - { label: "Last updated", name: "trackerUpdated", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Owner", name: "owner", widget: "string", hint: "Who's responsible for this component — prefilled with your name, change if needed" }
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -65,6 +70,7 @@ collections:
 
   - name: "visuals"
     label: "🖼️ Visuals"
+    label_singular: "doc"
     folder: "src/content/docs/visuals"
     create: true
     slug: "{{slug}}"
@@ -77,8 +83,7 @@ collections:
         options: ["draft", "in-review", "approved", "deprecated"]
         default: "draft"
         required: false
-      - { label: "Owner", name: "owner", widget: "string", required: false }
-      - { label: "Last updated", name: "trackerUpdated", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      - { label: "Owner", name: "owner", widget: "string", hint: "Who's responsible for this doc — prefilled with your name, change if needed", required: false }
       - label: "Body"
         name: "body"
         widget: "markdown"

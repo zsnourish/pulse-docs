@@ -1,0 +1,27 @@
+---
+title: Backups & version history
+status: approved
+---
+
+Pulse docs live in a GitHub repository (`zsnourish/pulse-docs`), and that gives you version history and backup for free — no extra tool needed.
+
+## What you already have
+
+Every publish is a real git commit. GitHub keeps every commit ever made to the repo, forever, unless someone deliberately rewrites history (force-push) or deletes the repository outright. That means:
+
+- **Version history**: open any page's **View history** link (bottom of the page, next to "Edit this page") to see every past version, who changed what, and when.
+- **Nothing is truly deleted**: deleting a doc removes it from the current version, but the file and all its history still exist in past commits. It can always be brought back.
+- **Who changed what**: every page shows "Last updated by" automatically, pulled straight from git — no one has to remember to fill that in.
+
+## There's no "trash bin" — here's why that's fine
+
+Decap CMS doesn't have a soft-delete/trash feature. In practice this doesn't lose anything: because the underlying storage is git, every deleted file is fully recoverable from history, indefinitely — arguably a stronger guarantee than a typical trash bin that auto-empties after 30 days.
+
+**To restore a deleted doc**: find it in the file's history on GitHub (search the repo, or check recent commits for the delete), open the version just before it was removed, and either restore it through GitHub's web UI ("view raw" at that commit, copy the content back into a new doc) or ask whoever manages the repo to run a one-line git command to bring it back exactly as it was.
+
+## Keeping it safe
+
+Two settings worth having on the GitHub repo itself (owner/admin access needed):
+
+- **Branch protection on `main`**: require pull request review before merging, and disallow force-pushes. This prevents accidental history rewrites — the one thing that *would* undermine the "everything is recoverable" guarantee above.
+- **A second remote clone**, if you want redundancy beyond GitHub's own infrastructure (optional — GitHub's durability is already very high, this is belt-and-braces).

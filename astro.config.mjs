@@ -1,7 +1,11 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import remarkGitAuthor from './src/remark-git-author.mjs';
 
 export default defineConfig({
+  markdown: {
+    remarkPlugins: [remarkGitAuthor],
+  },
   integrations: [
     starlight({
       title: 'Pulse Docs',
@@ -15,6 +19,8 @@ export default defineConfig({
       social: {
         github: 'https://github.com/zsnourish/pulse-docs',
       },
+      // Auto-computed from git history — no manual "last updated" entry needed.
+      lastUpdated: true,
       sidebar: [
         {
           label: '🎨 Foundations',
@@ -36,6 +42,7 @@ export default defineConfig({
       components: {
         ThemeProvider: './src/components/ForceLightThemeProvider.astro',
         ThemeSelect: './src/components/EmptyThemeSelect.astro',
+        EditLink: './src/components/EditLinkWithHistory.astro',
       },
     }),
   ],

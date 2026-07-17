@@ -198,3 +198,16 @@ starlight-page-title h1,
   font-weight: 800;
   letter-spacing: -0.02em;
 }
+
+/* --- Fix disproportionate Previous/Next pagination cards --- */
+.pagination-links a {
+  max-width: 22rem;
+  padding: 0.75rem 1rem;
+  box-shadow: none;
+  border-color: var(--pulse-neutral-40);
+}
+.pagination-links .link-title {
+  font-size: 1rem !important;
+  font-weight: 600;
+  color: var(--pulse-neutral-120) !important;
+}
