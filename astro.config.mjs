@@ -30,6 +30,10 @@ export default defineConfig({
           label: 'Visuals',
           autogenerate: { directory: 'visuals' },
         },
+        {
+          label: 'Component Tracker',
+          link: '/components/tracker/',
+        },
       ],
       editLink: {
         baseUrl: 'https://github.com/zsnourish/pulse-docs/edit/main/',

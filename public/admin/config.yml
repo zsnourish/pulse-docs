@@ -129,3 +129,34 @@ collections:
           What is this asset (motion, illustration, icon set, etc.), and where's it used?
 
           ## Usage guidance
+
+  # Component Build Tracker: a single structured data file (not a doc), edited
+  # as a proper list of rows rather than a raw markdown table — much easier to
+  # add/update rows on than hand-editing an HTML table. "By" fields are free
+  # text on purpose: you can name anyone (a dev, a designer, whoever actually
+  # built it) whether or not they have CMS access themselves.
+  - name: "component_tracker"
+    label: "Component Build Tracker"
+    files:
+      - name: "tracker"
+        label: "Component Build Tracker"
+        file: "src/data/component-tracker.json"
+        fields:
+          - name: "rows"
+            label: "Rows"
+            widget: "list"
+            summary: "{{component}} {{variant}} — {{platform}}"
+            fields:
+              - { label: "Component", name: "component", widget: "string" }
+              - { label: "Variant", name: "variant", widget: "string", required: false, hint: "e.g. Primary, Secondary — leave blank if the component has no variants" }
+              - label: "Platform"
+                name: "platform"
+                widget: "select"
+                options: ["Desktop", "Mobile (Browser)", "Mobile (Android)", "Mobile (iOS)"]
+              - { label: "Figma — Designed?", name: "figmaDesigned", widget: "boolean", default: false }
+              - { label: "Vue — Built?", name: "vueBuilt", widget: "boolean", default: false }
+              - { label: "Vue — By", name: "vueBy", widget: "string", required: false, hint: "Any name — doesn't need to be a collaborator" }
+              - { label: "Vue — Updated", name: "vueUpdated", widget: "datetime", required: false, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "React — Built?", name: "reactBuilt", widget: "boolean", default: false }
+              - { label: "React — By", name: "reactBy", widget: "string", required: false, hint: "Any name — doesn't need to be a collaborator" }
+              - { label: "React — Updated", name: "reactUpdated", widget: "datetime", required: false, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
