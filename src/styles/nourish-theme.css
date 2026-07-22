@@ -76,6 +76,13 @@ h1, h2, h3, h4, h5,
    off Starlight's responsive tokens, since at this size responsive scaling
    stopped being noticeable anyway). */
 :root {
+  /* H2 was rendering at ~35px (Starlight's default) -- cut by 10px so it
+     reads closer to the rest of the content instead of shouting. On the
+     Tabs-converted pages (Colour, Typography, Dashboard Design, Logos &
+     Brand) this is also the tag genuine sub-section headings ended up on
+     after the heading-demotion needed to make Tabs work, so this one change
+     fixes both "H2" and "H3" reading oversized on those pages. */
+  --sl-text-h2: 1.5625rem; /* 25px */
   --sl-text-h1: var(--sl-text-h2);
   --sl-text-h3: 0.9rem; /* was ~16-21px, now a flat ~14px at every breakpoint */
 }
@@ -282,6 +289,55 @@ starlight-page-title h1,
 }
 .ds-embed .ds-embed-caption:empty {
   display: none;
+}
+
+/* Click-to-load facade -- shows a static thumbnail + button instead of the
+   live iframe until clicked, since Figma/Confluence/Storybook embeds are
+   slow to spin up their own JS and feel awkward loading unprompted. */
+.ds-embed-facade {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  cursor: pointer;
+  background: var(--pulse-neutral-20);
+}
+.ds-embed-facade .ds-embed-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  filter: saturate(0.9);
+}
+.ds-embed-facade .ds-embed-load-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--pulse-neutral-10);
+  color: var(--pulse-neutral-120);
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+  pointer-events: none; /* click is handled by the whole facade */
+}
+.ds-embed-facade .ds-embed-load-btn::before {
+  content: '▶';
+  font-size: 0.7rem;
+  color: var(--pulse-primary-90);
+}
+.ds-embed-facade:hover .ds-embed-load-btn,
+.ds-embed-facade:focus-visible .ds-embed-load-btn {
+  background: var(--pulse-primary-10);
+}
+.ds-embed-facade:focus-visible {
+  outline: 2px solid var(--pulse-primary-90);
+  outline-offset: 2px;
 }
 /* Placeholder shown when a doc has no real Figma/Storybook link yet — a
    plain dashed box, deliberately NOT an iframe, so there's no src to

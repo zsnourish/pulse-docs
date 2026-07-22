@@ -7,6 +7,12 @@ export default defineConfig({
       title: 'Pulse Docs',
       description: 'Pulse component documentation and tracker',
       customCss: ['./src/styles/nourish-theme.css', './src/styles/sidebar-icons.css'],
+      head: [
+        {
+          tag: 'script',
+          attrs: { src: '/scripts/ds-embed.js', defer: true },
+        },
+      ],
       logo: {
         src: './src/assets/pulse-logo.png',
         alt: 'Pulse Design System',
