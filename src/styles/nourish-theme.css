@@ -70,6 +70,16 @@ h1, h2, h3, h4, h5,
   letter-spacing: -0.01em;
 }
 
+/* H3, 8px smaller than Starlight's default at both responsive breakpoints. */
+:root {
+  --sl-text-h3: calc(var(--sl-text-2xl) - 8px); /* 24px -> 16px */
+}
+@media (min-width: 50em) {
+  :root {
+    --sl-text-h3: calc(var(--sl-text-3xl) - 8px); /* 29px -> 21px */
+  }
+}
+
 /* --- GitBook-style polish: rounder, more breathing room --- */
 .sidebar-pane {
   border-right: 1px solid var(--sl-color-hairline-light);
@@ -109,31 +119,47 @@ main .sl-markdown-content {
 .status-pill[data-status='draft'] { background: var(--pulse-neutral-30); color: var(--pulse-neutral-90); }
 .status-pill[data-status='deprecated'] { background: var(--pulse-urgency-20); color: var(--pulse-urgency-70); }
 
-/* --- Do / Don't callouts, matching Pulse Supernova's pattern --- */
+/* --- Do / Don't callouts, matching Pulse Supernova's pattern ---
+   Two-column, minimal: no full border outline (just a coloured left edge,
+   matching the CMS's own live-preview rendering in widgets.js), inline-block
+   so pairs sit side by side and wrap naturally without needing a wrapper
+   element (the markdown only gives us a flat run of sibling divs). */
 .ds-callout {
-  border-radius: 0.75rem;
-  padding: 0.9rem 1.1rem;
-  margin: 1rem 0;
-  border: 1px solid transparent;
+  display: inline-block;
+  width: calc(50% - 0.6rem);
+  vertical-align: top;
+  box-sizing: border-box;
+  border-radius: 0.4rem;
+  padding: 0.6rem 0.8rem;
+  margin: 0.3rem 0;
+  border: none;
+  border-left: 3px solid transparent;
 }
 .ds-callout p {
   margin: 0;
+  font-size: 0.9rem;
 }
 .ds-callout strong {
   margin-right: 0.35rem;
 }
 .ds-do {
   background: var(--pulse-success-20);
-  border-color: var(--pulse-success-70);
+  border-left-color: var(--pulse-success-70);
   color: var(--pulse-neutral-120);
 }
 .ds-do strong { color: var(--pulse-success-70); }
 .ds-dont {
   background: var(--pulse-urgency-20);
-  border-color: var(--pulse-urgency-70);
+  border-left-color: var(--pulse-urgency-70);
   color: var(--pulse-neutral-120);
 }
 .ds-dont strong { color: var(--pulse-urgency-70); }
+/* Below ~600px, drop back to a single column so text doesn't get cramped. */
+@media (max-width: 37.5em) {
+  .ds-callout {
+    width: 100%;
+  }
+}
 
 /* --- Additional GitBook-style polish (light theme only) --- */
 .card {
