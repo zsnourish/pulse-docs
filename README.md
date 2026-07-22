@@ -17,7 +17,7 @@ This repo is the single source of truth — no parallel copy in Notion or Supern
   - `widgets.js` — "✓ Do" / "✗ Don't" and "Embed" (Figma/Storybook/any iframe URL) editor components, a Workflow-board colour fix (Decap hardcodes clashing pastel column colours with no CSS hook — this remaps them to Pulse tones), preview-pane stylesheet, English locale override (renames Decap's "Contents"/"New Post" chrome to "Docs"/"New doc"), and hides the redundant "Sync scrolling" button.
   - Each collection also has a default Body template (`config.yml`) so a new doc starts with sensible section headings instead of a blank page.
   - `preview-style.css` — styles Decap's live-preview pane to match the real site.
-  - `admin-chrome.css` — font override for Decap's own outer UI (see note below).
+  - `admin-chrome.css` — restyles Decap's own outer UI (top bar, sidebar, primary buttons, cards, toolbar, login screen) to Pulse's palette, by targeting Decap's internal Emotion component labels (e.g. `[class*="PublishButton"]`) rather than guessed colours — more durable against Decap updates than colour-matching, though still not a full theme — see "On matching GitBook exactly" below for what Decap's chrome fundamentally can't replicate.
 - `src/styles/nourish-theme.css` — Pulse brand tokens, GitBook-style sidebar/search/heading polish, Do/Don't callout styling, and a fix for oversized Previous/Next footer cards. Light theme only.
 - `src/assets/pulse-logo.png` — Pulse logo, wired into the sidebar.
 - `netlify.toml` — build config for Netlify.

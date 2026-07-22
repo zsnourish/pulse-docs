@@ -1,15 +1,238 @@
 /**
- * Very light-touch styling for Decap CMS's own outer UI (the editor chrome
- * itself, not the preview pane). Decap doesn't expose a theming API for its
- * own interface — its internal component classes are auto-generated and can
- * change on any update, so deep reskinning here is fragile by nature. This
- * sticks to the two properties safe enough to override globally: base font
- * and page background. For anything deeper (button colours, toolbar icons),
- * that would mean patching Decap's own CSS modules, which breaks on updates.
+ * Styling for Decap CMS's own outer UI (the editor chrome itself, not the
+ * preview pane). Decap doesn't expose a theming API for its interface, but
+ * its production bundle keeps Emotion's component labels in the generated
+ * class names (e.g. an element rendered by Decap's internal "TopBarContainer"
+ * component gets a class like `css-<hash>-TopBarContainer`). That's a real,
+ * documented Emotion behaviour, not a guess — confirmed by downloading and
+ * inspecting the published decap-cms@3.1 bundle directly. Using
+ * `[class*="ComponentName"]` attribute selectors against those labels is far
+ * more reliable than matching on colour values (which is still used for the
+ * Workflow board below, kept as-is since it's already verified working): a
+ * label only breaks if Decap renames or removes the component, not if they
+ * merely restyle it.
+ *
+ * As with the rest of this file, if a future Decap release changes or drops
+ * one of these labels, the selector just stops matching — nothing breaks,
+ * it silently reverts to Decap's own default for that element.
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+:root {
+  /* Mirrors src/styles/nourish-theme.css — duplicated here because this
+     admin page isn't built by Astro, so it can't import that file directly. */
+  --pulse-primary-100: #2b5656;
+  --pulse-primary-90: #3e7e7e;
+  --pulse-primary-70: #66cccc;
+  --pulse-primary-30: #d1f0f0;
+  --pulse-primary-10: #f0fafa;
+  --pulse-neutral-120: #36393f;
+  --pulse-neutral-90: #878e9d;
+  --pulse-neutral-40: #e7e8eb;
+  --pulse-neutral-30: #f3f4f5;
+  --pulse-neutral-20: #f9f9fa;
+  --pulse-neutral-10: #ffffff;
+  --pulse-success-70: #4bb97e;
+  --pulse-urgency-70: #cc5252;
+}
+
 html, body {
   font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+/* --- Top bar (logo, site link, nav) --- */
+[class*="AppHeaderContainer"],
+[class*="TopBarContainer"],
+[class*="AppHeaderContent"] {
+  background-color: var(--pulse-neutral-10) !important;
+  border-bottom: 1px solid var(--pulse-neutral-40) !important;
+}
+[class*="AppHeaderSiteLink"],
+[class*="AppHeaderNavLink"],
+[class*="SidebarNavLink"] {
+  color: var(--pulse-neutral-120) !important;
+  font-weight: 500 !important;
+}
+
+/* --- Primary action buttons: Publish, Save, Quick add, Login --- */
+[class*="PublishButton"],
+[class*="SaveButton"],
+[class*="LoginButton"],
+[class*="CollectionTopNewButton"],
+[class*="AppHeaderQuickNewButton"] {
+  background-color: var(--pulse-primary-100) !important;
+  border-color: var(--pulse-primary-100) !important;
+  border-radius: 6px !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+[class*="PublishButton"]:hover,
+[class*="SaveButton"]:hover,
+[class*="LoginButton"]:hover,
+[class*="CollectionTopNewButton"]:hover,
+[class*="AppHeaderQuickNewButton"]:hover {
+  background-color: var(--pulse-primary-90) !important;
+  border-color: var(--pulse-primary-90) !important;
+}
+
+/* --- Sidebar (collections list) --- */
+[class*="SidebarContainer"] {
+  background-color: var(--pulse-neutral-20) !important;
+  border-right: 1px solid var(--pulse-neutral-40) !important;
+}
+
+/* --- Entry list cards, grid/list view, workflow cards --- */
+[class*="CardGrid"] [class*="Card"],
+[class*="ListCard"],
+[class*="GridCard"],
+[class*="WorkflowCardContainer"] {
+  border-radius: 8px !important;
+  border: 1px solid var(--pulse-neutral-40) !important;
+}
+
+/* --- Entry editor toolbar --- */
+[class*="ToolbarContainer"] {
+  background-color: var(--pulse-neutral-10) !important;
+  border-bottom: 1px solid var(--pulse-neutral-40) !important;
+}
+
+/* --- Login screen (shown before handing off to DecapBridge) --- */
+[class*="StyledAuthenticationPage"] {
+  background-color: var(--pulse-neutral-20) !important;
+}
+[class*="AuthForm"] {
+  border-radius: 10px !important;
+  border: 1px solid var(--pulse-neutral-40) !important;
+}
+
+/* --- Form controls: title/body inputs, focus states --- */
+[class*="ControlContainer"] input[type="text"],
+[class*="ControlContainer"] textarea,
+[class*="ControlContainer"] select {
+  border-radius: 6px !important;
+  border-color: var(--pulse-neutral-40) !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+[class*="ControlContainer"] input[type="text"]:focus,
+[class*="ControlContainer"] textarea:focus {
+  border-color: var(--pulse-primary-90) !important;
+  box-shadow: 0 0 0 1px var(--pulse-primary-90) !important;
+}
+[class*="FieldLabel"] {
+  font-family: 'Inter', system-ui, sans-serif !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* --- Search bar (collections list) --- */
+[class*="SearchInput"] {
+  border-radius: 8px !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+/* --- Collection list heading + top row --- */
+[class*="SidebarHeading"],
+[class*="CollectionTopHeading"] {
+  font-family: 'Inter', system-ui, sans-serif !important;
+  color: var(--pulse-neutral-120) !important;
+  font-weight: 700 !important;
+}
+[class*="CollectionTopRow"] {
+  border-color: var(--pulse-neutral-40) !important;
+}
+
+/* --- Editor toolbar (top of entry editor) --- */
+[class*="ToolbarSectionBackLink"],
+[class*="ToolbarSectionMain"],
+[class*="ToolbarSectionMeta"] {
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+/* --- Dropdowns / suggestion menus (status select, quick add, etc.) --- */
+[class*="StyledDropdown"],
+[class*="DropdownList"] {
+  border-radius: 8px !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+[class*="SuggestionItem"]:hover,
+[class*="SuggestionItem"][class*="active"] {
+  background-color: var(--pulse-primary-10) !important;
+  color: var(--pulse-primary-100) !important;
+}
+
+/* --- Toggle switches (boolean widget) --- */
+[class*="ToggleBackground"] {
+  background-color: var(--pulse-primary-90) !important;
+}
+
+/* --- Rounder corners on secondary buttons for visual consistency --- */
+[class*="StatusButton"],
+[class*="DropdownButton"] {
+  border-radius: 6px !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+/* --- Round 3: closing the "generic form builder" gap against GitBook's
+   spacious, confident editorial feel. Colour-only changes weren't enough —
+   the actual tells are the boxed grey "chip" label above every field (with
+   little folder-tab notches baked into :before/:after), cramped field
+   spacing, small headings, and boxed rectangular inputs. All still pure
+   cosmetic overrides (no JS, no new DOM, same Emotion-label technique) —
+   just going further than the first pass did. */
+
+/* Flatten the field-label chip into a plain small-caps caption. */
+[class*="FieldLabel"] {
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 0 6px 0 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  color: var(--pulse-neutral-90) !important;
+}
+[class*="FieldLabel"]::before,
+[class*="FieldLabel"]::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Real breathing room between fields (Decap ships 16px/36px). */
+[class*="ControlContainer"] {
+  margin-top: 32px !important;
+}
+[class*="ControlContainer"]:first-of-type {
+  margin-top: 8px !important;
+}
+
+/* Wider, airier editor pane (Decap ships 16px horizontal padding). */
+[class*="ControlPaneContainer"] {
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+  padding-top: 24px !important;
+}
+
+/* Bigger, bolder headings — Decap ships these at 20-22px; GitBook's are
+   confidently large. */
+[class*="CollectionTopHeading"],
+[class*="SidebarHeading"] {
+  font-size: 28px !important;
+  line-height: 34px !important;
+  font-weight: 700 !important;
+}
+
+/* Borderless, underline-style inputs instead of boxed rectangles — closer
+   to a continuous page than a form. */
+[class*="ControlContainer"] input[type="text"],
+[class*="ControlContainer"] textarea {
+  border: none !important;
+  border-bottom: 1px solid var(--pulse-neutral-40) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  font-size: 16px !important;
+}
+[class*="ControlContainer"] input[type="text"]:focus,
+[class*="ControlContainer"] textarea:focus {
+  border-bottom: 2px solid var(--pulse-primary-90) !important;
+  box-shadow: none !important;
 }
