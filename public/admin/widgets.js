@@ -186,30 +186,66 @@ CMS.registerEditorComponent({
     { name: 'url', label: 'Embed URL (Figma share link, Storybook story URL, or any embeddable URL)', widget: 'string' },
     { name: 'label', label: 'Caption (optional)', widget: 'string', required: false },
   ],
-  pattern: /^<div class="ds-embed">\n<iframe src="(.*?)" loading="lazy" allowfullscreen><\/iframe>\n<p class="ds-embed-caption">(.*?)<\/p>\n<\/div>$/ms,
+  // Matches either a real embed (iframe + caption) or the "not linked yet"
+  // fallback block, so re-opening either form for editing still populates
+  // the URL/Caption fields correctly instead of falling back to raw HTML.
+  pattern: /^<div class="ds-embed">\n<iframe src="(.*?)" loading="lazy" allowfullscreen><\/iframe>\n<p class="ds-embed-caption">(.*?)<\/p>\n<\/div>$|^<div class="ds-embed-missing">\n<p>(.*?)<\/p>\n<\/div>$/ms,
   fromBlock: function (match) {
-    return { url: match[1], label: match[2] };
+    if (match[1] !== undefined) {
+      return { url: match[1], label: match[2] };
+    }
+    return { url: '', label: match[3] === 'Not linked yet' ? '' : match[3] };
   },
   toBlock: function (obj) {
+    var url = (obj.url || '').trim();
+    // No real URL yet — render the plain "not linked" fallback instead of an
+    // iframe with a bogus src (an empty or placeholder-like string resolves
+    // as a relative URL on whatever site renders this page, which loads that
+    // site's own 404 page inside the iframe — a real bug this guards against,
+    // not a hypothetical one).
+    if (!url) {
+      return (
+        '<div class="ds-embed-missing">\n<p>' +
+        (obj.label || 'Not linked yet') +
+        '</p>\n</div>'
+      );
+    }
     return (
       '<div class="ds-embed">\n<iframe src="' +
-      toEmbedSrc(obj.url || '') +
+      toEmbedSrc(url) +
       '" loading="lazy" allowfullscreen></iframe>\n<p class="ds-embed-caption">' +
       (obj.label || '') +
       '</p>\n</div>'
     );
   },
   toPreview: function (obj) {
+    var url = (obj.url || '').trim();
+    if (!url) {
+      return h(
+        'div',
+        {
+          style: {
+            border: '1px dashed #b3b9c4',
+            borderRadius: '0.5rem',
+            padding: '0.75rem',
+            margin: '0.5rem 0',
+            color: '#878e9d',
+            fontSize: '0.85rem',
+          },
+        },
+        obj.label || 'Not linked yet — paste a Figma or Storybook URL above.'
+      );
+    }
     return h(
       'div',
       { style: { border: '1px solid #e7e8eb', borderRadius: '0.5rem', padding: '0.5rem', margin: '0.5rem 0' } },
       h(
         'div',
         { style: { fontSize: '0.8rem', color: '#878e9d', marginBottom: '0.3rem' } },
-        'Embed: ' + (obj.label || obj.url || '')
+        'Embed: ' + (obj.label || url)
       ),
       h('iframe', {
-        src: toEmbedSrc(obj.url || ''),
+        src: toEmbedSrc(url),
         style: { width: '100%', height: '300px', border: 'none', borderRadius: '0.3rem' },
       })
     );

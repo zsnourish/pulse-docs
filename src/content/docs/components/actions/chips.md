@@ -1,0 +1,32 @@
+---
+title: Chips
+status: draft
+---
+
+**Chip components** represent options for the user to select from, typically an attribute or action. Can be static, filterable (filters content) or removable (with the X icon).
+
+## Desktop
+
+<div class="ds-embed">
+<iframe src="https://www.figma.com/embed?embed_host=pulse-docs&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F4aH6RUyKkttaRIkqfhMH0P%2FPulse-Components%3Fnode-id%3D2428-19890" loading="lazy" allowfullscreen></iframe>
+<p class="ds-embed-caption">Desktop specimen — linked from Figma's "Pulse Components" file (best-effort match; this frame may show all variants together, not just this one — verify and swap if needed).</p>
+</div>
+
+## Mobile
+
+<div class="ds-embed">
+<iframe src="https://www.figma.com/embed?embed_host=pulse-docs&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F4aH6RUyKkttaRIkqfhMH0P%2FPulse-Components%3Fnode-id%3D2428-21501" loading="lazy" allowfullscreen></iframe>
+<p class="ds-embed-caption">Mobile specimen — linked from Figma's "Pulse Components" file (best-effort match; this frame may show all variants together, not just this one — verify and swap if needed).</p>
+</div>
+
+## Usage & Content Guidelines
+
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Use to display multiple attributes, tags or selected filters.</p>
+</div>
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Use removable chips for user-generated input amongst other relevant use cases.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Avoid long strings of text; keep labels concise (1-3 words).</p>
+</div>

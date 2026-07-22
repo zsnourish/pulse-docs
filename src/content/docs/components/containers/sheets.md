@@ -180,7 +180,6 @@ A bottom sheet should have a single primary focus, whilst allowing users to easi
 
 If a user needs to perform a secondary, complex task (like choosing a date), that task also deserves its own dedicated space. The Input Entry pattern above honours this principle best, providing a clean, intuitive, and predictable experience for the user.
 
-<div class="ds-embed">
-<iframe src="PASTE-FIGMA-OR-STORYBOOK-URL-HERE" loading="lazy" allowfullscreen></iframe>
-<p class="ds-embed-caption">Anatomy diagrams for both Side Sheets and Bottom Sheets (originally screenshotted from the "Goals & Milestones" feature) — replace with the real Figma frames (source images live in the original Supernova asset library and were not re-hosted as part of this migration)</p>
+<div class="ds-embed-missing">
+<p>Anatomy diagrams for both Side Sheets and Bottom Sheets (originally screenshotted from the "Goals & Milestones" feature) — replace with the real Figma frames (source images live in the original Supernova asset library and were not re-hosted as part of this migration) <em>No confident match found in the Figma "Pulse Components" file during the automated audit — please link the correct frame directly via the CMS's Embed block.</em></p>
 </div>

@@ -10,15 +10,15 @@ status: draft
 ### Desktop
 
 <div class="ds-embed">
-<iframe src="PASTE-FIGMA-OR-STORYBOOK-URL-HERE" loading="lazy" allowfullscreen></iframe>
-<p class="ds-embed-caption">Desktop specimen — replace with the real Figma frame or Storybook link (not scrapable from Supernova, needs re-linking manually)</p>
+<iframe src="https://www.figma.com/embed?embed_host=pulse-docs&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F4aH6RUyKkttaRIkqfhMH0P%2FPulse-Components%3Fnode-id%3D3884-7717" loading="lazy" allowfullscreen></iframe>
+<p class="ds-embed-caption">Desktop specimen — linked from Figma's "Pulse Components" file (best-effort match; this frame may show all variants together, not just this one — verify and swap if needed).</p>
 </div>
 
 ### Mobile
 
 <div class="ds-embed">
-<iframe src="PASTE-FIGMA-OR-STORYBOOK-URL-HERE" loading="lazy" allowfullscreen></iframe>
-<p class="ds-embed-caption">Mobile specimen — replace with the real Figma frame or Storybook link (not scrapable from Supernova, needs re-linking manually)</p>
+<iframe src="https://www.figma.com/embed?embed_host=pulse-docs&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F4aH6RUyKkttaRIkqfhMH0P%2FPulse-Components%3Fnode-id%3D3885-7725" loading="lazy" allowfullscreen></iframe>
+<p class="ds-embed-caption">Mobile specimen — linked from Figma's "Pulse Components" file (best-effort match; this frame may show all variants together, not just this one — verify and swap if needed).</p>
 </div>
 
 ### Usage & Content Guidelines
@@ -40,15 +40,15 @@ status: draft
 ### Desktop
 
 <div class="ds-embed">
-<iframe src="PASTE-FIGMA-OR-STORYBOOK-URL-HERE" loading="lazy" allowfullscreen></iframe>
-<p class="ds-embed-caption">Desktop specimen (Attention / Error / Urgency / Success / General / Greyed) — replace with the real Figma frame or Storybook link (source images live in the original Supernova asset library and were not re-hosted as part of this migration)</p>
+<iframe src="https://www.figma.com/embed?embed_host=pulse-docs&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F4aH6RUyKkttaRIkqfhMH0P%2FPulse-Components%3Fnode-id%3D3884-7717" loading="lazy" allowfullscreen></iframe>
+<p class="ds-embed-caption">Desktop specimen (Attention / Error / Urgency / Success / General / Greyed) — linked from Figma's "Pulse Components" file (best-effort match; this frame may show all variants together, not just this one — verify and swap if needed).</p>
 </div>
 
 ### Mobile
 
 <div class="ds-embed">
-<iframe src="PASTE-FIGMA-OR-STORYBOOK-URL-HERE" loading="lazy" allowfullscreen></iframe>
-<p class="ds-embed-caption">Mobile specimen (Attention / Error / Urgency / Success / General / Greyed) — replace with the real Figma frame or Storybook link (source images live in the original Supernova asset library and were not re-hosted as part of this migration)</p>
+<iframe src="https://www.figma.com/embed?embed_host=pulse-docs&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F4aH6RUyKkttaRIkqfhMH0P%2FPulse-Components%3Fnode-id%3D3885-7725" loading="lazy" allowfullscreen></iframe>
+<p class="ds-embed-caption">Mobile specimen (Attention / Error / Urgency / Success / General / Greyed) — linked from Figma's "Pulse Components" file (best-effort match; this frame may show all variants together, not just this one — verify and swap if needed).</p>
 </div>
 
 ### Usage & Content Guidelines

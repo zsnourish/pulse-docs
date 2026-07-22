@@ -8,8 +8,8 @@ Our icon library is based on [Phosphor](https://phosphoricons.com/) in Regular -
 ## Storybook
 
 <div class="ds-embed">
-<iframe src="PASTE-FIGMA-OR-STORYBOOK-URL-HERE" loading="lazy" allowfullscreen></iframe>
-<p class="ds-embed-caption">Storybook icon browser — replace with the real Storybook link (not scrapable from Supernova, needs re-linking manually)</p>
+<iframe src="https://nourish-pulse-storybook.s3.eu-west-2.amazonaws.com/index.html?path=/docs/components-pulseicon--docs" loading="lazy" allowfullscreen></iframe>
+<p class="ds-embed-caption">Storybook icon browser — linked directly to the PulseIcon docs page.</p>
 </div>
 
 ## All Pulse Icons

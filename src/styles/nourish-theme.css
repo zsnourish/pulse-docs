@@ -262,3 +262,17 @@ starlight-page-title h1,
 .ds-embed .ds-embed-caption:empty {
   display: none;
 }
+/* Placeholder shown when a doc has no real Figma/Storybook link yet — a
+   plain dashed box, deliberately NOT an iframe, so there's no src to
+   accidentally resolve as a broken same-site relative URL. */
+.ds-embed-missing {
+  margin: 1.25rem 0;
+  padding: 0.85rem 1rem;
+  border: 1px dashed var(--pulse-neutral-40);
+  border-radius: 0.75rem;
+  color: var(--pulse-neutral-90);
+  font-size: 0.85rem;
+}
+.ds-embed-missing p {
+  margin: 0;
+}

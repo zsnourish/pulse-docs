@@ -7,16 +7,14 @@ status: draft
 
 ## Desktop
 
-<div class="ds-embed">
-<iframe src="PASTE-FIGMA-OR-STORYBOOK-URL-HERE" loading="lazy" allowfullscreen></iframe>
-<p class="ds-embed-caption">Desktop specimen — replace with the real Figma frame or Storybook link (not scrapable from Supernova, needs re-linking manually)</p>
+<div class="ds-embed-missing">
+<p>Desktop specimen — replace with the real Figma frame or Storybook link (not scrapable from Supernova, needs re-linking manually) <em>No confident match found in the Figma "Pulse Components" file during the automated audit — please link the correct frame directly via the CMS's Embed block.</em></p>
 </div>
 
 ## Mobile
 
-<div class="ds-embed">
-<iframe src="PASTE-FIGMA-OR-STORYBOOK-URL-HERE" loading="lazy" allowfullscreen></iframe>
-<p class="ds-embed-caption">Mobile specimen — replace with the real Figma frame or Storybook link (not scrapable from Supernova, needs re-linking manually)</p>
+<div class="ds-embed-missing">
+<p>Mobile specimen — replace with the real Figma frame or Storybook link (not scrapable from Supernova, needs re-linking manually) <em>No confident match found in the Figma "Pulse Components" file during the automated audit — please link the correct frame directly via the CMS's Embed block.</em></p>
 </div>
 
 ## Usage & Content Guidelines
