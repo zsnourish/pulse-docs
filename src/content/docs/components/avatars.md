@@ -1,0 +1,57 @@
+---
+title: Avatars
+status: draft
+---
+
+Our Pulse **avatar** sets thoughtfully represent both People We Support (PWS) and Carers, designed to reflect real-world diversity while aligning with our platform's tone of dignified optimism and professional care.
+
+## PWS Avatars
+
+Our set of 10 PWS avatars balances ethnicity, age and gender while addressing representation gaps. We've also included four individuals with Down Syndrome to address underrepresentation in the media (Source: National Down Syndrome Society, 2023).
+
+These avatars deliberately avoid overt disability markers like wheelchairs to ensure flexible usage across contexts. Expressions range from warm smiles to neutral, carefully crafted to communicate balanced optimism and respect. This approach allows the avatars to work across various touchpoints while maintaining consistency with our Nourish values.
+
+The set:
+
+- Sam Brooks (Samuel Brooks)
+- Leila Hassan (Leila S Hassan)
+- Sasha Hill (Sasha Ann Hill)
+- Nico Wilson (Nico J Wilson)
+- Mira Rossi
+- Adam Santos
+- Danny Silva (Down Syndrome PWS)
+- Darius Clay (Down Syndrome PWS)
+- Sara Joy (Down Syndrome PWS)
+- Ella Gonzalez (Down Syndrome PWS)
+
+## Staff Avatars
+
+Our 8 Staff/Carer avatars mirror actual UK care workforce demographics, with 70% identifying as Black or POC and 80% being women (Skills for Care 2022).
+
+These avatars feature lanyards as subtle professional identifiers. Expressions strike a balance between neutral and subtly smiling, conveying both the competence and human warmth which is characteristic of care professionals.
+
+The set:
+
+- Lina Idris
+- Rafi Ali
+- Karim Bennett
+- Maya Park
+- Alex Adams
+- Tara Reed
+- Amina Ahmed
+- Diana Martinez
+
+## Usage & Content Guidelines
+
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Use in conjunction with the assigned PWS or Staff name for a rounded experience. Some PWS have a full name (in subtitles above) and their 'preferred' name which is the default.</p>
+</div>
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Use <a href="https://www.figma.com/community/plugin/1321827706516209557/simple-randomizer">this Figma plugin</a> to randomise selection of PWS or Staff avatars and thereby reduce unconscious bias.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Do not intermix PWS and Staff/Carer avatars - maintain role clarity.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Do not alter or edit. Use these avatars as they are. This is important to maintain consistency in quality, tone and balance in representation.</p>
+</div>

@@ -1,0 +1,8 @@
+---
+title: Updates & Decisions
+status: draft
+---
+
+Linked below are our Pulse changelog and Pulse DSDRs (design system decision records) maintained by the design team as we progress.
+
+[Pulse Updates & Decisions — view our Pulse changelog and DSDRs](https://sharing.clickup.com/6657194/gr/h/6b55a-32012/9209e7c08a30428)

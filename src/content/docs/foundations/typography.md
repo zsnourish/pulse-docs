@@ -1,0 +1,122 @@
+---
+title: Typography
+status: draft
+---
+
+Pulse's approach is influenced by [Utopia's fluid type system](https://utopia.fyi/), thereby considering a maximum (1440px/desktop) and minimum width (320px/mobile), and allowing CSS to facilitate fluid transition between sizes.
+
+**Default** is for body text, **Prose** is for long-form, **Strong** is for bold text (i.e. alerts) and headings.
+
+Some styles will sit in multiple buckets i.e. some styles will repeat in Prose but with adjusted line-height, and in Strong with adjusted weight.
+
+## Default
+
+### Desktop (1440px)
+
+**Desktop / Default**
+
+| Style | Spec | Usage |
+| --- | --- | --- |
+| Error Message | Inter 400 12px/147.9926%, underline | Error message for form input fields |
+| Captions Small | Inter 400 12px | Form labels, captions, timestamps. Pair with Body Small. |
+| Captions Regular | Inter 400 14px | |
+| Body Small | Inter 400 16px/21.4px | Dense tables, secondary info. Pair with Captions. |
+| Body Regular ★ | Inter 400 18px/23.8px | Main content, form inputs. Pair with H3. |
+| Body Large | Inter 400 20px/26.2px | Intro paragraphs, CTAs. Pair with H2. |
+
+**Desktop / Strong**
+
+| Style | Spec | Usage |
+| --- | --- | --- |
+| Captions Small | Inter 500 12px | Form labels, captions, timestamps. Pair with Body Small. |
+| Captions Regular | Inter 500 14px | Form labels, captions, timestamps. Pair with Body Small. |
+| Body Small | Inter 500 16px/21.4px | Dense tables, secondary info. Pair with Captions. |
+| Body Regular ★ | Inter 500 18px/23.8px | Main content, form inputs. Pair with H3. |
+| Body Large | Inter 500 20px/26.2px | Intro paragraphs, CTAs. Pair with H2. |
+| H5 | FS Me 700 18px | Card titles, modal subheadings. Pair with Body Regular. |
+| H4 | FS Me 700 20px | Card titles, modal subheadings. Pair with Body Regular. |
+| H3 | FS Me 700 24px | Card titles, modal subheadings. Pair with Body Regular. |
+| H2 | FS Me 700 32px | Section titles (e.g., "Patient Vitals"). Pair with Body Large. |
+| H1 | FS Me 700 40px | Page titles, critical alerts. Pair with Body Large. |
+| Display | FS Me 700 48px | Login headers, hero banners. Pair with Body Large. |
+
+### Mobile (320px)
+
+**Mobile / Default**
+
+| Style | Spec | Usage |
+| --- | --- | --- |
+| Error Message | Inter 400 12px/147.9926%, underline | Error message for form input fields |
+| Captions Small | Inter 400 12px | Form labels, captions, timestamps. Pair with Body Small. |
+| Captions Regular | Inter 400 14px | Form labels, captions, timestamps. Pair with Body Small. |
+| Body Small | Inter 400 15px/20.2px | Dense tables, secondary info. Pair with Captions. |
+| Body Regular ★ | Inter 400 16px/21.4px | Main content, form inputs. Pair with H3. |
+| Body Large | Inter 400 18px/23.8px | Intro paragraphs, CTAs. Pair with H2. |
+
+**Mobile / Strong**
+
+| Style | Spec | Usage |
+| --- | --- | --- |
+| Captions Small | Inter 500 12px | Form labels, captions, timestamps. Pair with Body Small. |
+| Captions Regular | Inter 500 14px | Form labels, captions, timestamps. Pair with Body Small. |
+| Body Small | Inter 500 15px/20.2px | Dense tables, secondary info. Pair with Captions. |
+| Body Regular | Inter 500 16px/21.4px | Main content, form inputs. Pair with H3. |
+| Body Large | Inter 500 18px/23.8px | Intro paragraphs, CTAs. Pair with H2. |
+| H5 | FS Me 700 16px | Card titles, modal subheadings. Pair with Body Regular. |
+| H4 | FS Me 700 18px | Card titles, modal subheadings. Pair with Body Regular. |
+| H3 | FS Me 700 20px | Card titles, modal subheadings. Pair with Body Regular. |
+| H2 | FS Me 700 24px | Section titles (e.g., "Patient Vitals"). Pair with Body Large. |
+| H1 | FS Me 700 28px | Page titles, critical alerts. Pair with Body Large. |
+| Display | FS Me 700 32px | Login headers, hero banners. Pair with Body Large. |
+
+## Power BI
+
+Since Power BI has limited font support and cannot accommodate fluid type, we will instead use fallback fonts in a system which works for both 1440px and mobile at 375px (which Power BI's Mobile Layout works best on).
+
+**Default** is for body text, **Prose** is for long-form, **Strong** is for bold text (i.e. alerts) and headings.
+
+Some styles will sit in multiple buckets i.e. some styles will repeat in Prose but with adjusted line-height, and in Strong with adjusted weight.
+
+### Desktop (1440px)
+
+**Desktop (Power BI) / Default**
+
+| Style | Spec | Usage |
+| --- | --- | --- |
+| Captions Small | Segoe UI 400 12px | Axis labels, captions |
+| Captions Regular | Segoe UI 400 14px | Axis labels, captions |
+| Body Small | Segoe UI 400 15px/22px | Table footnotes |
+| Body Regular | Segoe UI 400 16px/23.3px | Card body text |
+| Body Large | Segoe UI 400 18px/25.9px | KPI values, buttons |
+
+**Desktop (Power BI) / Strong**
+
+| Style | Spec | Usage |
+| --- | --- | --- |
+| H5 | Arial 700 16px | |
+| H4 | Arial 700 18px | Card titles |
+| H3 | Arial 700 20px | Card titles |
+| H2 | Arial 700 24px | Dashboard headings |
+| H1 | Arial 700 28px | Page titles |
+
+### Mobile (320px)
+
+**Mobile (Power BI) / Default**
+
+| Style | Spec | Usage |
+| --- | --- | --- |
+| Captions | Segoe UI 400 12px | Axis labels, captions |
+| Captions | Segoe UI 400 14px | Axis labels, captions |
+| Body Small | Segoe UI 400 15px/22px | Table footnotes |
+| Body Regular | Segoe UI 400 16px/23.3px | Card body text |
+| Body Large | Segoe UI 400 18px/25.9px | KPI values, buttons |
+
+**Mobile (Power BI) / Strong**
+
+| Style | Spec | Usage |
+| --- | --- | --- |
+| H5 | Arial 700 16px | |
+| H4 | Arial 700 18px | |
+| H3 | Arial 700 20px | Card titles |
+| H2 | Arial 700 24px | Dashboard headings |
+| H1 | Arial 700 28px | Page titles |

@@ -1,0 +1,95 @@
+---
+title: Iconography
+status: draft
+---
+
+Our icon library is based on [Phosphor](https://phosphoricons.com/) in Regular - below you'll see a searchable list of icons with the name as in Phosphor i.e. Icons/[Phosphor Name], and the name within Pulse beneath each one.
+
+## Storybook
+
+<div class="ds-embed">
+<iframe src="PASTE-FIGMA-OR-STORYBOOK-URL-HERE" loading="lazy" allowfullscreen></iframe>
+<p class="ds-embed-caption">Storybook icon browser — replace with the real Storybook link (not scrapable from Supernova, needs re-linking manually)</p>
+</div>
+
+## All Pulse Icons
+
+Full download of all icons is available from the source Figma library. The current set (Pulse name — Phosphor name):
+
+| Pulse name | Phosphor icon |
+| --- | --- |
+| Reload | Icons / ArrowClockwise |
+| Discard | Icons / ArrowCounterClockwise |
+| Previous | Icons / ArrowLeft / Back |
+| Continue | Icons / ArrowRight / Next |
+| Sync | Icons / ArrowsClockwise |
+| Collapse | Icons / ArrowsIn |
+| Expand | Icons / ArrowsOut |
+| Skin Integrity | Icons / Care Domains / Bandaids |
+| Cognition | Icons / Care Domains / Brain |
+| Communication | Icons / Care Domains / ChatCircleDots |
+| Sleep & Rest | Icons / Care Domains / CloudMoon |
+| Community & Recreation | Icons / Care Domains / DiscoBall / Social |
+| Continence | Icons / Care Domains / Drop |
+| Sensory | Icons / Care Domains / Ear |
+| Mental Health | Icons / Care Domains / FlowerLotus |
+| Mobility & Physical | Icons / Care Domains / Footprints |
+| Nutrition & Hydration | Icons / Care Domains / ForkKnife |
+| Religious & Spiritual Identity | Icons / Care Domains / GlobeStand / Cultural |
+| Education & Employment | Icons / Care Domains / GraduationCap |
+| Sexuality & Relationships | Icons / Care Domains / HandHeart |
+| Daily Living & Environment | Icons / Care Domains / HouseLine |
+| Behaviour | Icons / Care Domains / PersonSimpleWalk |
+| Medication & Healthcare | Icons / Care Domains / Pill |
+| Specific Diagnosis & Long-Term Conditions | Icons / Care Domains / Pulse |
+| Personal Care & Hygiene | Icons / Care Domains / Shower |
+| Status | Icons / BatteryHigh / Battery |
+| Notifications | Icons / Bell |
+| Saved Items | Icons / BookmarkSimple |
+| Calendar | Icons / CalendarDots |
+| Photo | Icons / Camera |
+| Cancel | Icons / Cancel |
+| Dropdown | Icons / CaretDown |
+| Chat | Icons / Chat |
+| Success | Icons / CheckCircle |
+| Submit | Icons / CheckCircle / Confirm |
+| Clock | Icons / Clock |
+| Recent | Icons / ClockCounterClockwise / History |
+| Explore | Icons / Compass |
+| Duplicate | Icons / Copy |
+| More options | Icons / DotsThree |
+| Download | Icons / Download |
+| Email | Icons / EnvelopeSimple |
+| View | Icons / Eye |
+| Hide | Icons / EyeSlash |
+| Favourite | Icons / Favourite |
+| Document | Icons / File |
+| Directory | Icons / Folder |
+| Filter | Icons / Funnel |
+| Settings | Icons / Gear |
+| Hourglass | Icons / Hourglass |
+| Home | Icons / House |
+| media | Icons / Image / Photo |
+| Information | Icons / Info |
+| Access | Icons / Key / Password |
+| Hyperlink | Icons / LinkSimple |
+| Hamburger | Icons / List / Menu |
+| Private | Icons / LockKey / Secure |
+| Unlock | Icons / LockKeyOpen |
+| Search | Icons / MagnifyingGlass |
+| Location | Icons / MapPin |
+| Voice Input | Icons / Microphone |
+| Edit | Icons / Pencil |
+| Call | Icons / Phone |
+| Create | Icons / PlusCircle / Add |
+| Help | Icons / Question |
+| Share | Icons / ShareFat |
+| Security | Icons / Shield |
+| Sort A-Z | Icons / SortAscending |
+| Sort Z-A | Icons / SortDescending |
+| Loading | Icons / SpinnerGap |
+| Delete | Icons / Trash |
+| Upload | Icons / Upload |
+| Account | Icons / UserCircle / Profile |
+| Alert | Icons / Warning / Warning |
+| Failure | Icons / XCircle / Error |

@@ -1,0 +1,283 @@
+---
+title: Colour
+status: draft
+---
+
+Pulse's colour system is organised into five palettes: Primary, Neutral, Semantic, Accent, and Product Categories.
+
+## Primary
+
+**Primary** (Nourish teal) is the main colour to be used throughout Nourish interfaces.
+
+Primary 70 is the official Nourish brand colour. CTAs are in Primary 100 or 90.
+
+| Token | Hex |
+| --- | --- |
+| Primary 120 | #172f2f |
+| Primary 110 | #214343 |
+| Primary 100 | #2b5656 |
+| Primary 90 | #3e7e7e |
+| Primary 80 | #52a5a5 |
+| Primary 70 ★ | #66cccc |
+| Primary 60 | #85d6d6 |
+| Primary 50 | #a3e0e0 |
+| Primary 40 | #c2ebeb |
+| Primary 30 | #d1f0f0 |
+| Primary 20 | #e0f5f5 |
+| Primary 10 | #f0fafa |
+
+### Usage Guidelines
+
+**Accessibility rule of thumb:** Pair Primary 10 with default text colour Neutral 120. Pair Primary 100 with text colour Neutral 20. These pairings meet WCAG AAA contrast criteria.
+
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Light background: Background 'Primary 10' + text 'Neutral 120' + stroke/icon 'Primary 100'.</p>
+</div>
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Dark background: Background 'Primary 100' + text 'Neutral 20' + icon 'Neutral 20'.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Don't use Primary backgrounds with Primary text. For scalability, always use Neutral 120 or 20 for text as appropriate.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Don't use Primary backgrounds or text with colours other than Neutral.</p>
+</div>
+
+## Neutral
+
+**Neutral** is a cool-toned grey palette which allows depth and distinction in visual hierarchy, particularly in text. Subtle variations in tone enable us to accommodate UI needs and challenges across the platform.
+
+Neutral 20 is our default UI background, with Neutral 10 used for containers. Neutral 120 is our default body text colour.
+
+| Token | Hex |
+| --- | --- |
+| Neutral 130 | #000000 |
+| Neutral 120 ★ | #36393f |
+| Neutral 110 | #51555e |
+| Neutral 100 | #6c727e |
+| Neutral 90 | #878e9d |
+| Neutral 80 | #9fa5b1 |
+| Neutral 70 | #b7bbc4 |
+| Neutral 60 | #cfd2d8 |
+| Neutral 50 | #dbdde2 |
+| Neutral 40 | #e7e8eb |
+| Neutral 30 | #f3f4f5 |
+| Neutral 20 | #f9f9fa |
+| Neutral 10 | #ffffff |
+
+### Usage Guidelines
+
+**Accessibility rule of thumb:** Pair Neutral 120 with either Neutral or Primary in 20, or other colours in their lightest shades. These pairings meet WCAG AAA contrast criteria.
+
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Light background: Background 'Neutral 20' + text 'Neutral 120' + stroke/icon 'Neutral 120'. Dark background: Pair Neutral 120 with Neutral 20.</p>
+</div>
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Dark background: Background 'Neutral 120' + text 'Neutral 20' + icon 'Neutral 20'.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Don't use too much contrast.</p>
+</div>
+
+To implement best practise, never use Neutral 10 with Neutral 130 (black with white). Both shades are to be used sparingly.
+
+## Semantic
+
+**Semantic** colours indicate statuses within the Nourish platform, crucial for communicating in-app feedback to users within the UI.
+
+### Urgency
+
+For critical, irreversible actions with permanent consequences.
+
+Use to warn and inform about **destructive actions that cannot be undone**, usually high-stakes decisions requiring explicit user confirmation — e.g. deleting an account, template, or dataset, or permanently revoking access.
+
+| Token | Hex |
+| --- | --- |
+| Urgency 70 | #cc5252 |
+| Urgency 60 | #d96666 |
+| Urgency 50 | #e57e7e |
+| Urgency 40 | #f29696 |
+| Urgency 30 | #ffb2b2 |
+| Urgency 20 | #fee7e7 |
+| Urgency 10 | #fff5f5 |
+
+### Error
+
+Immediate action required to proceed; system or user-blocking issues.
+
+Use for failures that **block progress** until resolved, requiring correction before continuation — e.g. file upload failed (retry required), form validation errors (missing fields).
+
+| Token | Hex |
+| --- | --- |
+| Error 70 | #f77321 |
+| Error 60 | #f98f4d |
+| Error 50 | #faab7a |
+| Error 40 | #fcc7a6 |
+| Error 30 | #fdd5bc |
+| Error 20 | #fde3d3 |
+| Error 10 | #fef1e9 |
+
+### Attention
+
+Warning of potential risks, but no immediate blockage.
+
+Use for non-critical issues requiring **eventual action**, advisory messages users can ignore at their own risk — e.g. missing documents (e.g., "Upload your ID soon to avoid delays"), drafts nearing deadlines (e.g., "Complete this task by Friday").
+
+| Token | Hex |
+| --- | --- |
+| Attention 70 | #e6c020 |
+| Attention 60 | #ebcd4d |
+| Attention 50 | #f0d979 |
+| Attention 40 | #f5e6a6 |
+| Attention 30 | #f7ecbc |
+| Attention 20 | #faf2d2 |
+| Attention 10 | #fcf9e9 |
+
+### Success
+
+Confirmation of completed actions or positive outcomes.
+
+Use for **success or completion** including successful submissions, approvals, system completions or favourable status updates — e.g. "Form submitted successfully", "Payment approved", "Task marked complete."
+
+| Token | Hex |
+| --- | --- |
+| Success 70 | #4bb97e |
+| Success 60 | #5ec990 |
+| Success 50 | #74d8a2 |
+| Success 40 | #96e9bc |
+| Success 30 | #d2f9e4 |
+| Success 20 | #edfcf4 |
+| Success 10 | #f6fef9 |
+
+### General
+
+Neutral information, guidance or passive statuses.
+
+Use for supplemental details **without urgency**, navigation hints or non-actionable states — e.g. "Learn more" links, 'neutral' status labels (e.g., "Pending review"), informational tooltips.
+
+| Token | Hex |
+| --- | --- |
+| General 70 | #7390cd |
+| General 60 | #7390cd |
+| General 50 | #a4b4db |
+| General 40 | #c2cce5 |
+| General 30 | #d1d8ec |
+| General 20 | #e7edfe |
+| General 10 | #f5f8ff |
+
+### Usage Guidelines
+
+These examples use the Semantic colour 'General'.
+
+**Accessibility caution:** RAG colours can be difficult to incorporate according to WCAG contrast criteria. To address this, semantic colours **must** be used in tandem with iconography and/or as clear labelling as possible.
+
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Light background: Background 'Semantic 10' + text 'Neutral 120' + stroke/icon 'Semantic 70'.</p>
+</div>
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Dark background: Background 'Urgency 70' + text 'Neutral 20' + icon 'Neutral 20'.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Don't pair Semantic backgrounds with Semantic text.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Don't pair Semantic with Primary.</p>
+</div>
+
+## Accent
+
+Accent colours are to be used as needed for multi-coloured components such as selection chips.
+
+| Palette | 6 | 5 | 4 | 3 | 2 | 1.5 | 1 | 0.5 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Pink Clay | #b36d7b | #d68595 | #de9daa | #e6b6bf | #efced5 | #f3dadf | #f7e7ea | #fbf3f4 |
+| Lapis | #3d3c80 | #4c4ba0 | #706fb3 | #9493c6 | #b7b7d9 | #c9c9e2 | #dbdbec | #ededf5 |
+| Lavender | #65469b | #7e57c2 | #9879ce | #b29ada | #cbbce7 | #d8cded | #e5ddf3 | #f2eef9 |
+| Olive | #717f2d | #8d9f38 | #a4b260 | #bbc588 | #d1d9af | #dde2c3 | #e8ecd7 | #f4f5eb |
+| Topaz | #027cb7 | #039be5 | #35afea | #68c3ef | #9ad7f5 | #b3e1f7 | #cdebfa | #e6f5fc |
+| Mulberry | #813474 | #a14191 | #b467a7 | #c78dbd | #d9b3d3 | #e3c6de | #ecd9e9 | #f6ecf4 |
+| Ice | #7e9dba | #99bbdb | #adc9e2 | #c2d6e9 | #d6e4f1 | #e0ebf4 | #ebf1f8 | #f5f8fb |
+| Jade | #627e76 | #7b9d94 | #95b1a9 | #b0c4bf | #cad8d4 | #d7e2df | #e5ebea | #f2f5f4 |
+
+### Usage Guidelines
+
+These examples use the Accent colour 'Lapis'.
+
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Light background: Background 'Accent 0.5' + text 'Neutral 120' + stroke/icon 'Accent 6'.</p>
+</div>
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Dark background: Background 'Accent 6' + text 'Neutral 20' + icon 'Neutral 20'.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Don't pair Accent backgrounds with Accent text.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Don't pair Accent with Primary.</p>
+</div>
+
+## Product Categories
+
+For use as accents through the UI as part of our multi-product strategy.
+
+### Care Delivery
+
+Better Care, Better Care at Home, Wellbeing
+
+| Token | Hex |
+| --- | --- |
+| Care Delivery 6 | #ba4e74 |
+| Care Delivery 5 | #dd5f8b |
+| Care Delivery 4 | #e47fa2 |
+| Care Delivery 3 | #eb9fb9 |
+| Care Delivery 2 | #f1bfd1 |
+| Care Delivery 1.5 | #f5cfdc |
+| Care Delivery 1 | #f8dfe8 |
+| Care Delivery 0.5 | #fceff3 |
+
+### Continuous Improvement
+
+Safety, Confidence, Blueprint, Prevent
+
+| Token | Hex |
+| --- | --- |
+| Cont. Improv 6 | #5c5c3e |
+| Cont. Improv 5 | #73734e |
+| Cont. Improv 4 | #8d8d6f |
+| Cont. Improv 3 | #a7a790 |
+| Cont. Improv 2 | #c2c2b0 |
+| Cont. Improv 1.5 | #cfcfc1 |
+| Cont. Improv 1 | #dcdcd1 |
+| Cont. Improv 0.5 | #e9e9e2 |
+
+### Operations
+
+Empower, Transparency, Protect, eLearning
+
+| Token | Hex |
+| --- | --- |
+| Operations 6 | #2c3a83 |
+| Operations 5 | #3749a4 |
+| Operations 4 | #5f6db6 |
+| Operations 3 | #8792c8 |
+| Operations 2 | #afb6db |
+| Operations 1.5 | #c3c8e4 |
+| Operations 1 | #d7dbed |
+| Operations 0.5 | #ebedf6 |
+
+### Usage Guidelines
+
+These examples use the Product Category colour 'Continuous Improvement'.
+
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Light background: Background 'Product Category 0.5' + text 'Neutral 120' + stroke/icon 'Product Category 6'.</p>
+</div>
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Dark background: Background 'Product Category 6' + text 'Neutral 20' + icon 'Neutral 20'.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Don't pair Product Category backgrounds with Product Category text.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Don't pair Product Category with Primary.</p>
+</div>

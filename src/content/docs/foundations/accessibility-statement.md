@@ -1,0 +1,83 @@
+---
+title: Accessibility Statement
+status: draft
+---
+
+The following statement is also published on our Nourish website:
+
+## Our Commitment to Inclusive Design
+
+At Nourish, we are committed to digital inclusion. We believe that a great user experience is one that is accessible to **everyone.** While accessibility is crucial for users with disabilities, it also enhances usability for all, creating a more robust and inclusive experience for every user.
+
+## Measures to Support Accessibility
+
+Nourish takes the following measures to ensure accessibility:
+
+- Integrating accessibility into our new Pulse design system, product development lifecycle, and company practices,
+- Employing an Accessibility Champion & Guild and running continual accessibility sessions across Product teams,
+- Proactively researching and speaking to users with accessibility needs,
+- Assigning clear accessibility targets and responsibilities towards our goal of WCAG 2.2 AA compliance, which we are working to implement across our entire product suite,
+- Actively improving the user experience for assistive technology users, with a current focus on enhancing navigation, feedback, and clarity for screen reader users.
+
+## WCAG Compliance Status
+
+Our current design rebuild includes a phased implementation of our new Pulse design system, which has integrated accessibility measures as a core principle. Users can expect to see the most significant visual and interactive improvements materialise across the legacy platform and newer offerings as we progress through 2026.
+
+We currently define our conformance status based on our product portfolio:
+
+### Nourish Web App
+
+**Current Status:** We believe this product is substantially compliant with WCAG 2.1 Level AA based on an historical assessment, and we're actively working to validate and improve this to meet WCAG 2.2 standards. As it stands, some known limitations include:
+
+- Some colour contrasts are not strictly in line with WCAG 2.1 AA standard
+- Some sections have limitations using keyboard-only navigation
+- Some icons do not have a text label
+- Data visualisation tools embedded in the app (such as PowerBI) use technologies that Nourish cannot fully control
+
+**Goal:** We are targeting an upgrade to WCAG 2.2 Level AA compliance. This work is underway as part of our new design system (Pulse) rollout, which is being implemented incrementally.
+
+### New Products & Features
+
+Our newer products are designed to a higher standard of accessibility from the ground up, championed by our new design system.
+
+- **Goals & Milestones:** This product is a flagship example of our new Pulse design system, built to our WCAG 2.2 Level AA goal from the outset. It represents our current benchmark for accessibility and inclusive UX.
+- **BCaH Mobile App:** Our new mobile app is also built with a strong foundation in accessibility principles, including technical requirements such as robust keyboard navigation, and we are confident it represents a significant step forward. This product has not yet undergone a formal external audit so whilst we cannot verify full compliance yet, we are actively working to align it fully over the upcoming months.
+- **Other Upcoming Releases:** These products are being developed with a goal of WCAG 2.2 Level AA compliance. As they are actively evolving, we are continuously testing and remediating issues.
+
+## Compatibility with Browsers & Assistive Technology
+
+Our products are designed to be compatible with the latest versions of major browsers (Chrome, Firefox, Safari, Edge) and popular screenreaders (JAWS, NVDA, VoiceOver). The vast majority of the Nourish web application works on any web technology however, Nourish officially tests and supports the web application on Google Chrome only. You may experience unexpected behaviour in other browsers, although we use fully validated code which should work on any modern browser.
+
+As a priority through 2026, we'll be looking to actively improve our compatibility with popular screenreaders across our platform.
+
+## Technical Specifications
+
+Accessibility of our products relies on the following technologies to work with the particular combination of web browser and any assistive technologies or plugins installed on your computer:
+
+- HTML
+- WAI-ARIA
+- CSS
+- JavaScript
+
+## Assessment Approach
+
+Nourish assesses the accessibility of its products through the following methods:
+
+- Usability testing of existing and upcoming products,
+- Internal testing and reviews by our product teams,
+- Testing by our dedicated Accessibility Champion and our internal Accessibility Guild,
+- Planned external audits to enable formal evaluations and further understand how to improve our compliance status.
+
+## Areas for Improvement & Feedback
+
+We know that some parts of our legacy platform and newer features may not be fully accessible yet. The areas we are looking to focus on improving include:
+
+- Completing formal audits (both internal and external) for all new products, including the BCaH mobile app, to validate and document compliance,
+- Ensuring a consistent and high-quality visual and interactive experience for all users, with a focus on screenreader users,
+- The full integration of our new, accessible Pulse design system across the entire Nourish Web App experience.
+
+We are committed to improving the accessibility of our Nourish platform. If you find any areas for improvement that aren't listed on this page, please reach out to our CS team or your account manager.
+
+---
+
+This statement was created on **22 October 2025** by Zahra Siddiquia (Head of Design), Anna Alabau (UX Researcher) and Hamid Hafeez (Lead Product and UX Designer), and will be reviewed and updated regularly.

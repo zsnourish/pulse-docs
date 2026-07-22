@@ -1,0 +1,258 @@
+---
+title: Table
+status: draft
+---
+
+A data table for displaying lists of information in rows and columns, with built-in sorting, row actions, and pagination.
+
+> Source page on Supernova was marked **"Table (WIP)"** — content below is migrated as-is; treat as in-progress / subject to change.
+
+## PulseTable
+
+A data table for displaying lists of information in rows and columns, with built-in sorting, row actions, and pagination.
+
+### Overview
+
+PulseTable is the go-to component for showing structured data -- think lists of action items, residents, tasks, or audit records. It handles the common patterns you'd expect from a table: clicking column headers to sort, a three-dot menu at the end of each row for actions like "View" or "Delete", and pagination for long lists.
+
+**Category:** Containers / Data Display
+**Status:** In progress
+
+### When to Use
+
+- Showing lists of records with several pieces of information per row (e.g. name, status, date, assignee)
+- When users need to perform actions on individual rows (view, edit, delete) via a menu
+- When data should be sortable by column
+- For long lists that need to be split across pages
+
+### When Not to Use
+
+- For simple detail views with labels and values -- use **PulseCard** or **PulsePanel**
+- When you only have one or two columns -- a simple list is a better fit
+- For tree-structured or deeply nested data -- use **PulseTreeSelect**
+
+### Anatomy (placeholder image)
+
+```
+┌──────────────────────────────────────────────────────────┐
+│ 🔍 Search... (optional, toggled via "Show Search")       │
+├──────────┬──────────┬──────────┬──────────┬──────────┬───┤
+│ Header   │ Header   │ Header ↓ │ Header   │ Header   │   │ ← Column headers (sortable arrows appear on hover)
+├──────────┼──────────┼──────────┼──────────┼──────────┼───┤
+│ Cell     │ Cell     │ Cell     │ Cell     │ Cell     │ ⋮ │ ← Data rows with optional action menu
+├──────────┼──────────┼──────────┼──────────┼──────────┼───┤
+│ Cell     │ Cell     │ Cell     │ Cell     │ Cell     │ ⋮ │
+├──────────┴──────────┴──────────┴──────────┴──────────┴───┤
+│ ← 1 2 3 ... →              10 per page ▾                  │ ← Pagination (optional)
+└──────────────────────────────────────────────────────────┘
+```
+
+#### Key parts
+
+| Part | Description |
+| --- | --- |
+| **Column header** | Displays the column name. If sorting is enabled, an arrow icon appears on hover and stays visible when that column is actively sorted. |
+| **Data row** | A horizontal row of cells showing one record's information. When row clicking is enabled, the row shows hover and pressed states. |
+| **Action menu** | A three-dot icon at the end of each row that opens a dropdown with actions like View, Edit, or Delete. |
+| **Pagination** | Controls at the bottom that let users move between pages and choose how many rows to show. |
+| **Horizontal scrollbar** | Appears automatically at the bottom of the table when column widths exceed the available container width. Uses Pulse neutral colours and is 6px tall. |
+
+### Behaviour
+
+#### Column sorting
+
+- Clicking a sortable column header sorts the table by that column.
+- Click again to reverse the sort direction.
+- A small arrow icon shows the current sort direction (up for ascending, down for descending).
+- The arrow only appears on hover for unsorted columns -- it stays visible on the currently sorted column.
+- The sorted column header keeps the same light background as other headers (it does **not** turn dark).
+
+#### Row interactions
+
+- **Clickable rows** (optional): When enabled, rows show a pointer cursor, a subtle background change on hover, and a slightly darker background on press/click. This is useful when rows navigate to a detail page.
+- **Action menu**: The three-dot button at the end of each row opens a dropdown menu. The button shows a circular hover and pressed state. Actions can be conditionally shown or hidden per row.
+
+#### Pagination
+
+- When enabled, pagination controls appear at the bottom of the table.
+- Users can navigate between pages and optionally change the number of rows shown per page.
+- Supports both client-side and server-side pagination.
+
+#### Horizontal scrolling
+
+- When the table's columns are too wide to fit in the available space, the table scrolls horizontally.
+- A styled scrollbar appears at the bottom of the table -- it only shows when there is content to scroll to, so it never clutters a table that fits comfortably.
+- The scrollbar uses Pulse neutral colours: a light grey track with a mid-grey thumb that darkens on hover.
+- Horizontal scrolling is enabled by default and can be turned off if needed.
+
+#### Text truncation
+
+- When `truncateLines` is set, cell text is clamped to that number of lines. Content beyond the limit is hidden with an ellipsis (`…`).
+- Applies to all body cells — both plain text and custom cell content (e.g. cells with tags).
+- When not set (the default), cells expand freely to fit their content.
+- Use this to keep row heights consistent when text length varies across rows.
+
+#### Empty and loading states
+
+- If there's no data, the table shows a friendly empty state message (customisable text).
+- When data is loading, the table shows a loading indicator.
+
+### Visual Specifications
+
+#### Colours
+
+| Element | Token | Colour |
+| --- | --- | --- |
+| Header background | `neutral-10` | White |
+| Header background (hover) | `neutral-20` | Light grey |
+| Header text | `neutral-120` | Near-black |
+| Row background | `neutral-10` | White |
+| Row background (hover) | `neutral-20` | Light grey |
+| Clickable row hover | `neutral-30` | Medium-light grey |
+| Clickable row pressed | `neutral-40` | Medium grey |
+| Cell border | `neutral-50` | Mid grey |
+| Scrollbar track | `neutral-20` | Light grey |
+| Scrollbar thumb | `neutral-50` | Mid grey |
+| Scrollbar thumb (hover) | `neutral-80` | Dark grey |
+| Sort icon (default) | `neutral-80` | Dark grey |
+| Sort icon (active) | `primary-90` | Teal |
+| Action button hover | `neutral-20` | Light grey |
+| Action button pressed | `neutral-30` | Medium-light grey |
+
+#### Typography
+
+| Element | Font | Size | Weight |
+| --- | --- | --- | --- |
+| Column header text | Inter | 14px | Medium (500) |
+| Cell text | Inter | 12–14px (`--pulse-font-size-caption-regular`) | Regular (400) |
+| Tag text (PulseTag / PulseStatusTag) | Inter | 11–12px (`--pulse-font-size-caption-small`) | Regular (400) |
+
+#### Spacing
+
+| Element | Value |
+| --- | --- |
+| Cell padding (horizontal) | 14px |
+| Cell padding (vertical) | 10.5px |
+| Action column width | 56px |
+| Action button size | 32 x 32px (circular) |
+| Gap between header text and sort icon | 4px |
+
+### Interactive States
+
+#### Column header states
+
+| State | Background | Sort icon |
+| --- | --- | --- |
+| Default | `neutral-10` | Hidden |
+| Hover | `neutral-20` | Visible (grey) |
+| Sorted | `neutral-10` | Visible (teal) |
+| Sorted + Hover | `neutral-20` | Visible (teal) |
+
+#### Row states (when row clicking is enabled)
+
+| State | Background |
+| --- | --- |
+| Default | `neutral-10` |
+| Hover | `neutral-30` |
+| Pressed | `neutral-40` |
+
+#### Action button states
+
+| State | Background |
+| --- | --- |
+| Default | Transparent |
+| Hover | `neutral-20` (circular) |
+| Pressed | `neutral-30` (circular) |
+| Focus | 2px teal outline |
+
+### Accessibility
+
+PulseTable is built to meet **WCAG 2.2 AA** standards:
+
+- **Screen readers**: The table uses proper HTML table elements (`<table>`, `<th>`, `<td>`) so screen readers can navigate by row and column. The action menu column has a hidden "Actions" label.
+- **Keyboard navigation**: Users can Tab to sortable headers and press Enter or Space to sort. The action menu can be opened with Enter/Space and navigated with arrow keys. Escape closes the menu.
+- **Sort feedback**: The `aria-sort` attribute on column headers tells screen readers the current sort direction.
+- **Loading state**: The table announces when it's loading data.
+- **Focus indicators**: All interactive elements (sort headers, action buttons, pagination) show a visible focus ring.
+
+### Dos and Don'ts
+
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Provide clear, concise column headers.</p>
+</div>
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Enable sorting only on columns where it's meaningful.</p>
+</div>
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Use action menus for operations on individual rows.</p>
+</div>
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Include an empty state message that helps users understand why there's no data.</p>
+</div>
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Use custom cell rendering for status tags, priority badges, and other visual indicators.</p>
+</div>
+<div class="ds-callout ds-do">
+<p><strong>✓ Do</strong> — Use <code>truncateLines</code> when rows contain long-form text and you want a consistent, scannable row height.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Cram too many columns into a narrow space without considering horizontal scroll -- always check how the table looks on smaller screens.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Make every row clickable unless clicking actually navigates somewhere.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Put destructive actions (like Delete) as the first item in the action menu.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Use the table for layout purposes -- it's for structured data only.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Mix clickable rows with too many in-row interactive elements (links, buttons) -- this creates confusing click targets.</p>
+</div>
+<div class="ds-callout ds-dont">
+<p><strong>✗ Don't</strong> — Set <code>truncateLines</code> so low that important information is always hidden -- consider whether a detail panel or expandable row is a better pattern.</p>
+</div>
+
+### Figma Components
+
+The table is available as a set of composable Figma components in the **Pulse table component - WIP** file:
+
+| Component | Variants | Description |
+| --- | --- | --- |
+| **HeaderCell** | Default, Hover, Sorted, Sorted+Hover | A single column header with sort arrow and configurable label |
+| **TableRow** | Default, Hover, Pressed | A row of body cells with an optional action menu |
+| **DataTable** | Show Search (on/off) | The complete table assembled from HeaderCell and TableRow instances |
+
+All components use **library colour variables** and **text styles** -- not hardcoded values -- so they automatically update if the design system tokens change.
+
+### Related Components
+
+| Component | Use when... |
+| --- | --- |
+| **PulseDataTable** | You need a simpler table without sorting or action menus |
+| **PulseAuditTable** | Displaying audit/history records specifically |
+| **PulseMenu** | You need a standalone dropdown action menu |
+| **PulseTag / PulseStatusTag** | Showing status or priority labels inside table cells |
+| **PulseCard** | Displaying a single record's details (not a list) |
+
+### Storybook
+
+<div class="ds-embed">
+<iframe src="https://nourish.supernova-docs.io/story/components-pulsetable" loading="lazy" allowfullscreen></iframe>
+<p class="ds-embed-caption">PulseTable in Storybook — verify this link still resolves before publishing; re-link if the Storybook instance has moved</p>
+</div>
+
+| Story | What it shows |
+| --- | --- |
+| BasicTable | The simplest table with just columns and rows |
+| WithStyledColumns | Custom cell rendering with status and priority tags |
+| SortableColumns | Clickable column headers that sort the data |
+| WithActionMenu | Three-dot menus at the end of each row |
+| AllFeatures | Everything combined: sorting, actions, pagination, clickable rows |
+| WithRowClick | Rows that respond to clicks with hover and pressed feedback |
+| HorizontalScroll | Wide columns that exceed the container, showing the horizontal scrollbar |
+| TruncateLines | Cell text clamped to 2 lines with an ellipsis on overflow |
+| AsyncPaginated | Server-side pagination with loading states |
+| EmptyTable | What users see when there's no data |
+| LoadingTable | The loading skeleton while data is being fetched |

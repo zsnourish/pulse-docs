@@ -1,0 +1,24 @@
+---
+title: AI Ethos
+status: draft
+---
+
+## Clarity over magic
+
+AI can often broaden our thinking, help us ideate, and sometimes challenge our assumptions. We use it to generate ideas, build quick prototypes, and automate repetitive tasks - but its output is always a starting point for discussion, never a final answer. We bring multiple options to the table to compare and refine, not just one to accept.
+
+## Protect the problem space
+
+Understanding the user's problem deeply is the most critical phase of our work. AI can support that discovery, rather than shortcut it. We use it to explore the problem space more widely, not to bypass it.
+
+## Strengthen, not short-circuit
+
+AI enhances each phase of our design process, and we ensure it doesn't jump from prompt to solution. We protect space for shared exploration of problem spaces, because the best criteria for a good solution often only surfaces through collaborative analysis.
+
+## Prioritise learning
+
+Our aim is that time saved by AI goes back into research, testing, and iteration. The goal is deeper learning, not just faster output.
+
+## Human at the helm
+
+AI generates options; our team provides judgement. Every AI-assisted output is checked for bias, fit with user needs, and strategic alignment - because good products are built on a commitment to quality and shared understanding of the people we're designing for.
