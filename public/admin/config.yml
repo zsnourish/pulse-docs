@@ -71,7 +71,7 @@ collections:
     folder: "src/content/docs/components/actions"
     create: true
     slug: "{{slug}}"
-    extension: "md"
+    extension: "mdx"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - label: "Status"
@@ -107,7 +107,7 @@ collections:
     folder: "src/content/docs/components/communication"
     create: true
     slug: "{{slug}}"
-    extension: "md"
+    extension: "mdx"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - label: "Status"
@@ -143,7 +143,7 @@ collections:
     folder: "src/content/docs/components/containers"
     create: true
     slug: "{{slug}}"
-    extension: "md"
+    extension: "mdx"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - label: "Status"
@@ -179,7 +179,7 @@ collections:
     folder: "src/content/docs/components/navigation"
     create: true
     slug: "{{slug}}"
-    extension: "md"
+    extension: "mdx"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - label: "Status"
@@ -215,7 +215,7 @@ collections:
     folder: "src/content/docs/components/selection"
     create: true
     slug: "{{slug}}"
-    extension: "md"
+    extension: "mdx"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - label: "Status"
@@ -251,7 +251,7 @@ collections:
     folder: "src/content/docs/components/text-inputs"
     create: true
     slug: "{{slug}}"
-    extension: "md"
+    extension: "mdx"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - label: "Status"
