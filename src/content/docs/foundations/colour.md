@@ -30,17 +30,23 @@ Primary 70 is the official Nourish brand colour. CTAs are in Primary 100 or 90.
 
 **Accessibility rule of thumb:** Pair Primary 10 with default text colour Neutral 120. Pair Primary 100 with text colour Neutral 20. These pairings meet WCAG AAA contrast criteria.
 
+<div class="ds-callout-columns">
+<div class="ds-callout-col">
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — Light background: Background 'Primary 10' + text 'Neutral 120' + stroke/icon 'Primary 100'.</p>
 </div>
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — Dark background: Background 'Primary 100' + text 'Neutral 20' + icon 'Neutral 20'.</p>
 </div>
+</div>
+<div class="ds-callout-col">
 <div class="ds-callout ds-dont">
 <p><strong>✗ Don't</strong> — Don't use Primary backgrounds with Primary text. For scalability, always use Neutral 120 or 20 for text as appropriate.</p>
 </div>
 <div class="ds-callout ds-dont">
 <p><strong>✗ Don't</strong> — Don't use Primary backgrounds or text with colours other than Neutral.</p>
+</div>
+</div>
 </div>
 
 ## Neutral
@@ -69,14 +75,20 @@ Neutral 20 is our default UI background, with Neutral 10 used for containers. Ne
 
 **Accessibility rule of thumb:** Pair Neutral 120 with either Neutral or Primary in 20, or other colours in their lightest shades. These pairings meet WCAG AAA contrast criteria.
 
+<div class="ds-callout-columns">
+<div class="ds-callout-col">
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — Light background: Background 'Neutral 20' + text 'Neutral 120' + stroke/icon 'Neutral 120'. Dark background: Pair Neutral 120 with Neutral 20.</p>
 </div>
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — Dark background: Background 'Neutral 120' + text 'Neutral 20' + icon 'Neutral 20'.</p>
 </div>
+</div>
+<div class="ds-callout-col">
 <div class="ds-callout ds-dont">
 <p><strong>✗ Don't</strong> — Don't use too much contrast.</p>
+</div>
+</div>
 </div>
 
 To implement best practise, never use Neutral 10 with Neutral 130 (black with white). Both shades are to be used sparingly.
@@ -171,17 +183,23 @@ These examples use the Semantic colour 'General'.
 
 **Accessibility caution:** RAG colours can be difficult to incorporate according to WCAG contrast criteria. To address this, semantic colours **must** be used in tandem with iconography and/or as clear labelling as possible.
 
+<div class="ds-callout-columns">
+<div class="ds-callout-col">
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — Light background: Background 'Semantic 10' + text 'Neutral 120' + stroke/icon 'Semantic 70'.</p>
 </div>
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — Dark background: Background 'Urgency 70' + text 'Neutral 20' + icon 'Neutral 20'.</p>
 </div>
+</div>
+<div class="ds-callout-col">
 <div class="ds-callout ds-dont">
 <p><strong>✗ Don't</strong> — Don't pair Semantic backgrounds with Semantic text.</p>
 </div>
 <div class="ds-callout ds-dont">
 <p><strong>✗ Don't</strong> — Don't pair Semantic with Primary.</p>
+</div>
+</div>
 </div>
 
 ## Accent
@@ -203,17 +221,23 @@ Accent colours are to be used as needed for multi-coloured components such as se
 
 These examples use the Accent colour 'Lapis'.
 
+<div class="ds-callout-columns">
+<div class="ds-callout-col">
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — Light background: Background 'Accent 0.5' + text 'Neutral 120' + stroke/icon 'Accent 6'.</p>
 </div>
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — Dark background: Background 'Accent 6' + text 'Neutral 20' + icon 'Neutral 20'.</p>
 </div>
+</div>
+<div class="ds-callout-col">
 <div class="ds-callout ds-dont">
 <p><strong>✗ Don't</strong> — Don't pair Accent backgrounds with Accent text.</p>
 </div>
 <div class="ds-callout ds-dont">
 <p><strong>✗ Don't</strong> — Don't pair Accent with Primary.</p>
+</div>
+</div>
 </div>
 
 ## Product Categories
@@ -269,15 +293,21 @@ Empower, Transparency, Protect, eLearning
 
 These examples use the Product Category colour 'Continuous Improvement'.
 
+<div class="ds-callout-columns">
+<div class="ds-callout-col">
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — Light background: Background 'Product Category 0.5' + text 'Neutral 120' + stroke/icon 'Product Category 6'.</p>
 </div>
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — Dark background: Background 'Product Category 6' + text 'Neutral 20' + icon 'Neutral 20'.</p>
 </div>
+</div>
+<div class="ds-callout-col">
 <div class="ds-callout ds-dont">
 <p><strong>✗ Don't</strong> — Don't pair Product Category backgrounds with Product Category text.</p>
 </div>
 <div class="ds-callout ds-dont">
 <p><strong>✗ Don't</strong> — Don't pair Product Category with Primary.</p>
+</div>
+</div>
 </div>

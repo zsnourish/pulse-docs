@@ -20,6 +20,8 @@ The Nourish logo is available in the following variants:
 
 ### Usage Guidelines
 
+<div class="ds-callout-columns">
+<div class="ds-callout-col">
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — Use the original, full-colour version by default where possible.</p>
 </div>
@@ -32,6 +34,8 @@ The Nourish logo is available in the following variants:
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — Select the correct logo variant (e.g., main brand vs. specific product) that is relevant to the UI.</p>
 </div>
+</div>
+<div class="ds-callout-col">
 <div class="ds-callout ds-dont">
 <p><strong>✗ Don't</strong> — Avoid letting the logo touch container edges. If placed within a container, the logo must never touch its edges or other nearby elements.</p>
 </div>
@@ -40,6 +44,8 @@ The Nourish logo is available in the following variants:
 </div>
 <div class="ds-callout ds-dont">
 <p><strong>✗ Don't</strong> — Avoid using the wrong logo for the context. Always use the relevant product-specific logo within that product's user interface.</p>
+</div>
+</div>
 </div>
 
 ## Multi-Product
@@ -63,6 +69,8 @@ Each Nourish sub-product has its own logo, available in colour and white variant
 
 ### Usage Guidelines
 
+<div class="ds-callout-columns">
+<div class="ds-callout-col">
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — Use the original, full-colour version by default where possible.</p>
 </div>
@@ -75,6 +83,8 @@ Each Nourish sub-product has its own logo, available in colour and white variant
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — Select the correct logo variant (e.g., main brand vs. specific product) that is relevant to the UI.</p>
 </div>
+</div>
+<div class="ds-callout-col">
 <div class="ds-callout ds-dont">
 <p><strong>✗ Don't</strong> — Avoid letting the logo touch container edges. If placed within a container, the logo must never touch its edges or other nearby elements.</p>
 </div>
@@ -83,4 +93,6 @@ Each Nourish sub-product has its own logo, available in colour and white variant
 </div>
 <div class="ds-callout ds-dont">
 <p><strong>✗ Don't</strong> — Avoid using the wrong logo for the context. Always use the relevant product-specific logo within that product's user interface.</p>
+</div>
+</div>
 </div>

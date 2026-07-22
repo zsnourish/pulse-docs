@@ -139,43 +139,46 @@ main .sl-markdown-content {
 .ds-callout strong {
   margin-right: 0.35rem;
 }
-/* Real Do column / Don't column: floats of the same direction stack within
-   their own side, so this holds even with uneven counts (2 Do + 1 Don't
-   still gives a clean left column of two, right column of one). */
+/* Real Do column / Don't column. Floats were tried here first and got the
+   alignment wrong: with an uneven count (e.g. 1 Do + 2 Don't), a same-side
+   float can't rise above the previous float of that side, so the second
+   Don't got pushed down and to the left instead of stacking under the first
+   Don't -- floats only pack around each other, they don't guarantee "all
+   Do's in one column, all Don'ts in the other." Fixed at the content level
+   instead: consecutive Do/Don't callouts are grouped at build time into a
+   .ds-callout-columns wrapper containing one .ds-callout-col per type, so
+   each column is a real, ordered stack -- alignment is correct for any mix
+   of counts, and there's nothing to clear/contain for the page footer. */
+.ds-callout-columns {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  margin-bottom: 0.6rem;
+}
+.ds-callout-col {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.ds-callout-col .ds-callout:last-child {
+  margin-bottom: 0;
+}
 .ds-do {
-  float: left;
-  width: calc(50% - 0.6rem);
-  margin-right: 1.2rem;
   background: var(--pulse-success-20);
   border-left-color: var(--pulse-success-70);
   color: var(--pulse-neutral-120);
 }
 .ds-do strong { color: var(--pulse-success-70); }
 .ds-dont {
-  float: right;
-  width: calc(50% - 0.6rem);
   background: var(--pulse-urgency-20);
   border-left-color: var(--pulse-urgency-70);
   color: var(--pulse-neutral-120);
 }
 .ds-dont strong { color: var(--pulse-urgency-70); }
-/* Contain the floats inside the markdown content area with a standard
-   clearfix, rather than trying to clear specific elements one by one --
-   the first version of this (clearing just headings/hr/embed) missed the
-   page footer (Edit page / View history / Previous-Next pagination), which
-   isn't part of the markdown body, and floats bled into it, squeezing that
-   text into a near-zero-width column next to the last callout. */
-.sl-markdown-content::after {
-  content: "";
-  display: table;
-  clear: both;
-}
 /* Below ~600px, drop to a single column so text doesn't get cramped. */
 @media (max-width: 37.5em) {
-  .ds-do, .ds-dont {
-    float: none;
-    width: 100%;
-    margin-right: 0;
+  .ds-callout-columns {
+    flex-direction: column;
+    gap: 0;
   }
 }
 

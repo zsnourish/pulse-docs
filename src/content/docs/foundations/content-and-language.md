@@ -22,6 +22,8 @@ There are a few reasons for this decision:
 
 ### Usage & Content Guidelines
 
+<div class="ds-callout-columns">
+<div class="ds-callout-col">
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — Month abbreviations must be capitalised (e.g. Jan, Feb, Dec).</p>
 </div>
@@ -37,6 +39,10 @@ There are a few reasons for this decision:
 <div class="ds-callout ds-do">
 <p><strong>✓ Do</strong> — For a date range spanning two different years, both years must be stated. For example: 15 Dec 2024 – 5 Jan 2025</p>
 </div>
+</div>
+<div class="ds-callout-col">
 <div class="ds-callout ds-dont">
 <p><strong>✗ Don't</strong> — Do not use ordinal indicators (e.g. 7th, 21st). For example, 7th Nov 2024 should be 7 Nov 2024.</p>
+</div>
+</div>
 </div>
