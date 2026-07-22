@@ -65,10 +65,190 @@ collections:
           <p><strong>✗ Don't</strong> — </p>
           </div>
 
-  - name: "components"
-    label: "Components"
-    label_singular: "Components doc"
-    folder: "src/content/docs/components"
+  - name: "components_actions"
+    label: "Components — Actions"
+    label_singular: "Actions doc"
+    folder: "src/content/docs/components/actions"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["draft", "in-review", "approved", "deprecated"]
+        default: "draft"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
+        editor_components: ["do", "dont", "embed", "image"]
+        buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
+        default: |
+          ## Usage
+
+          When should this component be used? Variants and states.
+
+          <div class="ds-callout ds-do">
+          <p><strong>✓ Do</strong> — </p>
+          </div>
+
+          <div class="ds-callout ds-dont">
+          <p><strong>✗ Don't</strong> — </p>
+          </div>
+
+          ## Accessibility
+
+          Keyboard behaviour, screen reader labels, and care-worker-specific considerations (low cognitive load, error prevention).
+  - name: "components_communication"
+    label: "Components — Communication"
+    label_singular: "Communication doc"
+    folder: "src/content/docs/components/communication"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["draft", "in-review", "approved", "deprecated"]
+        default: "draft"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
+        editor_components: ["do", "dont", "embed", "image"]
+        buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
+        default: |
+          ## Usage
+
+          When should this component be used? Variants and states.
+
+          <div class="ds-callout ds-do">
+          <p><strong>✓ Do</strong> — </p>
+          </div>
+
+          <div class="ds-callout ds-dont">
+          <p><strong>✗ Don't</strong> — </p>
+          </div>
+
+          ## Accessibility
+
+          Keyboard behaviour, screen reader labels, and care-worker-specific considerations (low cognitive load, error prevention).
+  - name: "components_containers"
+    label: "Components — Containers"
+    label_singular: "Containers doc"
+    folder: "src/content/docs/components/containers"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["draft", "in-review", "approved", "deprecated"]
+        default: "draft"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
+        editor_components: ["do", "dont", "embed", "image"]
+        buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
+        default: |
+          ## Usage
+
+          When should this component be used? Variants and states.
+
+          <div class="ds-callout ds-do">
+          <p><strong>✓ Do</strong> — </p>
+          </div>
+
+          <div class="ds-callout ds-dont">
+          <p><strong>✗ Don't</strong> — </p>
+          </div>
+
+          ## Accessibility
+
+          Keyboard behaviour, screen reader labels, and care-worker-specific considerations (low cognitive load, error prevention).
+  - name: "components_navigation"
+    label: "Components — Navigation"
+    label_singular: "Navigation doc"
+    folder: "src/content/docs/components/navigation"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["draft", "in-review", "approved", "deprecated"]
+        default: "draft"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
+        editor_components: ["do", "dont", "embed", "image"]
+        buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
+        default: |
+          ## Usage
+
+          When should this component be used? Variants and states.
+
+          <div class="ds-callout ds-do">
+          <p><strong>✓ Do</strong> — </p>
+          </div>
+
+          <div class="ds-callout ds-dont">
+          <p><strong>✗ Don't</strong> — </p>
+          </div>
+
+          ## Accessibility
+
+          Keyboard behaviour, screen reader labels, and care-worker-specific considerations (low cognitive load, error prevention).
+  - name: "components_selection"
+    label: "Components — Selection"
+    label_singular: "Selection doc"
+    folder: "src/content/docs/components/selection"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["draft", "in-review", "approved", "deprecated"]
+        default: "draft"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
+        editor_components: ["do", "dont", "embed", "image"]
+        buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
+        default: |
+          ## Usage
+
+          When should this component be used? Variants and states.
+
+          <div class="ds-callout ds-do">
+          <p><strong>✓ Do</strong> — </p>
+          </div>
+
+          <div class="ds-callout ds-dont">
+          <p><strong>✗ Don't</strong> — </p>
+          </div>
+
+          ## Accessibility
+
+          Keyboard behaviour, screen reader labels, and care-worker-specific considerations (low cognitive load, error prevention).
+  - name: "components_text_inputs"
+    label: "Components — Text Inputs"
+    label_singular: "Text Inputs doc"
+    folder: "src/content/docs/components/text-inputs"
     create: true
     slug: "{{slug}}"
     extension: "md"
