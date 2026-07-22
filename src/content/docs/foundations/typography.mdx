@@ -3,15 +3,18 @@ title: Typography
 status: draft
 ---
 
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
 Pulse's approach is influenced by [Utopia's fluid type system](https://utopia.fyi/), thereby considering a maximum (1440px/desktop) and minimum width (320px/mobile), and allowing CSS to facilitate fluid transition between sizes.
 
 **Default** is for body text, **Prose** is for long-form, **Strong** is for bold text (i.e. alerts) and headings.
 
 Some styles will sit in multiple buckets i.e. some styles will repeat in Prose but with adjusted line-height, and in Strong with adjusted weight.
 
-## Default
+<Tabs>
+<TabItem label="Default">
 
-### Desktop (1440px)
+## Desktop (1440px)
 
 **Desktop / Default**
 
@@ -40,7 +43,7 @@ Some styles will sit in multiple buckets i.e. some styles will repeat in Prose b
 | H1 | FS Me 700 40px | Page titles, critical alerts. Pair with Body Large. |
 | Display | FS Me 700 48px | Login headers, hero banners. Pair with Body Large. |
 
-### Mobile (320px)
+## Mobile (320px)
 
 **Mobile / Default**
 
@@ -69,7 +72,8 @@ Some styles will sit in multiple buckets i.e. some styles will repeat in Prose b
 | H1 | FS Me 700 28px | Page titles, critical alerts. Pair with Body Large. |
 | Display | FS Me 700 32px | Login headers, hero banners. Pair with Body Large. |
 
-## Power BI
+</TabItem>
+<TabItem label="Power BI">
 
 Since Power BI has limited font support and cannot accommodate fluid type, we will instead use fallback fonts in a system which works for both 1440px and mobile at 375px (which Power BI's Mobile Layout works best on).
 
@@ -77,7 +81,7 @@ Since Power BI has limited font support and cannot accommodate fluid type, we wi
 
 Some styles will sit in multiple buckets i.e. some styles will repeat in Prose but with adjusted line-height, and in Strong with adjusted weight.
 
-### Desktop (1440px)
+## Desktop (1440px)
 
 **Desktop (Power BI) / Default**
 
@@ -99,7 +103,7 @@ Some styles will sit in multiple buckets i.e. some styles will repeat in Prose b
 | H2 | Arial 700 24px | Dashboard headings |
 | H1 | Arial 700 28px | Page titles |
 
-### Mobile (320px)
+## Mobile (320px)
 
 **Mobile (Power BI) / Default**
 
@@ -120,3 +124,6 @@ Some styles will sit in multiple buckets i.e. some styles will repeat in Prose b
 | H3 | Arial 700 20px | Card titles |
 | H2 | Arial 700 24px | Dashboard headings |
 | H1 | Arial 700 28px | Page titles |
+
+</TabItem>
+</Tabs>

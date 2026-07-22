@@ -3,9 +3,12 @@ title: Colour
 status: draft
 ---
 
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
 Pulse's colour system is organised into five palettes: Primary, Neutral, Semantic, Accent, and Product Categories.
 
-## Primary
+<Tabs>
+<TabItem label="Primary">
 
 **Primary** (Nourish teal) is the main colour to be used throughout Nourish interfaces.
 
@@ -26,7 +29,7 @@ Primary 70 is the official Nourish brand colour. CTAs are in Primary 100 or 90.
 | Primary 20 | #e0f5f5 |
 | Primary 10 | #f0fafa |
 
-### Usage Guidelines
+## Usage Guidelines
 
 **Accessibility rule of thumb:** Pair Primary 10 with default text colour Neutral 120. Pair Primary 100 with text colour Neutral 20. These pairings meet WCAG AAA contrast criteria.
 
@@ -49,7 +52,8 @@ Primary 70 is the official Nourish brand colour. CTAs are in Primary 100 or 90.
 </div>
 </div>
 
-## Neutral
+</TabItem>
+<TabItem label="Neutral">
 
 **Neutral** is a cool-toned grey palette which allows depth and distinction in visual hierarchy, particularly in text. Subtle variations in tone enable us to accommodate UI needs and challenges across the platform.
 
@@ -71,7 +75,7 @@ Neutral 20 is our default UI background, with Neutral 10 used for containers. Ne
 | Neutral 20 | #f9f9fa |
 | Neutral 10 | #ffffff |
 
-### Usage Guidelines
+## Usage Guidelines
 
 **Accessibility rule of thumb:** Pair Neutral 120 with either Neutral or Primary in 20, or other colours in their lightest shades. These pairings meet WCAG AAA contrast criteria.
 
@@ -93,11 +97,12 @@ Neutral 20 is our default UI background, with Neutral 10 used for containers. Ne
 
 To implement best practise, never use Neutral 10 with Neutral 130 (black with white). Both shades are to be used sparingly.
 
-## Semantic
+</TabItem>
+<TabItem label="Semantic">
 
 **Semantic** colours indicate statuses within the Nourish platform, crucial for communicating in-app feedback to users within the UI.
 
-### Urgency
+## Urgency
 
 For critical, irreversible actions with permanent consequences.
 
@@ -113,7 +118,7 @@ Use to warn and inform about **destructive actions that cannot be undone**, usua
 | Urgency 20 | #fee7e7 |
 | Urgency 10 | #fff5f5 |
 
-### Error
+## Error
 
 Immediate action required to proceed; system or user-blocking issues.
 
@@ -129,7 +134,7 @@ Use for failures that **block progress** until resolved, requiring correction be
 | Error 20 | #fde3d3 |
 | Error 10 | #fef1e9 |
 
-### Attention
+## Attention
 
 Warning of potential risks, but no immediate blockage.
 
@@ -145,7 +150,7 @@ Use for non-critical issues requiring **eventual action**, advisory messages use
 | Attention 20 | #faf2d2 |
 | Attention 10 | #fcf9e9 |
 
-### Success
+## Success
 
 Confirmation of completed actions or positive outcomes.
 
@@ -161,7 +166,7 @@ Use for **success or completion** including successful submissions, approvals, s
 | Success 20 | #edfcf4 |
 | Success 10 | #f6fef9 |
 
-### General
+## General
 
 Neutral information, guidance or passive statuses.
 
@@ -177,7 +182,7 @@ Use for supplemental details **without urgency**, navigation hints or non-action
 | General 20 | #e7edfe |
 | General 10 | #f5f8ff |
 
-### Usage Guidelines
+## Usage Guidelines
 
 These examples use the Semantic colour 'General'.
 
@@ -202,7 +207,8 @@ These examples use the Semantic colour 'General'.
 </div>
 </div>
 
-## Accent
+</TabItem>
+<TabItem label="Accent">
 
 Accent colours are to be used as needed for multi-coloured components such as selection chips.
 
@@ -217,7 +223,7 @@ Accent colours are to be used as needed for multi-coloured components such as se
 | Ice | #7e9dba | #99bbdb | #adc9e2 | #c2d6e9 | #d6e4f1 | #e0ebf4 | #ebf1f8 | #f5f8fb |
 | Jade | #627e76 | #7b9d94 | #95b1a9 | #b0c4bf | #cad8d4 | #d7e2df | #e5ebea | #f2f5f4 |
 
-### Usage Guidelines
+## Usage Guidelines
 
 These examples use the Accent colour 'Lapis'.
 
@@ -240,11 +246,12 @@ These examples use the Accent colour 'Lapis'.
 </div>
 </div>
 
-## Product Categories
+</TabItem>
+<TabItem label="Product Categories">
 
 For use as accents through the UI as part of our multi-product strategy.
 
-### Care Delivery
+## Care Delivery
 
 Better Care, Better Care at Home, Wellbeing
 
@@ -259,7 +266,7 @@ Better Care, Better Care at Home, Wellbeing
 | Care Delivery 1 | #f8dfe8 |
 | Care Delivery 0.5 | #fceff3 |
 
-### Continuous Improvement
+## Continuous Improvement
 
 Safety, Confidence, Blueprint, Prevent
 
@@ -274,7 +281,7 @@ Safety, Confidence, Blueprint, Prevent
 | Cont. Improv 1 | #dcdcd1 |
 | Cont. Improv 0.5 | #e9e9e2 |
 
-### Operations
+## Operations
 
 Empower, Transparency, Protect, eLearning
 
@@ -289,7 +296,7 @@ Empower, Transparency, Protect, eLearning
 | Operations 1 | #d7dbed |
 | Operations 0.5 | #ebedf6 |
 
-### Usage Guidelines
+## Usage Guidelines
 
 These examples use the Product Category colour 'Continuous Improvement'.
 
@@ -311,3 +318,6 @@ These examples use the Product Category colour 'Continuous Improvement'.
 </div>
 </div>
 </div>
+
+</TabItem>
+</Tabs>

@@ -35,7 +35,7 @@ collections:
     folder: "src/content/docs/foundations"
     create: true
     slug: "{{slug}}"
-    extension: "md"
+    extension: "mdx"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - label: "Status"
@@ -288,7 +288,7 @@ collections:
     folder: "src/content/docs/visuals"
     create: true
     slug: "{{slug}}"
-    extension: "md"
+    extension: "mdx"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - label: "Status"
