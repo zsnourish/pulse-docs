@@ -65,6 +65,32 @@ collections:
           <p><strong>✗ Don't</strong> — </p>
           </div>
 
+  - name: "docs_meta"
+    label: "Docs"
+    label_singular: "Docs page"
+    folder: "src/content/docs/docs"
+    create: true
+    slug: "{{slug}}"
+    extension: "mdx"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["draft", "in-review", "approved", "deprecated"]
+        default: "draft"
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
+        editor_components: ["do", "dont", "embed", "image"]
+        buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
+        default: |
+          ## Overview
+
+          What is this, and why does it exist?
+
   - name: "components_actions"
     label: "Components — Actions"
     label_singular: "Actions doc"

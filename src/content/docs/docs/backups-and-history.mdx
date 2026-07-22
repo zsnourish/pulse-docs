@@ -13,11 +13,15 @@ Every publish is a real git commit. GitHub keeps every commit ever made to the r
 - **Nothing is truly deleted**: deleting a doc removes it from the current version, but the file and all its history still exist in past commits. It can always be brought back.
 - **Who changed what**: every page shows "Last updated by" automatically, pulled straight from git — no one has to remember to fill that in.
 
+---
+
 ## There's no "trash bin" — here's why that's fine
 
 Decap CMS doesn't have a soft-delete/trash feature. In practice this doesn't lose anything: because the underlying storage is git, every deleted file is fully recoverable from history, indefinitely — arguably a stronger guarantee than a typical trash bin that auto-empties after 30 days.
 
 **To restore a deleted doc**: find it in the file's history on GitHub (search the repo, or check recent commits for the delete), open the version just before it was removed, and either restore it through GitHub's web UI ("view raw" at that commit, copy the content back into a new doc) or ask whoever manages the repo to run a one-line git command to bring it back exactly as it was.
+
+---
 
 ## Keeping it safe
 

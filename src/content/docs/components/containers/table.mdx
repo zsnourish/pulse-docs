@@ -11,12 +11,16 @@ A data table for displaying lists of information in rows and columns, with built
 
 A data table for displaying lists of information in rows and columns, with built-in sorting, row actions, and pagination.
 
+---
+
 ### Overview
 
 PulseTable is the go-to component for showing structured data -- think lists of action items, residents, tasks, or audit records. It handles the common patterns you'd expect from a table: clicking column headers to sort, a three-dot menu at the end of each row for actions like "View" or "Delete", and pagination for long lists.
 
 **Category:** Containers / Data Display
 **Status:** In progress
+
+---
 
 ### When to Use
 
@@ -25,11 +29,15 @@ PulseTable is the go-to component for showing structured data -- think lists of 
 - When data should be sortable by column
 - For long lists that need to be split across pages
 
+---
+
 ### When Not to Use
 
 - For simple detail views with labels and values -- use **PulseCard** or **PulsePanel**
 - When you only have one or two columns -- a simple list is a better fit
 - For tree-structured or deeply nested data -- use **PulseTreeSelect**
+
+---
 
 ### Anatomy (placeholder image)
 
@@ -56,6 +64,8 @@ PulseTable is the go-to component for showing structured data -- think lists of 
 | **Action menu** | A three-dot icon at the end of each row that opens a dropdown with actions like View, Edit, or Delete. |
 | **Pagination** | Controls at the bottom that let users move between pages and choose how many rows to show. |
 | **Horizontal scrollbar** | Appears automatically at the bottom of the table when column widths exceed the available container width. Uses Pulse neutral colours and is 6px tall. |
+
+---
 
 ### Behaviour
 
@@ -97,6 +107,8 @@ PulseTable is the go-to component for showing structured data -- think lists of 
 - If there's no data, the table shows a friendly empty state message (customisable text).
 - When data is loading, the table shows a loading indicator.
 
+---
+
 ### Visual Specifications
 
 #### Colours
@@ -137,6 +149,8 @@ PulseTable is the go-to component for showing structured data -- think lists of 
 | Action button size | 32 x 32px (circular) |
 | Gap between header text and sort icon | 4px |
 
+---
+
 ### Interactive States
 
 #### Column header states
@@ -165,6 +179,8 @@ PulseTable is the go-to component for showing structured data -- think lists of 
 | Pressed | `neutral-30` (circular) |
 | Focus | 2px teal outline |
 
+---
+
 ### Accessibility
 
 PulseTable is built to meet **WCAG 2.2 AA** standards:
@@ -174,6 +190,8 @@ PulseTable is built to meet **WCAG 2.2 AA** standards:
 - **Sort feedback**: The `aria-sort` attribute on column headers tells screen readers the current sort direction.
 - **Loading state**: The table announces when it's loading data.
 - **Focus indicators**: All interactive elements (sort headers, action buttons, pagination) show a visible focus ring.
+
+---
 
 ### Dos and Don'ts
 
@@ -220,6 +238,8 @@ PulseTable is built to meet **WCAG 2.2 AA** standards:
 </div>
 </div>
 
+---
+
 ### Figma Components
 
 The table is available as a set of composable Figma components in the **Pulse table component - WIP** file:
@@ -232,6 +252,8 @@ The table is available as a set of composable Figma components in the **Pulse ta
 
 All components use **library colour variables** and **text styles** -- not hardcoded values -- so they automatically update if the design system tokens change.
 
+---
+
 ### Related Components
 
 | Component | Use when... |
@@ -241,6 +263,8 @@ All components use **library colour variables** and **text styles** -- not hardc
 | **PulseMenu** | You need a standalone dropdown action menu |
 | **PulseTag / PulseStatusTag** | Showing status or priority labels inside table cells |
 | **PulseCard** | Displaying a single record's details (not a list) |
+
+---
 
 ### Storybook
 

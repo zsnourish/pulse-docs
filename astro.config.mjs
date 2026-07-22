@@ -6,7 +6,7 @@ export default defineConfig({
     starlight({
       title: 'Pulse Docs',
       description: 'Pulse component documentation and tracker',
-      customCss: ['./src/styles/nourish-theme.css'],
+      customCss: ['./src/styles/nourish-theme.css', './src/styles/sidebar-icons.css'],
       logo: {
         src: './src/assets/pulse-logo.png',
         alt: 'Pulse Design System',
@@ -20,7 +20,26 @@ export default defineConfig({
       sidebar: [
         {
           label: 'Foundations',
-          autogenerate: { directory: 'foundations' },
+          items: [
+            {
+              label: 'Visual Identity',
+              items: [
+                { label: 'Colour', link: '/foundations/colour/' },
+                { label: 'Typography', link: '/foundations/typography/' },
+                { label: 'Iconography', link: '/foundations/iconography/' },
+                { label: 'Logos & Brand', link: '/foundations/logos-and-brand/' },
+              ],
+            },
+            {
+              label: 'Principles & Content',
+              items: [
+                { label: 'Accessibility Statement', link: '/foundations/accessibility-statement/' },
+                { label: 'Clinical Safety', link: '/foundations/clinical-safety/' },
+                { label: 'AI Ethos', link: '/foundations/ai-ethos/' },
+                { label: 'Content & Language', link: '/foundations/content-and-language/' },
+              ],
+            },
+          ],
         },
         {
           label: 'Components',
@@ -33,6 +52,19 @@ export default defineConfig({
         {
           label: 'Component Tracker',
           link: '/components/tracker/',
+        },
+        // Deliberately last: internal, "how this site itself works" pages
+        // (coverage audit, review/publish process, backups, changelog) --
+        // useful to keep discoverable, but not something a designer looking
+        // for component or foundation guidance needs to see first.
+        {
+          label: 'Docs',
+          items: [
+            { label: 'Component Coverage', link: '/docs/component-coverage/' },
+            { label: 'Reviewing & Publishing Docs', link: '/docs/reviewing-docs/' },
+            { label: 'Backups & Version History', link: '/docs/backups-and-history/' },
+            { label: 'Updates & Decisions', link: '/docs/updates-and-decisions/' },
+          ],
         },
       ],
       editLink: {

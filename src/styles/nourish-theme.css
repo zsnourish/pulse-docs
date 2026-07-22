@@ -322,3 +322,58 @@ starlight-page-title h1,
   font-size: 0.8rem;
   color: var(--pulse-neutral-90);
 }
+
+/* Logo galleries (Logos & Brand page): real logo files rather than a bare
+   list of variant names -- matches Supernova's own display of these as an
+   actual image grid, not just text. White-variant logos are invisible on
+   the site's white content background, so those tiles get a dark chip
+   (mirroring how a design system would actually show a "for dark surfaces"
+   logo) rather than leaving them looking broken. */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+.logo-grid figure {
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--pulse-neutral-40);
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--pulse-neutral-10);
+}
+.logo-grid figure.logo-tile-dark {
+  background: var(--pulse-neutral-120);
+}
+.logo-grid img {
+  max-width: 100%;
+  max-height: 64px;
+  object-fit: contain;
+}
+.logo-grid figcaption {
+  font-size: 0.75rem;
+  color: var(--pulse-neutral-90);
+  text-align: center;
+}
+.logo-grid figure.logo-tile-dark figcaption {
+  color: var(--pulse-neutral-30);
+}
+
+/* Reference photo inside a Do/Dont callout (Colour page) -- Supernova
+   paired each Do/Don't with an actual screenshot of the pairing in use;
+   dropped during migration, restored here as a small thumbnail above the
+   callout text rather than a full-width image, so the callout grid still
+   reads as a compact reference rather than a photo gallery. */
+.ds-callout-img {
+  display: block;
+  width: 100%;
+  max-height: 110px;
+  object-fit: cover;
+  border-radius: 0.3rem;
+  margin-bottom: 0.5rem;
+}

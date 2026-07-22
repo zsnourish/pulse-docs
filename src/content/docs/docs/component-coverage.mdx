@@ -1,5 +1,5 @@
 ---
-title: Component coverage audit
+title: Component Coverage
 status: draft
 ---
 
@@ -8,6 +8,8 @@ Cross-referenced Figma's "Pulse Components" library file (published components o
 ## Executive summary
 
 Figma is furthest ahead — it has design coverage for roughly 30 component families. Storybook (real built code) covers 38 component titles but several don't match anything in Figma or docs by name, suggesting either naming drift or genuinely undocumented builds. The new docs site now has 20 component pages migrated from Supernova, but Supernova itself was already behind Figma — several components designed and built have no usage guidance written anywhere. Net: the gap isn't "docs behind design," it's "docs behind both design and dev," and a few components exist in dev with no matching design page name at all, which is worth a direct conversation with the team rather than assuming it's just a naming mismatch.
+
+---
 
 ## Coverage matrix
 
@@ -48,6 +50,8 @@ Figma is furthest ahead — it has design coverage for roughly 30 component fami
 | **Text Links** | Yes, marked *"(Pending)"* | No clear match | No | Correctly excluded — still pending |
 | `PulseConfirmDialog`, `PulseFilters`, `PulseForm`, `PulseIcon`, `PulseLink`, `PulseCentralNavigation`, `PulseDragAndDrop`, `PulseContainerLayout` | **Not matched to any obvious Figma page name** | Yes — built | No | **Reverse gap: built in code, no matching Figma page name found and no docs** — needs a direct check with dev, these may be internal/utility components rather than design-system-level ones |
 
+---
+
 ## Priority gaps, ranked
 
 1. **KPI Cards and Rich Text editor** — fully designed *and* built, zero documentation. Fastest to close: content only, no design or dev work needed.
@@ -55,6 +59,8 @@ Figma is furthest ahead — it has design coverage for roughly 30 component fami
 3. **Radio Buttons, Password field, Search field, Error Summary, Toasts, Tooltip** — designed in Figma (Tooltip and possibly others also built), none documented. Password and Search are the two most visible gaps since your own Text Inputs overview page already namechecks them.
 4. **Naming drift** (Sheets↔Drawer, Overflow Bar, Three Dot Menu↔Option Menu, and the cluster of `Pulse*` components with no obvious Figma counterpart) — not necessarily missing work, but the three sources don't speak the same names for the same things. Worth a short naming-alignment pass with design + dev rather than assuming anything's actually missing.
 5. **Correctly excluded, not gaps**: File Upload, Switch, SessionBar, StatusBanner, Text Links — Figma's own page names already flag these as not signed off, pending review, or explicitly "do not use." Leave these out of docs until design clears them.
+
+---
 
 ## Caveats on this audit
 
