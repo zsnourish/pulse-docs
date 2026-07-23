@@ -27,24 +27,26 @@ export default defineConfig({
         {
           label: 'Foundations',
           items: [
+            { label: 'Colour', link: '/foundations/colour/' },
+            { label: 'Typography', link: '/foundations/typography/' },
+            { label: 'Iconography', link: '/foundations/iconography/' },
+            { label: 'Logos & Brand', link: '/foundations/logos-and-brand/' },
+            { label: 'Accessibility', link: '/foundations/accessibility-statement/' },
+            { label: 'AI Ethos', link: '/foundations/ai-ethos/' },
+          ],
+        },
+        {
+          label: 'Voice | Content & Imagery',
+          items: [
             {
-              label: 'Visual Identity',
+              label: 'Content Design',
               items: [
-                { label: 'Colour', link: '/foundations/colour/' },
-                { label: 'Typography', link: '/foundations/typography/' },
-                { label: 'Iconography', link: '/foundations/iconography/' },
-                { label: 'Logos & Brand', link: '/foundations/logos-and-brand/' },
-              ],
-            },
-            {
-              label: 'Principles & Content',
-              items: [
-                { label: 'Accessibility Statement', link: '/foundations/accessibility-statement/' },
                 { label: 'Clinical Safety', link: '/foundations/clinical-safety/' },
-                { label: 'AI Ethos', link: '/foundations/ai-ethos/' },
                 { label: 'Content & Language', link: '/foundations/content-and-language/' },
               ],
             },
+            // 'Imagery' and 'Misc' subcategories: holding off until we know
+            // what pages belong in each -- see chat.
           ],
         },
         {

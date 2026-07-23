@@ -87,6 +87,18 @@ h1, h2, h3, h4, h5,
   --sl-text-h3: 0.9rem; /* was ~16-21px, now a flat ~14px at every breakpoint */
 }
 
+/* 'Component Tracker' is the sidebar's only standalone top-level link (not
+   nested in a group), so Starlight gives it its ".large" group-header
+   treatment by default -- bigger, bolder, different colour than every
+   other page link around it. Bring it back in line. */
+.sidebar-pane a.large[href="/components/tracker/"] {
+  font-size: var(--sl-text-sm);
+  font-weight: 400;
+}
+.sidebar-pane a.large[href="/components/tracker/"]:not([aria-current='page']) {
+  color: var(--pulse-neutral-120);
+}
+
 /* --- GitBook-style polish: rounder, more breathing room --- */
 .sidebar-pane {
   border-right: 1px solid var(--sl-color-hairline-light);
