@@ -425,17 +425,28 @@ starlight-page-title h1,
 
 /* --- Homepage stats row --- */
 .pulse-stats {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   margin: 1.5rem 0;
-  padding: 1.1rem 0;
   border-top: 1px solid var(--pulse-neutral-40);
   border-bottom: 1px solid var(--pulse-neutral-40);
 }
 .pulse-stat {
   display: flex;
   flex-direction: column;
+  gap: 0.2rem;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--pulse-neutral-40);
+}
+/* Right-hand column of the 2x2 grid gets a divider instead of a right
+   border on the left column, so the line only appears once, not doubled. */
+.pulse-stat:nth-child(odd) {
+  border-right: 1px solid var(--pulse-neutral-40);
+}
+/* Last row shouldn't have a bottom border -- the grid's own border-bottom
+   already closes it off. */
+.pulse-stat:nth-last-child(-n+2) {
+  border-bottom: none;
 }
 .pulse-stat-number {
   font-size: 1.9rem;
@@ -446,6 +457,20 @@ starlight-page-title h1,
 .pulse-stat-label {
   font-size: 0.8rem;
   color: var(--pulse-neutral-90);
+}
+@media (max-width: 30em) {
+  .pulse-stats {
+    grid-template-columns: 1fr;
+  }
+  .pulse-stat:nth-child(odd) {
+    border-right: none;
+  }
+  .pulse-stat:nth-last-child(-n+2) {
+    border-bottom: 1px solid var(--pulse-neutral-40);
+  }
+  .pulse-stat:last-child {
+    border-bottom: none;
+  }
 }
 
 /* Logo galleries (Logos & Brand page): real logo files rather than a bare
