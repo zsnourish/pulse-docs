@@ -387,11 +387,13 @@ starlight-page-title h1,
 .avatar-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  justify-items: center;
   gap: 1.25rem;
   margin: 1.25rem 0 1.5rem;
 }
 .avatar-grid figure {
   margin: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -401,6 +403,8 @@ starlight-page-title h1,
 .avatar-grid img {
   width: 84px;
   height: 84px;
+  display: block;
+  margin: 0 auto;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--pulse-neutral-40);

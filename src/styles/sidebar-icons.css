@@ -64,147 +64,147 @@ nav.sidebar a[href="/voice/content-design/content-and-language/"] {
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/actions/button/"] {
+nav.sidebar a[data-icon="cursor-click"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M88%2C24V16a8%2C8%2C0%2C0%2C1%2C16%2C0v8a8%2C8%2C0%2C0%2C1-16%2C0ZM16%2C104h8a8%2C8%2C0%2C0%2C0%2C0-16H16a8%2C8%2C0%2C0%2C0%2C0%2C16ZM124.42%2C39.16a8%2C8%2C0%2C0%2C0%2C10.74-3.58l8-16a8%2C8%2C0%2C0%2C0-14.31-7.16l-8%2C16A8%2C8%2C0%2C0%2C0%2C124.42%2C39.16Zm-96%2C81.69-16%2C8a8%2C8%2C0%2C0%2C0%2C7.16%2C14.31l16-8a8%2C8%2C0%2C1%2C0-7.16-14.31ZM219.31%2C184a16%2C16%2C0%2C0%2C1%2C0%2C22.63l-12.68%2C12.68a16%2C16%2C0%2C0%2C1-22.63%2C0L132.7%2C168%2C115%2C214.09c0%2C.1-.08.21-.13.32a15.83%2C15.83%2C0%2C0%2C1-14.6%2C9.59l-.79%2C0a15.83%2C15.83%2C0%2C0%2C1-14.41-11L32.8%2C52.92A16%2C16%2C0%2C0%2C1%2C52.92%2C32.8L213%2C85.07a16%2C16%2C0%2C0%2C1%2C1.41%2C29.8l-.32.13L168%2C132.69ZM208%2C195.31%2C156.69%2C144h0a16%2C16%2C0%2C0%2C1%2C4.93-26l.32-.14%2C45.95-17.64L48%2C48l52.2%2C159.86%2C17.65-46c0-.11.08-.22.13-.33a16%2C16%2C0%2C0%2C1%2C11.69-9.34%2C16.72%2C16.72%2C0%2C0%2C1%2C3-.28%2C16%2C16%2C0%2C0%2C1%2C11.3%2C4.69L195.31%2C208Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/actions/chips/"] {
+nav.sidebar a[data-icon="tag-chevron"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M246.66%2C123.56%2C201%2C55.12A16%2C16%2C0%2C0%2C0%2C187.72%2C48H32a8%2C8%2C0%2C0%2C0-6.66%2C12.44L70.39%2C128l-45%2C67.56A8%2C8%2C0%2C0%2C0%2C32%2C208H187.72A16%2C16%2C0%2C0%2C0%2C201%2C200.88l45.63-68.44A8%2C8%2C0%2C0%2C0%2C246.66%2C123.56ZM187.72%2C192H47l39.71-59.56a8%2C8%2C0%2C0%2C0%2C0-8.88L47%2C64H187.72l42.67%2C64Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/actions/progress-bar/"] {
+nav.sidebar a[data-icon="gauge"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M207.06%2C72.67A111.24%2C111.24%2C0%2C0%2C0%2C128%2C40h-.4C66.07%2C40.21%2C16%2C91%2C16%2C153.13V176a16%2C16%2C0%2C0%2C0%2C16%2C16H224a16%2C16%2C0%2C0%2C0%2C16-16V152A111.25%2C111.25%2C0%2C0%2C0%2C207.06%2C72.67ZM224%2C176H119.71l54.76-75.3a8%2C8%2C0%2C0%2C0-12.94-9.42L99.92%2C176H32V153.13c0-3.08.15-6.12.43-9.13H56a8%2C8%2C0%2C0%2C0%2C0-16H35.27c10.32-38.86%2C44-68.24%2C84.73-71.66V80a8%2C8%2C0%2C0%2C0%2C16%2C0V56.33A96.14%2C96.14%2C0%2C0%2C1%2C221%2C128H200a8%2C8%2C0%2C0%2C0%2C0%2C16h23.67c.21%2C2.65.33%2C5.31.33%2C8Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/actions/three-dot-menu/"] {
+nav.sidebar a[data-icon="dots-three-vertical"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M140%2C128a12%2C12%2C0%2C1%2C1-12-12A12%2C12%2C0%2C0%2C1%2C140%2C128ZM128%2C72a12%2C12%2C0%2C1%2C0-12-12A12%2C12%2C0%2C0%2C0%2C128%2C72Zm0%2C112a12%2C12%2C0%2C1%2C0%2C12%2C12A12%2C12%2C0%2C0%2C0%2C128%2C184Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/communication/avatars/"] {
+nav.sidebar a[data-icon="user-circle"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M128%2C24A104%2C104%2C0%2C1%2C0%2C232%2C128%2C104.11%2C104.11%2C0%2C0%2C0%2C128%2C24ZM74.08%2C197.5a64%2C64%2C0%2C0%2C1%2C107.84%2C0%2C87.83%2C87.83%2C0%2C0%2C1-107.84%2C0ZM96%2C120a32%2C32%2C0%2C1%2C1%2C32%2C32A32%2C32%2C0%2C0%2C1%2C96%2C120Zm97.76%2C66.41a79.66%2C79.66%2C0%2C0%2C0-36.06-28.75%2C48%2C48%2C0%2C1%2C0-59.4%2C0%2C79.66%2C79.66%2C0%2C0%2C0-36.06%2C28.75%2C88%2C88%2C0%2C1%2C1%2C131.52%2C0Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/communication/photo-gallery/"] {
+nav.sidebar a[data-icon="image"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M216%2C40H40A16%2C16%2C0%2C0%2C0%2C24%2C56V200a16%2C16%2C0%2C0%2C0%2C16%2C16H216a16%2C16%2C0%2C0%2C0%2C16-16V56A16%2C16%2C0%2C0%2C0%2C216%2C40Zm0%2C16V158.75l-26.07-26.06a16%2C16%2C0%2C0%2C0-22.63%2C0l-20%2C20-44-44a16%2C16%2C0%2C0%2C0-22.62%2C0L40%2C149.37V56ZM40%2C172l52-52%2C80%2C80H40Zm176%2C28H194.63l-36-36%2C20-20L216%2C181.38V200ZM144%2C100a12%2C12%2C0%2C1%2C1%2C12%2C12A12%2C12%2C0%2C0%2C1%2C144%2C100Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/communication/tags/"] {
+nav.sidebar a[data-icon="tag"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M243.31%2C136%2C144%2C36.69A15.86%2C15.86%2C0%2C0%2C0%2C132.69%2C32H40a8%2C8%2C0%2C0%2C0-8%2C8v92.69A15.86%2C15.86%2C0%2C0%2C0%2C36.69%2C144L136%2C243.31a16%2C16%2C0%2C0%2C0%2C22.63%2C0l84.68-84.68a16%2C16%2C0%2C0%2C0%2C0-22.63Zm-96%2C96L48%2C132.69V48h84.69L232%2C147.31ZM96%2C84A12%2C12%2C0%2C1%2C1%2C84%2C72%2C12%2C12%2C0%2C0%2C1%2C96%2C84Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/containers/cards/"] {
+nav.sidebar a[data-icon="cards"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M184%2C72H40A16%2C16%2C0%2C0%2C0%2C24%2C88V200a16%2C16%2C0%2C0%2C0%2C16%2C16H184a16%2C16%2C0%2C0%2C0%2C16-16V88A16%2C16%2C0%2C0%2C0%2C184%2C72Zm0%2C128H40V88H184V200ZM232%2C56V176a8%2C8%2C0%2C0%2C1-16%2C0V56H64a8%2C8%2C0%2C0%2C1%2C0-16H216A16%2C16%2C0%2C0%2C1%2C232%2C56Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/containers/panels/"] {
+nav.sidebar a[data-icon="stack"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M230.91%2C172A8%2C8%2C0%2C0%2C1%2C228%2C182.91l-96%2C56a8%2C8%2C0%2C0%2C1-8.06%2C0l-96-56A8%2C8%2C0%2C0%2C1%2C36%2C169.09l92%2C53.65%2C92-53.65A8%2C8%2C0%2C0%2C1%2C230.91%2C172ZM220%2C121.09l-92%2C53.65L36%2C121.09A8%2C8%2C0%2C0%2C0%2C28%2C134.91l96%2C56a8%2C8%2C0%2C0%2C0%2C8.06%2C0l96-56A8%2C8%2C0%2C1%2C0%2C220%2C121.09ZM24%2C80a8%2C8%2C0%2C0%2C1%2C4-6.91l96-56a8%2C8%2C0%2C0%2C1%2C8.06%2C0l96%2C56a8%2C8%2C0%2C0%2C1%2C0%2C13.82l-96%2C56a8%2C8%2C0%2C0%2C1-8.06%2C0l-96-56A8%2C8%2C0%2C0%2C1%2C24%2C80Zm23.88%2C0L128%2C126.74%2C208.12%2C80%2C128%2C33.26Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/containers/sheets/"] {
+nav.sidebar a[data-icon="tray"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M208%2C32H48A16%2C16%2C0%2C0%2C0%2C32%2C48V208a16%2C16%2C0%2C0%2C0%2C16%2C16H208a16%2C16%2C0%2C0%2C0%2C16-16V48A16%2C16%2C0%2C0%2C0%2C208%2C32Zm0%2C16V152h-28.7A15.86%2C15.86%2C0%2C0%2C0%2C168%2C156.69L148.69%2C176H107.31L88%2C156.69A15.86%2C15.86%2C0%2C0%2C0%2C76.69%2C152H48V48Zm0%2C160H48V168H76.69L96%2C187.31A15.86%2C15.86%2C0%2C0%2C0%2C107.31%2C192h41.38A15.86%2C15.86%2C0%2C0%2C0%2C160%2C187.31L179.31%2C168H208v40Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/containers/table/"] {
+nav.sidebar a[data-icon="table"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M224%2C48H32a8%2C8%2C0%2C0%2C0-8%2C8V192a16%2C16%2C0%2C0%2C0%2C16%2C16H216a16%2C16%2C0%2C0%2C0%2C16-16V56A8%2C8%2C0%2C0%2C0%2C224%2C48ZM40%2C112H80v32H40Zm56%2C0H216v32H96ZM216%2C64V96H40V64ZM40%2C160H80v32H40Zm176%2C32H96V160H216v32Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/navigation/overflow-bar/"] {
+nav.sidebar a[data-icon="dots-three-outline"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M128%2C96a32%2C32%2C0%2C1%2C0%2C32%2C32A32%2C32%2C0%2C0%2C0%2C128%2C96Zm0%2C48a16%2C16%2C0%2C1%2C1%2C16-16A16%2C16%2C0%2C0%2C1%2C128%2C144ZM48%2C96a32%2C32%2C0%2C1%2C0%2C32%2C32A32%2C32%2C0%2C0%2C0%2C48%2C96Zm0%2C48a16%2C16%2C0%2C1%2C1%2C16-16A16%2C16%2C0%2C0%2C1%2C48%2C144ZM208%2C96a32%2C32%2C0%2C1%2C0%2C32%2C32A32%2C32%2C0%2C0%2C0%2C208%2C96Zm0%2C48a16%2C16%2C0%2C1%2C1%2C16-16A16%2C16%2C0%2C0%2C1%2C208%2C144Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/navigation/pagination/"] {
+nav.sidebar a[data-icon="arrows-left-right"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M213.66%2C181.66l-32%2C32a8%2C8%2C0%2C0%2C1-11.32-11.32L188.69%2C184H48a8%2C8%2C0%2C0%2C1%2C0-16H188.69l-18.35-18.34a8%2C8%2C0%2C0%2C1%2C11.32-11.32l32%2C32A8%2C8%2C0%2C0%2C1%2C213.66%2C181.66Zm-139.32-64a8%2C8%2C0%2C0%2C0%2C11.32-11.32L67.31%2C88H208a8%2C8%2C0%2C0%2C0%2C0-16H67.31L85.66%2C53.66A8%2C8%2C0%2C0%2C0%2C74.34%2C42.34l-32%2C32a8%2C8%2C0%2C0%2C0%2C0%2C11.32Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/navigation/tabs/"] {
+nav.sidebar a[data-icon="list"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M224%2C128a8%2C8%2C0%2C0%2C1-8%2C8H40a8%2C8%2C0%2C0%2C1%2C0-16H216A8%2C8%2C0%2C0%2C1%2C224%2C128ZM40%2C72H216a8%2C8%2C0%2C0%2C0%2C0-16H40a8%2C8%2C0%2C0%2C0%2C0%2C16ZM216%2C184H40a8%2C8%2C0%2C0%2C0%2C0%2C16H216a8%2C8%2C0%2C0%2C0%2C0-16Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/selection/checkboxes/"] {
+nav.sidebar a[data-icon="check-square"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M173.66%2C98.34a8%2C8%2C0%2C0%2C1%2C0%2C11.32l-56%2C56a8%2C8%2C0%2C0%2C1-11.32%2C0l-24-24a8%2C8%2C0%2C0%2C1%2C11.32-11.32L112%2C148.69l50.34-50.35A8%2C8%2C0%2C0%2C1%2C173.66%2C98.34ZM224%2C48V208a16%2C16%2C0%2C0%2C1-16%2C16H48a16%2C16%2C0%2C0%2C1-16-16V48A16%2C16%2C0%2C0%2C1%2C48%2C32H208A16%2C16%2C0%2C0%2C1%2C224%2C48ZM208%2C208V48H48V208H208Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/selection/date-picker/"] {
+nav.sidebar a[data-icon="calendar"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M208%2C32H184V24a8%2C8%2C0%2C0%2C0-16%2C0v8H88V24a8%2C8%2C0%2C0%2C0-16%2C0v8H48A16%2C16%2C0%2C0%2C0%2C32%2C48V208a16%2C16%2C0%2C0%2C0%2C16%2C16H208a16%2C16%2C0%2C0%2C0%2C16-16V48A16%2C16%2C0%2C0%2C0%2C208%2C32ZM72%2C48v8a8%2C8%2C0%2C0%2C0%2C16%2C0V48h80v8a8%2C8%2C0%2C0%2C0%2C16%2C0V48h24V80H48V48ZM208%2C208H48V96H208V208Zm-96-88v64a8%2C8%2C0%2C0%2C1-16%2C0V132.94l-4.42%2C2.22a8%2C8%2C0%2C0%2C1-7.16-14.32l16-8A8%2C8%2C0%2C0%2C1%2C112%2C120Zm59.16%2C30.45L152%2C176h16a8%2C8%2C0%2C0%2C1%2C0%2C16H136a8%2C8%2C0%2C0%2C1-6.4-12.8l28.78-38.37A8%2C8%2C0%2C1%2C0%2C145.07%2C132a8%2C8%2C0%2C1%2C1-13.85-8A24%2C24%2C0%2C0%2C1%2C176%2C136%2C23.76%2C23.76%2C0%2C0%2C1%2C171.16%2C150.45Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/selection/dropdown/"] {
+nav.sidebar a[data-icon="caret-down"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M213.66%2C101.66l-80%2C80a8%2C8%2C0%2C0%2C1-11.32%2C0l-80-80A8%2C8%2C0%2C0%2C1%2C53.66%2C90.34L128%2C164.69l74.34-74.35a8%2C8%2C0%2C0%2C1%2C11.32%2C11.32Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/selection/number-scale/"] {
+nav.sidebar a[data-icon="sliders-horizontal"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M40%2C88H73a32%2C32%2C0%2C0%2C0%2C62%2C0h81a8%2C8%2C0%2C0%2C0%2C0-16H135a32%2C32%2C0%2C0%2C0-62%2C0H40a8%2C8%2C0%2C0%2C0%2C0%2C16Zm64-24A16%2C16%2C0%2C1%2C1%2C88%2C80%2C16%2C16%2C0%2C0%2C1%2C104%2C64ZM216%2C168H199a32%2C32%2C0%2C0%2C0-62%2C0H40a8%2C8%2C0%2C0%2C0%2C0%2C16h97a32%2C32%2C0%2C0%2C0%2C62%2C0h17a8%2C8%2C0%2C0%2C0%2C0-16Zm-48%2C24a16%2C16%2C0%2C1%2C1%2C16-16A16%2C16%2C0%2C0%2C1%2C168%2C192Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/text-inputs/text-area/"] {
+nav.sidebar a[data-icon="text-align-left"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M32%2C64a8%2C8%2C0%2C0%2C1%2C8-8H216a8%2C8%2C0%2C0%2C1%2C0%2C16H40A8%2C8%2C0%2C0%2C1%2C32%2C64Zm8%2C48H168a8%2C8%2C0%2C0%2C0%2C0-16H40a8%2C8%2C0%2C0%2C0%2C0%2C16Zm176%2C24H40a8%2C8%2C0%2C0%2C0%2C0%2C16H216a8%2C8%2C0%2C0%2C0%2C0-16Zm-48%2C40H40a8%2C8%2C0%2C0%2C0%2C0%2C16H168a8%2C8%2C0%2C0%2C0%2C0-16Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/text-inputs/text-fields/"] {
+nav.sidebar a[data-icon="cursor-text"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M184%2C208a8%2C8%2C0%2C0%2C1-8%2C8H160a40%2C40%2C0%2C0%2C1-32-16%2C40%2C40%2C0%2C0%2C1-32%2C16H80a8%2C8%2C0%2C0%2C1%2C0-16H96a24%2C24%2C0%2C0%2C0%2C24-24V136H104a8%2C8%2C0%2C0%2C1%2C0-16h16V80A24%2C24%2C0%2C0%2C0%2C96%2C56H80a8%2C8%2C0%2C0%2C1%2C0-16H96a40%2C40%2C0%2C0%2C1%2C32%2C16%2C40%2C40%2C0%2C0%2C1%2C32-16h16a8%2C8%2C0%2C0%2C1%2C0%2C16H160a24%2C24%2C0%2C0%2C0-24%2C24v40h16a8%2C8%2C0%2C0%2C1%2C0%2C16H136v40a24%2C24%2C0%2C0%2C0%2C24%2C24h16A8%2C8%2C0%2C0%2C1%2C184%2C208Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;
   background-position: 0 center;
   padding-left: 1.35em;
 }
-nav.sidebar a[href="/components/overview/"] {
+nav.sidebar a[data-icon="squares-four"] {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22%23878e9d%22%3E%3Cpath%20d%3D%22M104%2C40H56A16%2C16%2C0%2C0%2C0%2C40%2C56v48a16%2C16%2C0%2C0%2C0%2C16%2C16h48a16%2C16%2C0%2C0%2C0%2C16-16V56A16%2C16%2C0%2C0%2C0%2C104%2C40Zm0%2C64H56V56h48v48Zm96-64H152a16%2C16%2C0%2C0%2C0-16%2C16v48a16%2C16%2C0%2C0%2C0%2C16%2C16h48a16%2C16%2C0%2C0%2C0%2C16-16V56A16%2C16%2C0%2C0%2C0%2C200%2C40Zm0%2C64H152V56h48v48Zm-96%2C32H56a16%2C16%2C0%2C0%2C0-16%2C16v48a16%2C16%2C0%2C0%2C0%2C16%2C16h48a16%2C16%2C0%2C0%2C0%2C16-16V152A16%2C16%2C0%2C0%2C0%2C104%2C136Zm0%2C64H56V152h48v48Zm96-64H152a16%2C16%2C0%2C0%2C0-16%2C16v48a16%2C16%2C0%2C0%2C0%2C16%2C16h48a16%2C16%2C0%2C0%2C0%2C16-16V152A16%2C16%2C0%2C0%2C0%2C200%2C136Zm0%2C64H152V152h48v48Z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-size: 0.95em 0.95em;

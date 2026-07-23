@@ -148,6 +148,42 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - label: "Nav icon"
+        name: "sidebar"
+        widget: "object"
+        required: false
+        collapsed: true
+        hint: "Controls the icon shown next to this page in the left nav. Leave collapsed/unset to keep whatever it already has."
+        fields:
+          - label: "Icon"
+            name: "attrs"
+            widget: "object"
+            fields:
+              - label: "Icon name"
+                name: "data-icon"
+                widget: "select"
+                options:
+                  - { label: "Cursor / click", value: "cursor-click" }
+                  - { label: "Tag (chevron)", value: "tag-chevron" }
+                  - { label: "Gauge", value: "gauge" }
+                  - { label: "Dots (vertical)", value: "dots-three-vertical" }
+                  - { label: "User circle", value: "user-circle" }
+                  - { label: "Image", value: "image" }
+                  - { label: "Tag", value: "tag" }
+                  - { label: "Cards", value: "cards" }
+                  - { label: "Stack", value: "stack" }
+                  - { label: "Tray", value: "tray" }
+                  - { label: "Table", value: "table" }
+                  - { label: "Dots (outline)", value: "dots-three-outline" }
+                  - { label: "Arrows (left/right)", value: "arrows-left-right" }
+                  - { label: "List", value: "list" }
+                  - { label: "Checkbox", value: "check-square" }
+                  - { label: "Calendar", value: "calendar" }
+                  - { label: "Caret down", value: "caret-down" }
+                  - { label: "Sliders", value: "sliders-horizontal" }
+                  - { label: "Text align", value: "text-align-left" }
+                  - { label: "Cursor / text", value: "cursor-text" }
+                  - { label: "Squares", value: "squares-four" }
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -180,6 +216,42 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - label: "Nav icon"
+        name: "sidebar"
+        widget: "object"
+        required: false
+        collapsed: true
+        hint: "Controls the icon shown next to this page in the left nav. Leave collapsed/unset to keep whatever it already has."
+        fields:
+          - label: "Icon"
+            name: "attrs"
+            widget: "object"
+            fields:
+              - label: "Icon name"
+                name: "data-icon"
+                widget: "select"
+                options:
+                  - { label: "Cursor / click", value: "cursor-click" }
+                  - { label: "Tag (chevron)", value: "tag-chevron" }
+                  - { label: "Gauge", value: "gauge" }
+                  - { label: "Dots (vertical)", value: "dots-three-vertical" }
+                  - { label: "User circle", value: "user-circle" }
+                  - { label: "Image", value: "image" }
+                  - { label: "Tag", value: "tag" }
+                  - { label: "Cards", value: "cards" }
+                  - { label: "Stack", value: "stack" }
+                  - { label: "Tray", value: "tray" }
+                  - { label: "Table", value: "table" }
+                  - { label: "Dots (outline)", value: "dots-three-outline" }
+                  - { label: "Arrows (left/right)", value: "arrows-left-right" }
+                  - { label: "List", value: "list" }
+                  - { label: "Checkbox", value: "check-square" }
+                  - { label: "Calendar", value: "calendar" }
+                  - { label: "Caret down", value: "caret-down" }
+                  - { label: "Sliders", value: "sliders-horizontal" }
+                  - { label: "Text align", value: "text-align-left" }
+                  - { label: "Cursor / text", value: "cursor-text" }
+                  - { label: "Squares", value: "squares-four" }
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -212,6 +284,42 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - label: "Nav icon"
+        name: "sidebar"
+        widget: "object"
+        required: false
+        collapsed: true
+        hint: "Controls the icon shown next to this page in the left nav. Leave collapsed/unset to keep whatever it already has."
+        fields:
+          - label: "Icon"
+            name: "attrs"
+            widget: "object"
+            fields:
+              - label: "Icon name"
+                name: "data-icon"
+                widget: "select"
+                options:
+                  - { label: "Cursor / click", value: "cursor-click" }
+                  - { label: "Tag (chevron)", value: "tag-chevron" }
+                  - { label: "Gauge", value: "gauge" }
+                  - { label: "Dots (vertical)", value: "dots-three-vertical" }
+                  - { label: "User circle", value: "user-circle" }
+                  - { label: "Image", value: "image" }
+                  - { label: "Tag", value: "tag" }
+                  - { label: "Cards", value: "cards" }
+                  - { label: "Stack", value: "stack" }
+                  - { label: "Tray", value: "tray" }
+                  - { label: "Table", value: "table" }
+                  - { label: "Dots (outline)", value: "dots-three-outline" }
+                  - { label: "Arrows (left/right)", value: "arrows-left-right" }
+                  - { label: "List", value: "list" }
+                  - { label: "Checkbox", value: "check-square" }
+                  - { label: "Calendar", value: "calendar" }
+                  - { label: "Caret down", value: "caret-down" }
+                  - { label: "Sliders", value: "sliders-horizontal" }
+                  - { label: "Text align", value: "text-align-left" }
+                  - { label: "Cursor / text", value: "cursor-text" }
+                  - { label: "Squares", value: "squares-four" }
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -244,6 +352,42 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - label: "Nav icon"
+        name: "sidebar"
+        widget: "object"
+        required: false
+        collapsed: true
+        hint: "Controls the icon shown next to this page in the left nav. Leave collapsed/unset to keep whatever it already has."
+        fields:
+          - label: "Icon"
+            name: "attrs"
+            widget: "object"
+            fields:
+              - label: "Icon name"
+                name: "data-icon"
+                widget: "select"
+                options:
+                  - { label: "Cursor / click", value: "cursor-click" }
+                  - { label: "Tag (chevron)", value: "tag-chevron" }
+                  - { label: "Gauge", value: "gauge" }
+                  - { label: "Dots (vertical)", value: "dots-three-vertical" }
+                  - { label: "User circle", value: "user-circle" }
+                  - { label: "Image", value: "image" }
+                  - { label: "Tag", value: "tag" }
+                  - { label: "Cards", value: "cards" }
+                  - { label: "Stack", value: "stack" }
+                  - { label: "Tray", value: "tray" }
+                  - { label: "Table", value: "table" }
+                  - { label: "Dots (outline)", value: "dots-three-outline" }
+                  - { label: "Arrows (left/right)", value: "arrows-left-right" }
+                  - { label: "List", value: "list" }
+                  - { label: "Checkbox", value: "check-square" }
+                  - { label: "Calendar", value: "calendar" }
+                  - { label: "Caret down", value: "caret-down" }
+                  - { label: "Sliders", value: "sliders-horizontal" }
+                  - { label: "Text align", value: "text-align-left" }
+                  - { label: "Cursor / text", value: "cursor-text" }
+                  - { label: "Squares", value: "squares-four" }
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -276,6 +420,42 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - label: "Nav icon"
+        name: "sidebar"
+        widget: "object"
+        required: false
+        collapsed: true
+        hint: "Controls the icon shown next to this page in the left nav. Leave collapsed/unset to keep whatever it already has."
+        fields:
+          - label: "Icon"
+            name: "attrs"
+            widget: "object"
+            fields:
+              - label: "Icon name"
+                name: "data-icon"
+                widget: "select"
+                options:
+                  - { label: "Cursor / click", value: "cursor-click" }
+                  - { label: "Tag (chevron)", value: "tag-chevron" }
+                  - { label: "Gauge", value: "gauge" }
+                  - { label: "Dots (vertical)", value: "dots-three-vertical" }
+                  - { label: "User circle", value: "user-circle" }
+                  - { label: "Image", value: "image" }
+                  - { label: "Tag", value: "tag" }
+                  - { label: "Cards", value: "cards" }
+                  - { label: "Stack", value: "stack" }
+                  - { label: "Tray", value: "tray" }
+                  - { label: "Table", value: "table" }
+                  - { label: "Dots (outline)", value: "dots-three-outline" }
+                  - { label: "Arrows (left/right)", value: "arrows-left-right" }
+                  - { label: "List", value: "list" }
+                  - { label: "Checkbox", value: "check-square" }
+                  - { label: "Calendar", value: "calendar" }
+                  - { label: "Caret down", value: "caret-down" }
+                  - { label: "Sliders", value: "sliders-horizontal" }
+                  - { label: "Text align", value: "text-align-left" }
+                  - { label: "Cursor / text", value: "cursor-text" }
+                  - { label: "Squares", value: "squares-four" }
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -308,6 +488,42 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - label: "Nav icon"
+        name: "sidebar"
+        widget: "object"
+        required: false
+        collapsed: true
+        hint: "Controls the icon shown next to this page in the left nav. Leave collapsed/unset to keep whatever it already has."
+        fields:
+          - label: "Icon"
+            name: "attrs"
+            widget: "object"
+            fields:
+              - label: "Icon name"
+                name: "data-icon"
+                widget: "select"
+                options:
+                  - { label: "Cursor / click", value: "cursor-click" }
+                  - { label: "Tag (chevron)", value: "tag-chevron" }
+                  - { label: "Gauge", value: "gauge" }
+                  - { label: "Dots (vertical)", value: "dots-three-vertical" }
+                  - { label: "User circle", value: "user-circle" }
+                  - { label: "Image", value: "image" }
+                  - { label: "Tag", value: "tag" }
+                  - { label: "Cards", value: "cards" }
+                  - { label: "Stack", value: "stack" }
+                  - { label: "Tray", value: "tray" }
+                  - { label: "Table", value: "table" }
+                  - { label: "Dots (outline)", value: "dots-three-outline" }
+                  - { label: "Arrows (left/right)", value: "arrows-left-right" }
+                  - { label: "List", value: "list" }
+                  - { label: "Checkbox", value: "check-square" }
+                  - { label: "Calendar", value: "calendar" }
+                  - { label: "Caret down", value: "caret-down" }
+                  - { label: "Sliders", value: "sliders-horizontal" }
+                  - { label: "Text align", value: "text-align-left" }
+                  - { label: "Cursor / text", value: "cursor-text" }
+                  - { label: "Squares", value: "squares-four" }
       - label: "Body"
         name: "body"
         widget: "markdown"
