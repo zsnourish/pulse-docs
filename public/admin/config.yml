@@ -11,12 +11,14 @@ publish_mode: editorial_workflow
 media_folder: "src/assets/uploads"
 public_folder: "/uploads"
 
-# Three content categories, mirroring the left nav on the live site. Decap's
-# folder-per-category is what actually drives Starlight's grouped sidebar —
-# a single collection with a "category" dropdown can't reliably route files
-# into different folders (a known Decap limitation), so each category is its
-# own collection here. Functionally it's the same authoring step: pick which
-# of the three you're writing, exactly like picking a tag.
+# One Decap collection per nav category/sub-category, mirroring the left
+# nav on the live site. Decap's folder-per-category is what actually drives
+# Starlight's grouped sidebar — a single collection with a "category"
+# dropdown can't reliably route files into different folders (a known Decap
+# limitation), so each category (and, where the nav has sub-categories like
+# Components and Voice, each sub-category) gets its own collection here.
+# Functionally it's the same authoring step: pick which one you're writing,
+# exactly like picking a tag.
 #
 # Note on "doc" fields: there's no manual "last updated" or "created by" field
 # below — that's intentional. The live site reads those automatically from
@@ -65,6 +67,70 @@ collections:
           <div class="ds-callout ds-dont">
           <p><strong>✗ Don't</strong> — </p>
           </div>
+
+  - name: "voice_content_design"
+    label: "Voice — Content Design"
+    label_singular: "Content Design doc"
+    folder: "src/content/docs/voice/content-design"
+    create: true
+    slug: "{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["draft", "in-review", "approved", "deprecated"]
+        default: "draft"
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
+        editor_components: ["do", "dont", "embed", "image"]
+        buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
+        default: |
+          ## Overview
+
+          What is this, and why does it exist?
+
+          ## Guidance
+
+          <div class="ds-callout ds-do">
+          <p><strong>✓ Do</strong> — </p>
+          </div>
+
+          <div class="ds-callout ds-dont">
+          <p><strong>✗ Don't</strong> — </p>
+          </div>
+
+  - name: "voice_imagery"
+    label: "Voice — Imagery"
+    label_singular: "Imagery doc"
+    folder: "src/content/docs/voice/imagery"
+    create: true
+    slug: "{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["draft", "in-review", "approved", "deprecated"]
+        default: "draft"
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
+        editor_components: ["do", "dont", "embed", "image"]
+        buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
+        default: |
+          ## Overview
+
+          What is this, and why does it exist?
 
   - name: "docs_meta"
     label: "Docs"

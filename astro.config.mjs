@@ -36,17 +36,23 @@ export default defineConfig({
           ],
         },
         {
-          label: 'Voice | Content & Imagery',
+          label: 'Voice',
           items: [
             {
               label: 'Content Design',
               items: [
-                { label: 'Clinical Safety', link: '/foundations/clinical-safety/' },
-                { label: 'Content & Language', link: '/foundations/content-and-language/' },
+                { label: 'Clinical Safety', link: '/voice/content-design/clinical-safety/' },
+                { label: 'Content & Language', link: '/voice/content-design/content-and-language/' },
               ],
             },
-            // 'Imagery' and 'Misc' subcategories: holding off until we know
-            // what pages belong in each -- see chat.
+            {
+              label: 'Imagery',
+              items: [
+                { label: 'Principles (pending)', link: '/voice/imagery/principles-pending/' },
+              ],
+            },
+            // 'Misc' subcategory: holding off until we know what pages
+            // belong in it -- see chat.
           ],
         },
         {

@@ -278,6 +278,20 @@ starlight-page-title h1,
   color: var(--pulse-neutral-120) !important;
 }
 
+/* Inline colour swatch -- a small chip styled with the row's own hex value,
+   sitting right next to the hex code in the Colour page's tables. */
+.ds-swatch {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 0.2em;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  vertical-align: middle;
+  margin-right: 0.4em;
+  position: relative;
+  top: -0.05em;
+}
+
 /* --- Figma/Storybook/generic embeds --- */
 .ds-embed {
   margin: 1.25rem 0;
