@@ -44,12 +44,6 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - label: "Status"
-        name: "status"
-        widget: "select"
-        options: ["draft", "in-review", "approved", "deprecated"]
-        default: "draft"
-        required: false
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -81,12 +75,6 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - label: "Status"
-        name: "status"
-        widget: "select"
-        options: ["draft", "in-review", "approved", "deprecated"]
-        default: "draft"
-        required: false
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -118,12 +106,6 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - label: "Status"
-        name: "status"
-        widget: "select"
-        options: ["draft", "in-review", "approved", "deprecated"]
-        default: "draft"
-        required: false
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -145,12 +127,6 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - label: "Status"
-        name: "status"
-        widget: "select"
-        options: ["draft", "in-review", "approved", "deprecated"]
-        default: "draft"
-        required: false
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -172,11 +148,6 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - label: "Status"
-        name: "status"
-        widget: "select"
-        options: ["draft", "in-review", "approved", "deprecated"]
-        default: "draft"
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -209,11 +180,6 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - label: "Status"
-        name: "status"
-        widget: "select"
-        options: ["draft", "in-review", "approved", "deprecated"]
-        default: "draft"
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -246,11 +212,6 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - label: "Status"
-        name: "status"
-        widget: "select"
-        options: ["draft", "in-review", "approved", "deprecated"]
-        default: "draft"
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -283,11 +244,6 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - label: "Status"
-        name: "status"
-        widget: "select"
-        options: ["draft", "in-review", "approved", "deprecated"]
-        default: "draft"
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -320,11 +276,6 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - label: "Status"
-        name: "status"
-        widget: "select"
-        options: ["draft", "in-review", "approved", "deprecated"]
-        default: "draft"
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -357,11 +308,6 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - label: "Status"
-        name: "status"
-        widget: "select"
-        options: ["draft", "in-review", "approved", "deprecated"]
-        default: "draft"
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -395,12 +341,6 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - label: "Status"
-        name: "status"
-        widget: "select"
-        options: ["draft", "in-review", "approved", "deprecated"]
-        default: "draft"
-        required: false
       - label: "Body"
         name: "body"
         widget: "markdown"

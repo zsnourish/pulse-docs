@@ -189,12 +189,25 @@ CMS.registerEditorComponent({
   // Matches either a real embed (iframe + caption) or the "not linked yet"
   // fallback block, so re-opening either form for editing still populates
   // the URL/Caption fields correctly instead of falling back to raw HTML.
-  pattern: /^<div class="ds-embed">\n<iframe src="(.*?)" loading="lazy" allowfullscreen><\/iframe>\n<p class="ds-embed-caption">(.*?)<\/p>\n<\/div>$|^<div class="ds-embed-missing">\n<p>(.*?)<\/p>\n<\/div>$/ms,
+  // Three alternatives: (1) the plain iframe form this component itself
+  // still writes on save, (2) the click-to-load facade form used across the
+  // site for pre-thumbnailed embeds (a Figma/Confluence screenshot behind a
+  // "Click to load" button instead of an immediately-loading iframe -- see
+  // /public/scripts/ds-embed.js), and (3) the "not linked yet" fallback.
+  // Without alternative (2), this pattern silently failed to match any of
+  // the facade'd embeds (i.e. most component/foundation pages), which left
+  // Decap trying to deserialize that HTML some other way -- the likely
+  // cause of a recurring "Minified React error #130" crash when opening
+  // affected pages in the editor.
+  pattern: /^<div class="ds-embed">\n<iframe src="(.*?)" loading="lazy" allowfullscreen><\/iframe>\n<p class="ds-embed-caption">(.*?)<\/p>\n<\/div>$|^<div class="ds-embed">\n<div class="ds-embed-facade" data-embed-src="(.*?)"[^>]*>\n<img[^>]*\/>\n<span[^>]*>.*?<\/span>\n<\/div>\n<p class="ds-embed-caption">(.*?)<\/p>\n<\/div>$|^<div class="ds-embed-missing">\n<p>(.*?)<\/p>\n<\/div>$/ms,
   fromBlock: function (match) {
     if (match[1] !== undefined) {
       return { url: match[1], label: match[2] };
     }
-    return { url: '', label: match[3] === 'Not linked yet' ? '' : match[3] };
+    if (match[3] !== undefined) {
+      return { url: match[3], label: match[4] };
+    }
+    return { url: '', label: match[5] === 'Not linked yet' ? '' : match[5] };
   },
   toBlock: function (obj) {
     var url = (obj.url || '').trim();
