@@ -26,10 +26,13 @@ public_folder: "/uploads"
 # Starlight's lastUpdated config), so nothing needs typing in and nothing can
 # drift from the truth.
 #
-# `label_singular` is deliberately different per collection ("Foundations
-# doc" / "Components doc" / "Visuals doc") rather than a shared "doc" —
-# that's what shows in the "Quick add" dropdown, and sharing one label there
-# made all three entries look identical with no way to tell them apart.
+# `label_singular` is deliberately different per collection, and prefixed
+# with the parent nav category for anything that sits under a sub-category
+# ("Components — Actions doc", "Voice — Content Design doc") — that's what
+# shows in the "Quick add" dropdown, and the flat list was hard to navigate
+# without that prefix. Collections are also listed below in the same order
+# as the live site's left nav, since that's the order Decap uses for both
+# "Quick add" and the Collections sidebar.
 collections:
   - name: "foundations"
     label: "Foundations"
@@ -51,7 +54,7 @@ collections:
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
-        editor_components: ["do", "dont", "embed", "image"]
+        editor_components: ["do", "dont", "embed"]
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
         default: |
           ## Overview
@@ -70,7 +73,7 @@ collections:
 
   - name: "voice_content_design"
     label: "Voice — Content Design"
-    label_singular: "Content Design doc"
+    label_singular: "Voice — Content Design doc"
     folder: "src/content/docs/voice/content-design"
     create: true
     slug: "{{slug}}"
@@ -88,7 +91,7 @@ collections:
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
-        editor_components: ["do", "dont", "embed", "image"]
+        editor_components: ["do", "dont", "embed"]
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
         default: |
           ## Overview
@@ -107,7 +110,7 @@ collections:
 
   - name: "voice_imagery"
     label: "Voice — Imagery"
-    label_singular: "Imagery doc"
+    label_singular: "Voice — Imagery doc"
     folder: "src/content/docs/voice/imagery"
     create: true
     slug: "{{slug}}"
@@ -125,17 +128,17 @@ collections:
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
-        editor_components: ["do", "dont", "embed", "image"]
+        editor_components: ["do", "dont", "embed"]
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
         default: |
           ## Overview
 
           What is this, and why does it exist?
 
-  - name: "docs_meta"
-    label: "Docs"
-    label_singular: "Docs page"
-    folder: "src/content/docs/docs"
+  - name: "voice_other"
+    label: "Voice — Other"
+    label_singular: "Voice — Other doc"
+    folder: "src/content/docs/voice/other"
     create: true
     slug: "{{slug}}"
     extension: "mdx"
@@ -152,7 +155,7 @@ collections:
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
-        editor_components: ["do", "dont", "embed", "image"]
+        editor_components: ["do", "dont", "embed"]
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
         default: |
           ## Overview
@@ -161,7 +164,7 @@ collections:
 
   - name: "components_actions"
     label: "Components — Actions"
-    label_singular: "Actions doc"
+    label_singular: "Components — Actions doc"
     folder: "src/content/docs/components/actions"
     create: true
     slug: "{{slug}}"
@@ -178,7 +181,7 @@ collections:
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
-        editor_components: ["do", "dont", "embed", "image"]
+        editor_components: ["do", "dont", "embed"]
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
         default: |
           ## Usage
@@ -198,7 +201,7 @@ collections:
           Keyboard behaviour, screen reader labels, and care-worker-specific considerations (low cognitive load, error prevention).
   - name: "components_communication"
     label: "Components — Communication"
-    label_singular: "Communication doc"
+    label_singular: "Components — Communication doc"
     folder: "src/content/docs/components/communication"
     create: true
     slug: "{{slug}}"
@@ -215,7 +218,7 @@ collections:
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
-        editor_components: ["do", "dont", "embed", "image"]
+        editor_components: ["do", "dont", "embed"]
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
         default: |
           ## Usage
@@ -235,7 +238,7 @@ collections:
           Keyboard behaviour, screen reader labels, and care-worker-specific considerations (low cognitive load, error prevention).
   - name: "components_containers"
     label: "Components — Containers"
-    label_singular: "Containers doc"
+    label_singular: "Components — Containers doc"
     folder: "src/content/docs/components/containers"
     create: true
     slug: "{{slug}}"
@@ -252,7 +255,7 @@ collections:
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
-        editor_components: ["do", "dont", "embed", "image"]
+        editor_components: ["do", "dont", "embed"]
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
         default: |
           ## Usage
@@ -272,7 +275,7 @@ collections:
           Keyboard behaviour, screen reader labels, and care-worker-specific considerations (low cognitive load, error prevention).
   - name: "components_navigation"
     label: "Components — Navigation"
-    label_singular: "Navigation doc"
+    label_singular: "Components — Navigation doc"
     folder: "src/content/docs/components/navigation"
     create: true
     slug: "{{slug}}"
@@ -289,7 +292,7 @@ collections:
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
-        editor_components: ["do", "dont", "embed", "image"]
+        editor_components: ["do", "dont", "embed"]
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
         default: |
           ## Usage
@@ -309,7 +312,7 @@ collections:
           Keyboard behaviour, screen reader labels, and care-worker-specific considerations (low cognitive load, error prevention).
   - name: "components_selection"
     label: "Components — Selection"
-    label_singular: "Selection doc"
+    label_singular: "Components — Selection doc"
     folder: "src/content/docs/components/selection"
     create: true
     slug: "{{slug}}"
@@ -326,7 +329,7 @@ collections:
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
-        editor_components: ["do", "dont", "embed", "image"]
+        editor_components: ["do", "dont", "embed"]
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
         default: |
           ## Usage
@@ -346,7 +349,7 @@ collections:
           Keyboard behaviour, screen reader labels, and care-worker-specific considerations (low cognitive load, error prevention).
   - name: "components_text_inputs"
     label: "Components — Text Inputs"
-    label_singular: "Text Inputs doc"
+    label_singular: "Components — Text Inputs doc"
     folder: "src/content/docs/components/text-inputs"
     create: true
     slug: "{{slug}}"
@@ -363,7 +366,7 @@ collections:
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
-        editor_components: ["do", "dont", "embed", "image"]
+        editor_components: ["do", "dont", "embed"]
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
         default: |
           ## Usage
@@ -382,10 +385,10 @@ collections:
 
           Keyboard behaviour, screen reader labels, and care-worker-specific considerations (low cognitive load, error prevention).
 
-  - name: "visuals"
-    label: "Visuals"
-    label_singular: "Visuals doc"
-    folder: "src/content/docs/visuals"
+  - name: "docs_meta"
+    label: "System"
+    label_singular: "System page"
+    folder: "src/content/docs/docs"
     create: true
     slug: "{{slug}}"
     extension: "mdx"
@@ -402,12 +405,10 @@ collections:
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
-        editor_components: ["do", "dont", "embed", "image"]
+        editor_components: ["do", "dont", "embed"]
         buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"]
         default: |
-          ## Description
+          ## Overview
 
-          What is this asset (motion, illustration, icon set, etc.), and where's it used?
-
-          ## Usage guidance
+          What is this, and why does it exist?
 

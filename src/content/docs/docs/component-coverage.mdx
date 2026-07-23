@@ -5,6 +5,21 @@ status: draft
 
 Cross-referenced Figma's "Pulse Components" library file (published components only, via the Figma API — Scratch Pad, Archived, and Deprecated pages excluded), Storybook's real build manifest (`index.json`, 220 story entries / 38 component titles), and the Supernova documentation just migrated into the new docs site (31 pages).
 
+## Build tracker
+
+Cross-platform build status for Pulse components — Figma design, Vue build, and React build, tracked per platform. This lives in Confluence rather than here, so the team can edit rows without going through GitHub at all.
+
+<p class="tracker-embed-note">
+<strong>Heads up:</strong> this embeds the real, published Confluence page (table populated and cross-checked against Figma and Storybook) — but same as the Figma embeds elsewhere on this site, it usually only renders for people already signed into your organisation's Atlassian account, so anonymous visitors are likely to see a login wall instead of the table. Worth checking Confluence's sharing settings if this needs to be visible to people outside the org.
+</p>
+
+<div class="ds-embed">
+<iframe src="https://nourishcare.atlassian.net/wiki/spaces/Design/pages/1293647876/Component+Tracker" loading="lazy" allowfullscreen></iframe>
+<p class="ds-embed-caption">Component Build Tracker — Confluence (Pulse Components v1)</p>
+</div>
+
+---
+
 ## Executive summary
 
 Figma is furthest ahead — it has design coverage for roughly 30 component families. Storybook (real built code) covers 38 component titles but several don't match anything in Figma or docs by name, suggesting either naming drift or genuinely undocumented builds. The new docs site now has 20 component pages migrated from Supernova, but Supernova itself was already behind Figma — several components designed and built have no usage guidance written anywhere. Net: the gap isn't "docs behind design," it's "docs behind both design and dev," and a few components exist in dev with no matching design page name at all, which is worth a direct conversation with the team rather than assuming it's just a naming mismatch.

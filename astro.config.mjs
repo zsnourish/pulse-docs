@@ -51,6 +51,12 @@ export default defineConfig({
                 { label: 'Principles (pending)', link: '/voice/imagery/principles-pending/' },
               ],
             },
+            {
+              label: 'Other',
+              items: [
+                { label: 'Dashboard Design', link: '/voice/other/dashboard-design/' },
+              ],
+            },
             // 'Misc' subcategory: holding off until we know what pages
             // belong in it -- see chat.
           ],
@@ -59,20 +65,12 @@ export default defineConfig({
           label: 'Components',
           autogenerate: { directory: 'components' },
         },
-        {
-          label: 'Visuals',
-          autogenerate: { directory: 'visuals' },
-        },
-        {
-          label: 'Component Tracker',
-          link: '/components/tracker/',
-        },
         // Deliberately last: internal, "how this site itself works" pages
         // (coverage audit, review/publish process, backups, changelog) --
         // useful to keep discoverable, but not something a designer looking
         // for component or foundation guidance needs to see first.
         {
-          label: 'Docs',
+          label: 'System',
           items: [
             { label: 'Component Coverage', link: '/docs/component-coverage/' },
             { label: 'Reviewing & Publishing Docs', link: '/docs/reviewing-docs/' },
